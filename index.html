@@ -2,521 +2,267 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>creAItors Club — Where Kids Begin with AI</title>
 <meta name="description" content="Every child deserves a strong, confident beginning with AI. creAItors Club — joyful, structured AI literacy for children.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800;900&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#0f1923;--cream:#fdf8f0;--white:#fff;
-  --gold:#f7c948;--gold2:#ffb703;
-  --nano:#2ec4a9;--pixel:#ff6b6b;--mine:#5b8dee;--uni:#b97bff;
-  --nano-bg:#e6faf7;--pixel-bg:#fff0f0;--mine-bg:#eef2ff;--uni-bg:#f5eeff;
-  --font-h:'Baloo 2',cursive;--font-b:'Nunito',sans-serif;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--font-b);background:var(--cream);color:var(--ink);overflow-x:hidden}
+:root{--ink:#0f1923;--cream:#fdf8f0;--gold:#f7c948;--nano:#2ec4a9;--pixel:#ff6b6b;--mine:#5b8dee;--uni:#b97bff;--nano-bg:#e6faf7;--pixel-bg:#fff0f0;--mine-bg:#eef2ff;--uni-bg:#f5eeff;--fh:'Baloo 2',cursive;--fb:'Nunito',sans-serif;--shadow:0 4px 24px rgba(0,0,0,.08);--shadow-lg:0 16px 48px rgba(0,0,0,.14)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--fb);background:var(--cream);color:var(--ink);overflow-x:hidden}
+nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,4vw,3rem);height:64px;background:rgba(15,25,35,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(247,201,72,.18)}
+.nb{font-family:var(--fh);font-size:1.35rem;font-weight:900;color:#fff;text-decoration:none;letter-spacing:-.5px}.nb .ai{color:var(--gold)}
+.nl{display:flex;gap:4px;list-style:none;flex-wrap:wrap}
+.nl a{font-family:var(--fb);font-size:.8rem;font-weight:700;color:rgba(255,255,255,.6);text-decoration:none;padding:6px 12px;border-radius:20px;transition:all .2s;white-space:nowrap}
+.nl a:hover{color:#fff;background:rgba(255,255,255,.1)}.nl a.cta{background:var(--gold);color:var(--ink)!important}.nl a.cta:hover{background:#ffd700}.nl a.active{color:#fff;background:rgba(255,255,255,.1)}
+@media(max-width:640px){.nl{display:none}}
+section{padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,4rem)}.ctr{max-width:1100px;margin:0 auto}
+.sl{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.4;margin-bottom:.6rem;font-family:var(--fb)}
+.sh{font-family:var(--fh);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:-.5px;margin-bottom:.85rem}
+.ss{font-size:1rem;color:#666;line-height:1.7;max-width:580px}
+.btn{font-family:var(--fb);font-weight:800;font-size:.92rem;padding:12px 26px;border-radius:50px;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none}
+.btn-gold{background:var(--gold);color:var(--ink)}.btn-gold:hover{background:#ffd700;transform:translateY(-2px);box-shadow:0 8px 24px rgba(247,201,72,.35)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:2px solid rgba(255,255,255,.2)}.btn-ghost:hover{background:rgba(255,255,255,.15);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--ink);border:2px solid currentColor}.btn-outline:hover{background:var(--ink);color:#fff}
+.ph{background:var(--ink);padding:clamp(3rem,7vw,5.5rem) clamp(1rem,5vw,4rem);text-align:center;position:relative;overflow:hidden}
+.ph::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,rgba(46,196,169,.1),transparent 55%)}
+.ph h1{font-family:var(--fh);font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:#fff;letter-spacing:-.5px;margin-bottom:.65rem;position:relative;z-index:1}
+.ph h1 span{color:var(--gold)}.ph p{font-size:1rem;color:rgba(255,255,255,.58);max-width:540px;margin:0 auto;line-height:1.7;position:relative;z-index:1}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.rv.vis{opacity:1;transform:translateY(0)}
+footer{background:#080e14;color:rgba(255,255,255,.35);padding:2.5rem clamp(1rem,5vw,4rem)}
+.fi{max-width:1100px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:2rem}
+.fbr{font-family:var(--fh);font-size:1.05rem;font-weight:900;color:#fff}.fbr .ai{color:var(--gold)}.fbr p{font-size:.73rem;color:rgba(255,255,255,.3);margin-top:.3rem}
+.fc h4{font-family:var(--fh);font-size:.75rem;font-weight:800;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.55rem}
+.fc a{display:block;font-size:.77rem;font-weight:600;color:rgba(255,255,255,.32);text-decoration:none;transition:color .2s;margin-bottom:.28rem}.fc a:hover{color:var(--gold)}
+.fb2{max-width:1100px;margin:.7rem auto 0;padding-top:.7rem;border-top:1px solid rgba(255,255,255,.06);font-size:.7rem;color:rgba(255,255,255,.18)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-15px)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(max-width:600px){.fi{flex-direction:column}}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,4vw,3rem);height:64px;background:rgba(15,25,35,.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(247,201,72,.18)}
-.nav-brand{font-family:var(--font-h);font-size:1.4rem;font-weight:900;color:#fff;text-decoration:none;letter-spacing:-.5px}
-.nav-brand .ai{color:var(--gold)}
-.nav-links{display:flex;gap:6px;list-style:none}
-.nav-links a{font-family:var(--font-b);font-size:.82rem;font-weight:700;color:rgba(255,255,255,.6);text-decoration:none;padding:6px 14px;border-radius:20px;transition:all .2s}
-.nav-links a:hover{color:#fff;background:rgba(255,255,255,.1)}
-.nav-links a.cta{background:var(--gold);color:var(--ink)!important}
-.nav-links a.cta:hover{background:#ffd700;transform:translateY(-1px)}
-@media(max-width:600px){.nav-links{display:none}}
+.lg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.25rem}
+.lc{border-radius:22px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;border:2px solid transparent}
+.lc:hover{transform:translateY(-7px);box-shadow:var(--shadow-lg)}
+.lc.n{border-color:var(--nano)}.lc.p{border-color:var(--pixel)}.lc.m{border-color:var(--mine)}.lc.u{border-color:var(--uni)}
+.lct{padding:1.75rem 1.5rem 1.25rem;position:relative;overflow:hidden}
+.lc.n .lct{background:linear-gradient(145deg,#0a1a14,#0d2d24)}.lc.p .lct{background:linear-gradient(145deg,#1a0a0a,#2d1010)}
+.lc.m .lct{background:linear-gradient(145deg,#0a0f1a,#0f1a2f)}.lc.u .lct{background:linear-gradient(145deg,#120a1a,#1e0f30)}
+.lcg{position:absolute;width:180px;height:180px;border-radius:50%;filter:blur(60px);opacity:.23;top:-35px;right:-35px}
+.lc.n .lcg{background:var(--nano)}.lc.p .lcg{background:var(--pixel)}.lc.m .lcg{background:var(--mine)}.lc.u .lcg{background:var(--uni)}
+.lce{font-size:2.4rem;display:block;margin-bottom:.65rem;position:relative;z-index:1}
+.lcl{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.22rem;position:relative;z-index:1}
+.lc.n .lcl{color:var(--nano)}.lc.p .lcl{color:var(--pixel)}.lc.m .lcl{color:var(--mine)}.lc.u .lcl{color:var(--uni)}
+.lcn{font-family:var(--fh);font-size:1.45rem;font-weight:900;color:#fff;position:relative;z-index:1;margin-bottom:.28rem}
+.lca{display:inline-block;background:rgba(255,255,255,.09);border-radius:8px;padding:3px 9px;font-size:.7rem;font-weight:700;color:rgba(255,255,255,.62);position:relative;z-index:1}
+.lcb{padding:1.2rem 1.5rem;background:#fff;flex:1}
+.lcth{font-size:.84rem;font-weight:700;color:var(--ink);margin-bottom:.55rem}
+.lcf{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.5rem;border-top:1px solid #f0f0f0;background:#fff}
+.lcpr{font-family:var(--fh);font-size:.95rem;font-weight:900}
+.lc.n .lcpr{color:var(--nano)}.lc.p .lcpr{color:var(--pixel)}.lc.m .lcpr{color:var(--mine)}.lc.u .lcpr{color:var(--uni)}
+.lcbt{font-size:.77rem;font-weight:800;padding:6px 13px;border-radius:17px;text-decoration:none;transition:all .2s}
+.lc.n .lcbt{background:var(--nano-bg);color:var(--nano)}.lc.p .lcbt{background:var(--pixel-bg);color:var(--pixel)}
+.lc.m .lcbt{background:var(--mine-bg);color:var(--mine)}.lc.u .lcbt{background:var(--uni-bg);color:var(--uni)}
 
-/* HERO */
 .hero{min-height:100vh;background:var(--ink);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:100px clamp(1rem,5vw,4rem) 80px}
 .hbg{position:absolute;inset:0;pointer-events:none}
-.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.14}
-.b1{width:700px;height:700px;background:var(--nano);top:-200px;right:-150px;animation:drift 14s ease-in-out infinite}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.13}
+.b1{width:650px;height:650px;background:var(--nano);top:-200px;right:-120px;animation:drift 14s ease-in-out infinite}
 .b2{width:500px;height:500px;background:var(--uni);bottom:-150px;left:-100px;animation:drift 18s ease-in-out infinite reverse}
-.b3{width:280px;height:280px;background:var(--gold);top:45%;left:35%;animation:drift 11s ease-in-out infinite 4s}
+.b3{width:260px;height:260px;background:var(--gold);top:45%;left:35%;animation:drift 11s ease-in-out infinite 4s}
 .b4{width:200px;height:200px;background:var(--pixel);top:20%;left:10%;animation:drift 9s ease-in-out infinite 2s}
 .dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:32px 32px}
-@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(25px,-18px) scale(1.04)}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-@keyframes pop{0%{transform:scale(.8);opacity:0}100%{transform:scale(1);opacity:1}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@keyframes spin{to{transform:rotate(360deg)}}
-
-.hero-inner{position:relative;z-index:2;max-width:920px;text-align:center}
-.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(247,201,72,.12);border:1px solid rgba(247,201,72,.28);border-radius:30px;padding:7px 20px;margin-bottom:2rem;font-size:.78rem;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;animation:fadeUp .6s ease both}
-.hero-h1{font-family:var(--font-h);font-size:clamp(3rem,9vw,6.5rem);font-weight:900;line-height:.95;color:#fff;letter-spacing:-2px;margin-bottom:1.5rem;animation:fadeUp .7s .1s ease both}
-.hero-h1 .line2{display:block;color:var(--gold);position:relative}
-.hero-h1 .line2 .star{position:absolute;top:-.2em;right:-.15em;font-size:.3em;animation:spin 5s linear infinite}
-.hero-mission{font-size:clamp(1rem,2.4vw,1.25rem);font-weight:600;line-height:1.7;color:rgba(255,255,255,.72);max-width:650px;margin:0 auto 2.5rem;animation:fadeUp .7s .2s ease both}
-.hero-mission strong{color:var(--gold);font-weight:800}
-.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:4rem;animation:fadeUp .7s .3s ease both}
-.btn{font-family:var(--font-b);font-weight:800;font-size:1rem;padding:15px 32px;border-radius:50px;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none}
-.btn-gold{background:var(--gold);color:var(--ink);box-shadow:0 4px 20px rgba(247,201,72,.3)}
-.btn-gold:hover{background:#ffd700;transform:translateY(-3px);box-shadow:0 12px 32px rgba(247,201,72,.45)}
-.btn-ghost{background:rgba(255,255,255,.07);color:#fff;border:2px solid rgba(255,255,255,.18)}
-.btn-ghost:hover{background:rgba(255,255,255,.14);transform:translateY(-3px)}
-
-/* level chips */
-.level-chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .4s ease both}
-.chip{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:16px;padding:11px 20px;text-decoration:none;transition:all .25s}
+.hi{position:relative;z-index:2;max-width:900px;text-align:center}
+.hpill{display:inline-flex;align-items:center;gap:8px;background:rgba(247,201,72,.12);border:1px solid rgba(247,201,72,.28);border-radius:30px;padding:7px 20px;margin-bottom:2rem;font-size:.78rem;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;animation:fadeUp .6s ease both}
+.hh1{font-family:var(--fh);font-size:clamp(3rem,9vw,6.2rem);font-weight:900;line-height:.95;color:#fff;letter-spacing:-2px;margin-bottom:1.4rem;animation:fadeUp .7s .1s ease both}
+.hh1 .ai{color:var(--gold)}.hh1 .l2{display:block}
+.hmis{font-size:clamp(1rem,2.4vw,1.2rem);font-weight:600;line-height:1.7;color:rgba(255,255,255,.72);max-width:640px;margin:0 auto 2.5rem;animation:fadeUp .7s .2s ease both}
+.hmis strong{color:var(--gold);font-weight:800}
+.hbtns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:3.5rem;animation:fadeUp .7s .3s ease both}
+.chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .4s ease both}
+.chip{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:16px;padding:10px 17px;text-decoration:none;transition:all .25s}
 .chip:hover{background:rgba(255,255,255,.13);transform:translateY(-3px)}
-.chip .em{font-size:1.5rem}
-.chip .cn{display:block;font-family:var(--font-h);font-size:.88rem;font-weight:800;color:#fff}
-.chip .ca{display:block;font-size:.7rem;font-weight:600;color:rgba(255,255,255,.45)}
-.chip.nano{border-color:rgba(46,196,169,.3)}
-.chip.pixel{border-color:rgba(255,107,107,.3)}
-.chip.mine{border-color:rgba(91,141,238,.3)}
-.chip.uni{border-color:rgba(185,123,255,.3)}
-.chip.nano .cn{color:var(--nano)}
-.chip.pixel .cn{color:var(--pixel)}
-.chip.mine .cn{color:var(--mine)}
-.chip.uni .cn{color:var(--uni)}
-
-.scroll-cue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.25);font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:4px;animation:float 2.5s ease-in-out infinite}
-.scroll-cue span{font-size:1.2rem}
-
-/* SECTIONS */
-section{padding:clamp(4rem,8vw,7rem) clamp(1rem,5vw,4rem)}
-.container{max-width:1100px;margin:0 auto}
-.sec-label{font-family:var(--font-b);font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.4;margin-bottom:.75rem}
-.sec-title{font-family:var(--font-h);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;line-height:1.05;letter-spacing:-.5px;margin-bottom:1rem}
-.sec-sub{font-size:1.05rem;font-weight:500;color:#666;line-height:1.7}
-
-/* WHY */
-.why{background:#fff}
-.why-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;margin-top:3rem}
-@media(max-width:740px){.why-wrap{grid-template-columns:1fr}}
-.why-card{background:var(--ink);border-radius:28px;padding:2.75rem;position:relative;overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end}
-.why-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 75% 15%,rgba(46,196,169,.22),transparent 55%),radial-gradient(circle at 10% 85%,rgba(185,123,255,.15),transparent 50%)}
-.why-float{position:absolute;top:1.5rem;right:1.5rem;font-size:4.5rem;opacity:.15;animation:float 4s ease-in-out infinite}
-.why-q{font-family:var(--font-h);font-size:1.25rem;font-weight:800;color:#fff;line-height:1.55;position:relative;z-index:1}
-.why-q .hl{color:var(--gold)}
-.why-pts{display:flex;flex-direction:column;gap:1.1rem}
-.wpt{display:flex;gap:1rem;align-items:flex-start;padding:1.2rem 1.4rem;background:var(--cream);border-radius:16px;border-left:4px solid var(--gold)}
-.wpt .ic{font-size:1.5rem;flex-shrink:0;margin-top:2px}
-.wpt h4{font-family:var(--font-h);font-size:.98rem;font-weight:800;color:var(--ink);margin-bottom:3px}
-.wpt p{font-size:.85rem;color:#666;line-height:1.55}
-
-/* JOURNEY */
-.journey{background:var(--cream)}
-.journey-head{text-align:center;margin-bottom:3.5rem}
-.journey-head .sec-sub{margin:0 auto;max-width:560px}
-.levels-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:1.5rem}
-.lcard{border-radius:24px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;box-shadow:0 4px 28px rgba(0,0,0,.09);transition:transform .3s,box-shadow .3s;border:2.5px solid transparent}
-.lcard:hover{transform:translateY(-8px);box-shadow:0 20px 56px rgba(0,0,0,.16)}
-.lcard.nano{border-color:var(--nano)}.lcard.pixel{border-color:var(--pixel)}.lcard.mine{border-color:var(--mine)}.lcard.uni{border-color:var(--uni)}
-.lcard-top{padding:2rem 1.75rem 1.5rem;position:relative;overflow:hidden}
-.lcard.nano .lcard-top{background:linear-gradient(145deg,#0a1a14 0%,#0d2d24 100%)}
-.lcard.pixel .lcard-top{background:linear-gradient(145deg,#1a0a0a 0%,#2d1010 100%)}
-.lcard.mine .lcard-top{background:linear-gradient(145deg,#0a0f1a 0%,#0f1a2f 100%)}
-.lcard.uni .lcard-top{background:linear-gradient(145deg,#120a1a 0%,#1e0f30 100%)}
-.lcard-glow{position:absolute;width:220px;height:220px;border-radius:50%;filter:blur(70px);opacity:.28;top:-60px;right:-60px}
-.lcard.nano .lcard-glow{background:var(--nano)}.lcard.pixel .lcard-glow{background:var(--pixel)}.lcard.mine .lcard-glow{background:var(--mine)}.lcard.uni .lcard-glow{background:var(--uni)}
-.lcard-em{font-size:3rem;display:block;margin-bottom:1rem;position:relative;z-index:1;animation:float 4s ease-in-out infinite}
-.lcard-num{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem;position:relative;z-index:1}
-.lcard.nano .lcard-num{color:var(--nano)}.lcard.pixel .lcard-num{color:var(--pixel)}.lcard.mine .lcard-num{color:var(--mine)}.lcard.uni .lcard-num{color:var(--uni)}
-.lcard-name{font-family:var(--font-h);font-size:1.65rem;font-weight:900;color:#fff;position:relative;z-index:1;margin-bottom:.4rem}
-.lcard-age{display:inline-block;background:rgba(255,255,255,.09);border-radius:10px;padding:4px 11px;font-size:.73rem;font-weight:700;color:rgba(255,255,255,.65);position:relative;z-index:1}
-.lcard-body{padding:1.5rem 1.75rem;background:#fff;flex:1}
-.lcard-theme{font-family:var(--font-h);font-size:.93rem;font-weight:800;color:var(--ink);margin-bottom:.8rem}
-.lcard-learns{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.2rem}
-.lcard-learns li{font-size:.83rem;color:#555;padding-left:1.3rem;position:relative;line-height:1.5}
-.lcard-learns li::before{content:'✓';position:absolute;left:0;font-weight:800}
-.lcard.nano .lcard-learns li::before{color:var(--nano)}.lcard.pixel .lcard-learns li::before{color:var(--pixel)}.lcard.mine .lcard-learns li::before{color:var(--mine)}.lcard.uni .lcard-learns li::before{color:var(--uni)}
-.lcard-foot{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.75rem;border-top:1px solid #f0f0f0;background:#fff}
-.lcard-wks{font-size:.76rem;font-weight:700;color:#bbb}
-.lcard-btn{font-size:.8rem;font-weight:800;padding:7px 16px;border-radius:20px;text-decoration:none;transition:all .2s}
-.lcard.nano .lcard-btn{background:var(--nano-bg);color:var(--nano)}.lcard.pixel .lcard-btn{background:var(--pixel-bg);color:var(--pixel)}.lcard.mine .lcard-btn{background:var(--mine-bg);color:var(--mine)}.lcard.uni .lcard-btn{background:var(--uni-bg);color:var(--uni)}
-
-/* EXPERIENCE */
-.xp{background:#fff}
-.xp-head{text-align:center;margin-bottom:3rem}
-.xp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem}
-.xcard{padding:2rem;border-radius:20px;background:var(--cream);position:relative;overflow:hidden;transition:transform .25s}
-.xcard:hover{transform:translateY(-5px)}
-.xcard-n{position:absolute;top:1.2rem;right:1.5rem;font-family:var(--font-h);font-size:4rem;font-weight:900;color:rgba(0,0,0,.04);line-height:1}
-.xcard-em{font-size:2.2rem;margin-bottom:.9rem;display:block}
-.xcard h3{font-family:var(--font-h);font-size:1.05rem;font-weight:800;color:var(--ink);margin-bottom:.45rem}
-.xcard p{font-size:.86rem;color:#666;line-height:1.6}
-.xcard .tag{display:inline-block;margin-top:.8rem;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:4px 10px;border-radius:10px}
-.xcard:nth-child(1) .tag{background:var(--nano-bg);color:var(--nano)}
-.xcard:nth-child(2) .tag{background:var(--pixel-bg);color:var(--pixel)}
-.xcard:nth-child(3) .tag{background:var(--mine-bg);color:var(--mine)}
-.xcard:nth-child(4) .tag{background:var(--nano-bg);color:var(--nano)}
-.xcard:nth-child(5) .tag{background:#fff9e6;color:#7a5f00}
-.xcard:nth-child(6) .tag{background:var(--uni-bg);color:var(--uni)}
-
-/* HOW */
+.chip .cn{display:block;font-family:var(--fh);font-size:.86rem;font-weight:800;color:#fff}
+.chip .ca{display:block;font-size:.68rem;font-weight:600;color:rgba(255,255,255,.4)}
+.why{background:#fff}.why-w{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:2.5rem}
+@media(max-width:720px){.why-w{grid-template-columns:1fr}}
+.wcard{background:var(--ink);border-radius:24px;padding:2.5rem;position:relative;overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end}
+.wcard::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 75% 15%,rgba(46,196,169,.2),transparent 55%),radial-gradient(circle at 10% 85%,rgba(185,123,255,.13),transparent 50%)}
+.wfloat{position:absolute;top:1.5rem;right:1.5rem;font-size:3.8rem;opacity:.1}
+.wq{font-family:var(--fh);font-size:1.15rem;font-weight:800;color:#fff;line-height:1.55;position:relative;z-index:1}
+.wq .hl{color:var(--gold)}
+.wpts{display:flex;flex-direction:column;gap:.9rem}
+.wpt{display:flex;gap:.9rem;align-items:flex-start;padding:1rem 1.2rem;background:var(--cream);border-radius:14px;border-left:4px solid var(--gold)}
+.wpt .ic{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.wpt h4{font-family:var(--fh);font-size:.9rem;font-weight:800;color:var(--ink);margin-bottom:2px}
+.wpt p{font-size:.83rem;color:#666;line-height:1.5}
+.xg{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:1.1rem;margin-top:2.5rem}
+.xc{padding:1.65rem;border-radius:18px;background:var(--cream);position:relative;overflow:hidden;transition:transform .25s}
+.xc:hover{transform:translateY(-4px)}
+.xcn{position:absolute;top:1rem;right:1.25rem;font-family:var(--fh);font-size:3.2rem;font-weight:900;color:rgba(0,0,0,.04);line-height:1}
+.xce{font-size:1.9rem;margin-bottom:.7rem;display:block}
+.xc h3{font-family:var(--fh);font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:.38rem}
+.xc p{font-size:.83rem;color:#666;line-height:1.6}
 .how{background:var(--ink);color:#fff}
-.how .sec-label{color:rgba(255,255,255,.35)}
-.how .sec-title{color:#fff}
-.how .sec-sub{color:rgba(255,255,255,.55);max-width:600px}
-.how-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3rem}
-@media(max-width:740px){.how-inner{grid-template-columns:1fr}}
-.week-vis{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
-.dpill{border-radius:14px;padding:14px 5px;text-align:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);transition:.2s}
-.dpill.sp{background:rgba(247,201,72,.14);border-color:rgba(247,201,72,.35)}
-.dpill-n{font-family:var(--font-h);font-size:1.4rem;font-weight:900;color:var(--gold);display:block}
-.dpill-nm{font-size:.62rem;font-weight:800;color:rgba(255,255,255,.65);display:block;margin:.2rem 0}
-.dpill-em{font-size:1.1rem;display:block}
-.how-pts{display:flex;flex-direction:column;gap:1.3rem}
-.hpt{display:flex;gap:1rem;align-items:flex-start}
-.hpt .dot{width:10px;height:10px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px}
-.hpt h4{font-family:var(--font-h);font-size:1rem;font-weight:800;color:#fff;margin-bottom:3px}
-.hpt p{font-size:.86rem;color:rgba(255,255,255,.5);line-height:1.6}
-
-/* SAFE */
-.safe{background:var(--cream)}
-.safe-head{text-align:center;margin-bottom:3rem}
-.safe-head .sec-sub{margin:0 auto;max-width:540px}
-.safe-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.1rem}
-.scard{background:#fff;border-radius:18px;padding:1.75rem;text-align:center;box-shadow:0 2px 16px rgba(0,0,0,.06);transition:transform .2s}
-.scard:hover{transform:translateY(-3px)}
-.scard .ic{font-size:2.2rem;margin-bottom:.7rem;display:block}
-.scard h4{font-family:var(--font-h);font-size:.95rem;font-weight:800;color:var(--ink);margin-bottom:.35rem}
-.scard p{font-size:.81rem;color:#777;line-height:1.55}
-
-/* FML CTA */
-.fml{background:linear-gradient(135deg,#0f1923 0%,#1a2535 100%);text-align:center;position:relative;overflow:hidden}
-.fml::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(247,201,72,.07),transparent 65%)}
-.fml-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
-.fml-ems{font-size:2.8rem;margin-bottom:1.5rem;letter-spacing:.2em;animation:float 3s ease-in-out infinite}
-.fml h2{font-family:var(--font-h);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;color:#fff;margin-bottom:1rem;letter-spacing:-.5px}
-.fml p{font-size:1.05rem;color:rgba(255,255,255,.62);margin-bottom:2rem;line-height:1.7}
-.fml p strong{color:var(--gold)}
-.fml-badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:2.5rem}
-.fbadge{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;font-size:.82rem;font-weight:800}
-.fbadge.nano{background:rgba(46,196,169,.12);color:var(--nano);border:1px solid rgba(46,196,169,.25)}
-.fbadge.pixel{background:rgba(255,107,107,.12);color:var(--pixel);border:1px solid rgba(255,107,107,.25)}
-.fbadge.mine{background:rgba(91,141,238,.12);color:var(--mine);border:1px solid rgba(91,141,238,.25)}
-.fbadge.uni{background:rgba(185,123,255,.12);color:var(--uni);border:1px solid rgba(185,123,255,.25)}
-.fml-note{font-size:.78rem;color:rgba(255,255,255,.28);margin-top:1.5rem}
-
-/* FOOTER */
-footer{background:#080e14;color:rgba(255,255,255,.35);padding:2.5rem clamp(1rem,5vw,4rem)}
-.foot-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.foot-brand{font-family:var(--font-h);font-size:1.1rem;font-weight:900;color:#fff}
-.foot-brand .ai{color:var(--gold)}
-footer p{font-size:.74rem}
-.foot-links{display:flex;gap:1rem;flex-wrap:wrap}
-.foot-links a{font-size:.74rem;font-weight:700;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s}
-.foot-links a:hover{color:var(--gold)}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
-
-@media(max-width:600px){
-  .hero-btns{flex-direction:column;align-items:center}
-  .btn{width:100%;max-width:300px;justify-content:center}
-  .week-vis{grid-template-columns:repeat(4,1fr)}
-  .foot-inner{flex-direction:column;text-align:center}
-}
+.how-i{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;margin-top:2.5rem}
+@media(max-width:720px){.how-i{grid-template-columns:1fr}}
+.wv{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.dp{border-radius:12px;padding:11px 4px;text-align:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
+.dp.sp{background:rgba(247,201,72,.14);border-color:rgba(247,201,72,.35)}
+.dpn{font-family:var(--fh);font-size:1.25rem;font-weight:900;color:var(--gold);display:block}
+.dpnm{font-size:.6rem;font-weight:800;color:rgba(255,255,255,.6);display:block;margin:.18rem 0}
+.dpe{font-size:.95rem;display:block}
+.hps{display:flex;flex-direction:column;gap:1rem}
+.hpt{display:flex;gap:.85rem;align-items:flex-start}
+.hpt .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:5px}
+.hpt h4{font-family:var(--fh);font-size:.92rem;font-weight:800;color:#fff;margin-bottom:2px}
+.hpt p{font-size:.83rem;color:rgba(255,255,255,.48);line-height:1.6}
+.del{background:var(--cream)}
+.dg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem;margin-top:2.5rem}
+.dc{background:#fff;border-radius:16px;padding:1.6rem;box-shadow:var(--shadow);transition:transform .2s;border-top:4px solid transparent}
+.dc:hover{transform:translateY(-3px)}
+.dc.gc{border-color:#4285f4}.dc.sp{border-color:var(--gold)}.dc.tl{border-color:var(--nano)}.dc.sg{border-color:var(--pixel)}
+.dc .di{font-size:1.9rem;margin-bottom:.6rem;display:block}
+.dc h4{font-family:var(--fh);font-size:.95rem;font-weight:800;color:var(--ink);margin-bottom:.35rem}
+.dc p{font-size:.82rem;color:#666;line-height:1.5;margin-bottom:.65rem}
+.dc .dt{font-size:.7rem;font-weight:800;padding:3px 9px;border-radius:9px;display:inline-block}
+.dc.gc .dt{background:#e8f0fe;color:#1a73e8}.dc.sp .dt{background:var(--cream);color:#7a5f00}
+.dc.tl .dt{background:var(--nano-bg);color:var(--nano)}.dc.sg .dt{background:var(--pixel-bg);color:var(--pixel)}
+.tr{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.4rem}
+.tc{display:inline-flex;align-items:center;gap:.45rem;background:#fff;border:1.5px solid #e8e8e8;border-radius:11px;padding:.5rem .9rem;font-size:.8rem;font-weight:700;color:var(--ink);text-decoration:none;transition:all .2s}
+.tc:hover{border-color:var(--gold);background:#fffbee}
+.sg{background:#fff}.sg-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:.9rem;margin-top:2.5rem}
+.sc{background:var(--cream);border-radius:15px;padding:1.4rem;text-align:center;transition:transform .2s}.sc:hover{transform:translateY(-3px)}
+.sc .sic{font-size:1.9rem;margin-bottom:.55rem;display:block}
+.sc h4{font-family:var(--fh);font-size:.88rem;font-weight:800;color:var(--ink);margin-bottom:.3rem}
+.sc p{font-size:.79rem;color:#777;line-height:1.5}
+.cb{background:linear-gradient(135deg,var(--ink),#1a2535);text-align:center;position:relative;overflow:hidden}
+.cb::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(247,201,72,.06),transparent 60%)}
+.cbi{position:relative;z-index:1;max-width:600px;margin:0 auto}
+.cbi h2{font-family:var(--fh);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:#fff;margin-bottom:.7rem;letter-spacing:-.5px}
+.cbi p{font-size:.97rem;color:rgba(255,255,255,.58);margin-bottom:1.75rem;line-height:1.7}.cbi p strong{color:var(--gold)}
+.cbb{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+@media(max-width:600px){.hbtns,.cbb{flex-direction:column;align-items:center}.btn{width:100%;max-width:280px;justify-content:center}.wv{grid-template-columns:repeat(4,1fr)}}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-brand">cre<span class="ai">AI</span>tors Club</a>
-  <ul class="nav-links">
-    <li><a href="levels.html">Levels Guide</a></li>
-    <li><a href="nano-tots.html">🔬 Start Free</a></li>
-    <li><a href="levels.html#quiz" class="cta">✨ Find My Level</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
+<nav><a href="index.html" class="nb">cre<span class="ai">AI</span>tors Club</a><ul class="nl"><li><a href="index.html" class="active">Home</a></li><li><a href="levels.html" class="">Levels</a></li><li><a href="quiz.html" class="cta">✨ Find My Level</a></li><li><a href="pricing.html" class="">Pricing</a></li><li><a href="about.html" class="">About Us</a></li></ul></nav>
 <section class="hero">
-  <div class="hbg">
-    <div class="blob b1"></div><div class="blob b2"></div>
-    <div class="blob b3"></div><div class="blob b4"></div>
-    <div class="dots"></div>
+<div class="hbg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div><div class="dots"></div></div>
+<div class="hi">
+  <div class="hpill">&#x2736; AI Literacy for Every Child &#x2736;</div>
+  <h1 class="hh1">Where Kids Become<span class="l2">cre<span class="ai">AI</span>tors</span></h1>
+  <p class="hmis">Every child deserves a <strong>strong, confident beginning with AI</strong> &#x2014; because it&#x2019;s shaping the world they&#x2019;ll grow into. <strong>Joyful. Structured. Safe. Built for every child.</strong></p>
+  <div class="hbtns"><a href="quiz.html" class="btn btn-gold">&#x2728; Find My Level</a><a href="levels.html" class="btn btn-ghost">Explore the Journey &#x2192;</a></div>
+  <div class="chips">
+    <a href="levels.html#nano" class="chip"><span style="font-size:1.4rem">&#x1F52C;</span><span><span class="cn" style="color:var(--nano)">Nano Tots</span><span class="ca">6+ &#x2027; Free</span></span></a>
+    <a href="levels.html#pixel" class="chip"><span style="font-size:1.4rem">&#x1F9E9;</span><span><span class="cn" style="color:var(--pixel)">Pixel Blockers</span><span class="ca">7+ &#x2027; $5</span></span></a>
+    <a href="levels.html#mine" class="chip"><span style="font-size:1.4rem">&#x26CF;&#xFE0F;</span><span><span class="cn" style="color:var(--mine)">Minecrafters</span><span class="ca">8+ &#x2027; $10</span></span></a>
+    <a href="levels.html#uni" class="chip"><span style="font-size:1.4rem">&#x1F984;</span><span><span class="cn" style="color:var(--uni)">Unicorns</span><span class="ca">9+ &#x2027; $15</span></span></a>
   </div>
-  <div class="hero-inner">
-    <div class="hero-pill">✦ AI Literacy for Every Child ✦</div>
-    <h1 class="hero-h1">
-      Where Kids Become
-      <span class="line2">cre<span style="color:#fff">AI</span>tors<span class="star">✦</span></span>
-    </h1>
-    <p class="hero-mission">
-      Every child deserves a <strong>strong, confident beginning with AI</strong> —
-      because it's shaping the world they'll grow into.<br>
-      <strong>Joyful. Structured. Safe. Built for every child.</strong>
-    </p>
-    <div class="hero-btns">
-      <a href="levels.html#quiz" class="btn btn-gold">✨ Find My Level</a>
-      <a href="levels.html" class="btn btn-ghost">Explore the Journey →</a>
-    </div>
-    <div class="level-chips">
-      <a href="nano-tots.html" class="chip nano">
-        <span class="em">🔬</span>
-        <span><span class="cn">Nano Tots</span><span class="ca">6 and above</span></span>
-      </a>
-      <a href="pixel-blockers.html" class="chip pixel">
-        <span class="em">🧩</span>
-        <span><span class="cn">Pixel Blockers</span><span class="ca">7 and above</span></span>
-      </a>
-      <a href="minecrafters.html" class="chip mine">
-        <span class="em">⛏️</span>
-        <span><span class="cn">Minecrafters</span><span class="ca">8 and above</span></span>
-      </a>
-      <a href="ai-unicorns.html" class="chip uni">
-        <span class="em">🦄</span>
-        <span><span class="cn">Unicorns</span><span class="ca">9 and above</span></span>
-      </a>
-    </div>
-  </div>
-  <div class="scroll-cue"><span>↓</span>scroll to explore</div>
+</div>
 </section>
 
-<!-- WHY -->
-<section class="why">
-  <div class="container">
-    <div class="why-wrap">
-      <div class="why-card reveal">
-        <div class="why-float">🌍</div>
-        <p class="why-q">
-          "AI is already in every child's life — in the games they play, the videos they watch, the devices they speak to.<br><br>
-          <span class="hl">If we don't give them a framework for understanding it, someone else will — and it may not be safe, structured, or built with their best interests at heart.</span>"
-        </p>
-      </div>
-      <div class="reveal reveal-d1">
-        <p class="sec-label">Why it matters</p>
-        <h2 class="sec-title" style="margin-bottom:1.5rem">AI is already<br>teaching your child.</h2>
-        <div class="why-pts">
-          <div class="wpt">
-            <span class="ic">🎮</span>
-            <div><h4>Games that watch and adapt</h4><p>AI decides difficulty, rewards, and what your child sees next. Understanding this builds confidence and critical thinking.</p></div>
-          </div>
-          <div class="wpt">
-            <span class="ic">🎙️</span>
-            <div><h4>Devices that answer first</h4><p>Before a parent, teacher, or book — AI speaks. Children who understand it make better decisions with it.</p></div>
-          </div>
-          <div class="wpt">
-            <span class="ic">🚀</span>
-            <div><h4>A world that runs on AI</h4><p>creAItors Club gives every child the foundation to understand, question, and shape what comes next.</p></div>
-          </div>
-        </div>
-      </div>
+<section class="why"><div class="ctr"><div class="why-w">
+  <div class="wcard rv"><div class="wfloat">&#x1F30D;</div><p class="wq">&#x201C;AI is already in every child&#x2019;s life &#x2014; in the games they play, the videos they watch, the devices they speak to.<br><br><span class="hl">If we don&#x2019;t give them a framework for understanding it, someone else will.</span>&#x201D;</p></div>
+  <div class="rv"><p class="sl">Why it matters</p><h2 class="sh" style="margin-bottom:1.4rem">AI is already<br>teaching your child.</h2>
+  <div class="wpts">
+    <div class="wpt"><span class="ic">&#x1F3AE;</span><div><h4>Games that watch and adapt</h4><p>AI decides difficulty, rewards, and what your child sees next. Understanding this builds confidence and critical thinking.</p></div></div>
+    <div class="wpt"><span class="ic">&#x1F399;&#xFE0F;</span><div><h4>Devices that answer first</h4><p>Before a parent or teacher &#x2014; AI speaks. Children who understand it make better decisions with it.</p></div></div>
+    <div class="wpt"><span class="ic">&#x1F680;</span><div><h4>A world that runs on AI</h4><p>creAItors Club gives every child the foundation to understand, question, and shape what comes next.</p></div></div>
+  </div></div>
+</div></div></section>
+
+<section style="background:var(--cream)"><div class="ctr">
+  <div class="rv" style="text-align:center;margin-bottom:2.5rem"><p class="sl" style="display:inline-block">Four levels</p><h2 class="sh">One amazing journey.</h2></div>
+  <div class="lg rv">
+    <a href="levels.html#nano" class="lc n" id=""><div class="lct"><div class="lcg"></div><span class="lce">&#x1F52C;</span><div class="lcl">Level 0</div><div class="lcn">Nano Tots</div><div class="lca">6 and above &#x2027; Open entry</div></div><div class="lcb"><p class="lcth">The tiny invisible science behind AI &#x2014; patterns, sequences, ScratchJr stories.</p></div><div class="lcf"><span class="lcpr">Free</span><span class="lcbt">Start free &#x2192;</span></div></a><a href="levels.html#pixel" class="lc p" id=""><div class="lct"><div class="lcg"></div><span class="lce">&#x1F9E9;</span><div class="lcl">Level 1</div><div class="lcn">Pixel Blockers</div><div class="lca">7 and above &#x2027; Builds on Nano Tots</div></div><div class="lcb"><p class="lcth">Scratch games, logic, cybersecurity, first AI concepts.</p></div><div class="lcf"><span class="lcpr">$5</span><span class="lcbt">Explore &#x2192;</span></div></a><a href="levels.html#mine" class="lc m" id=""><div class="lct"><div class="lcg"></div><span class="lce">&#x26CF;&#xFE0F;</span><div class="lcl">Level 2</div><div class="lcn">Minecrafters</div><div class="lca">8 and above &#x2027; Builds on Pixel Blockers</div></div><div class="lcb"><p class="lcth">Real AI tools, training data, bias, ethics, design thinking.</p></div><div class="lcf"><span class="lcpr">$10</span><span class="lcbt">Explore &#x2192;</span></div></a><a href="levels.html#uni" class="lc u" id=""><div class="lct"><div class="lcg"></div><span class="lce">&#x1F984;</span><div class="lcl">Level 3 &#x2027; Graduation</div><div class="lcn">Unicorns</div><div class="lca">9 and above &#x2027; Builds on Minecrafters</div></div><div class="lcb"><p class="lcth">Complex AI projects, investigation, capstone, graduation &#x1F393;</p></div><div class="lcf"><span class="lcpr">$15</span><span class="lcbt">Explore &#x2192;</span></div></a>  </div>
+</div></section>
+
+<section style="background:#fff"><div class="ctr">
+  <div class="rv" style="text-align:center;margin-bottom:2.5rem"><p class="sl" style="display:inline-block">What your child will experience</p><h2 class="sh">Moments that stay with them.</h2></div>
+  <div class="xg rv">
+    <div class="xc"><span class="xcn">01</span><span class="xce">&#x1F916;</span><h3>Train their first real AI</h3><p>They teach a computer to recognise their drawings, sounds, or body movements &#x2014; and watch it learn in real time.</p></div>
+    <div class="xc"><span class="xcn">02</span><span class="xce">&#x1F3AE;</span><h3>Build a game from scratch</h3><p>Score, lives, timer, levels &#x2014; a complete working game they designed and built themselves.</p></div>
+    <div class="xc"><span class="xcn">03</span><span class="xce">&#x2728;</span><h3>Create stories that come alive</h3><p>Characters that move, scenes that change, sounds that play &#x2014; all coded from their own imagination.</p></div>
+    <div class="xc"><span class="xcn">04</span><span class="xce">&#x1F30D;</span><h3>Form real opinions about AI</h3><p>They understand AI well enough to have genuine views &#x2014; and know how to explain and defend them.</p></div>
+    <div class="xc"><span class="xcn">05</span><span class="xce">&#x1F50D;</span><h3>Investigate a real question</h3><p>They design an investigation, collect data, find patterns, and present at a class science fair.</p></div>
+    <div class="xc"><span class="xcn">06</span><span class="xce">&#x1F393;</span><h3>Graduate as a Young AI Pioneer</h3><p>A real ceremony. A real commitment. A certificate earned &#x2014; not given.</p></div>
+  </div>
+</div></section>
+
+<section class="how"><div class="ctr">
+  <div class="rv"><p class="sl" style="color:rgba(255,255,255,.35)">How it works</p><h2 class="sh" style="color:#fff">One lesson a week.<br>Six days of discovery.</h2><p class="ss" style="color:rgba(255,255,255,.52);max-width:580px">Every week follows the same rhythm &#x2014; so children always know what to expect. Consistency builds confidence.</p></div>
+  <div class="how-i rv">
+    <div class="wv">
+      <div class="dp sp"><span class="dpn">1</span><span class="dpnm">Teach</span><span class="dpe">&#x1F4D6;</span></div>
+      <div class="dp"><span class="dpn">2</span><span class="dpnm">Guided</span><span class="dpe">&#x270F;&#xFE0F;</span></div>
+      <div class="dp"><span class="dpn">3</span><span class="dpnm">Unplug</span><span class="dpe">&#x1F3B2;</span></div>
+      <div class="dp"><span class="dpn">4</span><span class="dpnm">Explore</span><span class="dpe">&#x1F52D;</span></div>
+      <div class="dp"><span class="dpn">5</span><span class="dpnm">Create</span><span class="dpe">&#x1F6E0;&#xFE0F;</span></div>
+      <div class="dp"><span class="dpn">6</span><span class="dpnm">Share</span><span class="dpe">&#x1F4AC;</span></div>
+      <div class="dp"><span class="dpn">7</span><span class="dpnm">Reflect</span><span class="dpe">&#x2B50;</span></div>
+    </div>
+    <div class="hps">
+      <div class="hpt"><div class="dot"></div><div><h4>Day 1 is always a new idea</h4><p>A story, a demo, a question that sparks curiosity. Never a lecture.</p></div></div>
+      <div class="hpt"><div class="dot"></div><div><h4>Days 2&#x2013;6 are all about doing</h4><p>Guided practice, physical games, digital tools, creative building, sharing with others.</p></div></div>
+      <div class="hpt"><div class="dot"></div><div><h4>Day 7 is honest self-reflection</h4><p>Not a test. A question &#x2014; what did I learn? What do I want to know next?</p></div></div>
+      <div class="hpt"><div class="dot"></div><div><h4>Ethics in every single lesson</h4><p>One question every week connecting technology to the humans who build and use it.</p></div></div>
     </div>
   </div>
-</section>
+</div></section>
 
-<!-- JOURNEY -->
-<section class="journey">
-  <div class="container">
-    <div class="journey-head reveal">
-      <p class="sec-label">The Learning Journey</p>
-      <h2 class="sec-title">Four worlds.<br>One amazing adventure.</h2>
-      <p class="sec-sub" style="margin:0 auto 3rem">Children enter at the level that matches their readiness — not their age. Every level builds on the last. Every week is a new discovery.</p>
-    </div>
-    <div class="levels-row reveal">
-      <a href="nano-tots.html" class="lcard nano">
-        <div class="lcard-top">
-          <div class="lcard-glow"></div>
-          <span class="lcard-em">🔬</span>
-          <div class="lcard-num">Level 0 · Entry</div>
-          <div class="lcard-name">Nano Tots</div>
-          <div class="lcard-age">🌱 6 and above · No experience needed</div>
-        </div>
-        <div class="lcard-body">
-          <p class="lcard-theme">The tiny invisible science behind AI</p>
-          <ul class="lcard-learns">
-            <li>Patterns everywhere — nature, music, data</li>
-            <li>Machines follow instructions humans wrote</li>
-            <li>Sequencing, sorting, and first algorithms</li>
-            <li>ScratchJr stories and animation</li>
-            <li>Computers as tools built by real people</li>
-          </ul>
-        </div>
-        <div class="lcard-foot">
-          <span class="lcard-wks">50 weeks · Open entry</span>
-          <span class="lcard-btn">Start here →</span>
-        </div>
-      </a>
-      <a href="pixel-blockers.html" class="lcard pixel">
-        <div class="lcard-top">
-          <div class="lcard-glow"></div>
-          <span class="lcard-em">🧩</span>
-          <div class="lcard-num">Level 1</div>
-          <div class="lcard-name">Pixel Blockers</div>
-          <div class="lcard-age">🧩 7 and above · Builds on Nano Tots</div>
-        </div>
-        <div class="lcard-body">
-          <p class="lcard-theme">How parts make a picture — computing foundations</p>
-          <ul class="lcard-learns">
-            <li>Full Scratch — sprites, loops, events</li>
-            <li>Design and build real games</li>
-            <li>Logic, debugging, problem solving</li>
-            <li>Online safety and cybersecurity</li>
-            <li>AI concepts introduced for the first time</li>
-          </ul>
-        </div>
-        <div class="lcard-foot">
-          <span class="lcard-wks">50 weeks · Assessment available</span>
-          <span class="lcard-btn">Explore →</span>
-        </div>
-      </a>
-      <a href="minecrafters.html" class="lcard mine">
-        <div class="lcard-top">
-          <div class="lcard-glow"></div>
-          <span class="lcard-em">⛏️</span>
-          <div class="lcard-num">Level 2</div>
-          <div class="lcard-name">Minecrafters</div>
-          <div class="lcard-age">⛏️ 8 and above · Builds on Pixel Blockers</div>
-        </div>
-        <div class="lcard-body">
-          <p class="lcard-theme">How to build and survive in AI</p>
-          <ul class="lcard-learns">
-            <li>Train real AI with Teachable Machine</li>
-            <li>Experience bias and fairness hands-on</li>
-            <li>Human-centred design thinking</li>
-            <li>AI in medicine, environment, creativity</li>
-            <li>Build a personal AI ethics framework</li>
-          </ul>
-        </div>
-        <div class="lcard-foot">
-          <span class="lcard-wks">50 weeks · Assessment available</span>
-          <span class="lcard-btn">Explore →</span>
-        </div>
-      </a>
-      <a href="ai-unicorns.html" class="lcard uni">
-        <div class="lcard-top">
-          <div class="lcard-glow"></div>
-          <span class="lcard-em">🦄</span>
-          <div class="lcard-num">Level 3 · Graduation</div>
-          <div class="lcard-name">Unicorns</div>
-          <div class="lcard-age">🦄 9 and above · Builds on Minecrafters</div>
-        </div>
-        <div class="lcard-body">
-          <p class="lcard-theme">Creating from pure imagination with AI</p>
-          <ul class="lcard-learns">
-            <li>Complex AI projects — multiple tools</li>
-            <li>Investigate and discover — science fair</li>
-            <li>AI and the world — rights, fairness, planet</li>
-            <li>Capstone — build something real</li>
-            <li>Graduate as a Young AI Pioneer 🎓</li>
-          </ul>
-        </div>
-        <div class="lcard-foot">
-          <span class="lcard-wks">50 weeks · Assessment available</span>
-          <span class="lcard-btn">Explore →</span>
-        </div>
-      </a>
-    </div>
+<section class="del" id="delivery"><div class="ctr">
+  <div class="rv"><p class="sl">How we deliver</p><h2 class="sh">Learn the way that works for you.</h2><p class="ss">creAItors Club works across multiple delivery modes &#x2014; all using free, trusted platforms.</p></div>
+  <div class="dg rv">
+    <div class="dc gc"><span class="di">&#x1F393;</span><h4>Google Classroom + Meet</h4><p>Tutor posts lessons, workbooks, and assignments. Live sessions via Google Meet. Parents receive updates. Works on any device.</p><span class="dt">Recommended &#x2027; Free</span></div>
+    <div class="dc sp"><span class="di">&#x1F3E0;</span><h4>Self-Paced at Home</h4><p>Parent and child work through lessons together at their own pace. All resources accessible. No tutor needed.</p><span class="dt">Flexible &#x2027; Included</span></div>
+    <div class="dc tl"><span class="di">&#x1F469;&#x200D;&#x1F4BB;</span><h4>Tutor-Led Online</h4><p>A creAItors Club tutor guides your child weekly via Google Meet. Progress tracked in Google Classroom.</p><span class="dt">Most supported</span></div>
+    <div class="dc sg"><span class="di">&#x1F3EB;</span><h4>School / Group</h4><p>We work with schools and community groups to deliver creAItors Club in classrooms or after-school settings.</p><a href="about.html#contact" class="dt" style="text-decoration:none">Contact us &#x2192;</a></div>
   </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section class="xp">
-  <div class="container">
-    <div class="xp-head reveal">
-      <p class="sec-label">What your child will experience</p>
-      <h2 class="sec-title">Moments that<br>stay with them.</h2>
-    </div>
-    <div class="xp-grid reveal">
-      <div class="xcard"><span class="xcard-n">01</span><span class="xcard-em">🤖</span><h3>Train their first real AI</h3><p>They'll teach a computer to recognise their drawings, sounds, or body movements — and watch it learn in real time.</p><span class="tag">Minecrafters</span></div>
-      <div class="xcard"><span class="xcard-n">02</span><span class="xcard-em">🎮</span><h3>Build a game from scratch</h3><p>Score, lives, timer, levels, win and lose conditions — a complete working game they designed and built themselves.</p><span class="tag">Pixel Blockers</span></div>
-      <div class="xcard"><span class="xcard-n">03</span><span class="xcard-em">🔍</span><h3>Discover something real</h3><p>They'll investigate a real question about AI, collect data, find patterns, and share findings at a class science fair.</p><span class="tag">Unicorns</span></div>
-      <div class="xcard"><span class="xcard-n">04</span><span class="xcard-em">✨</span><h3>Create stories that come alive</h3><p>Characters that move, scenes that change, sounds that play — all coded by them, from their own imagination.</p><span class="tag">Nano Tots</span></div>
-      <div class="xcard"><span class="xcard-n">05</span><span class="xcard-em">🌍</span><h3>Form opinions about AI</h3><p>They'll understand AI well enough to form genuine views — and know how to explain and defend them confidently.</p><span class="tag">All levels</span></div>
-      <div class="xcard"><span class="xcard-n">06</span><span class="xcard-em">🎓</span><h3>Graduate as a Young AI Pioneer</h3><p>A real ceremony. A real public commitment. A real certificate. Earned — not given.</p><span class="tag">Unicorns</span></div>
-    </div>
+  <div class="rv" style="margin-top:2rem"><p class="sl">Free tools used</p>
+  <div class="tr">
+    <a href="https://scratch.mit.edu" target="_blank" class="tc"><span>&#x1F431;</span> Scratch</a>
+    <a href="https://www.scratchjr.org" target="_blank" class="tc"><span>&#x1F3A8;</span> ScratchJr</a>
+    <a href="https://teachablemachine.withgoogle.com" target="_blank" class="tc"><span>&#x1F916;</span> Teachable Machine</a>
+    <a href="https://machinelearningforkids.co.uk" target="_blank" class="tc"><span>&#x1F9E0;</span> ML4Kids</a>
+    <a href="https://classroom.google.com" target="_blank" class="tc"><span>&#x1F4DA;</span> Google Classroom</a>
+    <a href="https://meet.google.com" target="_blank" class="tc"><span>&#x1F4F9;</span> Google Meet</a>
+    <span class="tc"><span>&#x1F41D;</span> Bee-Bot Simulator</span>
+    <span class="tc"><span>&#x1F30A;</span> Code.org AI for Oceans</span>
   </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="how">
-  <div class="container">
-    <div class="reveal">
-      <p class="sec-label">How it works</p>
-      <h2 class="sec-title">One lesson a week.<br>Six days of discovery.</h2>
-      <p class="sec-sub">Every week follows the same rhythm — so children always know what to expect. Consistency builds confidence.</p>
-    </div>
-    <div class="how-inner reveal">
-      <div class="week-vis">
-        <div class="dpill sp"><span class="dpill-n">1</span><span class="dpill-nm">Teach</span><span class="dpill-em">📖</span></div>
-        <div class="dpill"><span class="dpill-n">2</span><span class="dpill-nm">Guided</span><span class="dpill-em">✏️</span></div>
-        <div class="dpill"><span class="dpill-n">3</span><span class="dpill-nm">Unplug</span><span class="dpill-em">🎲</span></div>
-        <div class="dpill"><span class="dpill-n">4</span><span class="dpill-nm">Explore</span><span class="dpill-em">🔭</span></div>
-        <div class="dpill"><span class="dpill-n">5</span><span class="dpill-nm">Create</span><span class="dpill-em">🛠️</span></div>
-        <div class="dpill"><span class="dpill-n">6</span><span class="dpill-nm">Share</span><span class="dpill-em">💬</span></div>
-        <div class="dpill"><span class="dpill-n">7</span><span class="dpill-nm">Reflect</span><span class="dpill-em">⭐</span></div>
-      </div>
-      <div class="how-pts">
-        <div class="hpt"><div class="dot"></div><div><h4>Day 1 is always a new idea</h4><p>A story, a demo, a question that sparks curiosity. Never a lecture.</p></div></div>
-        <div class="hpt"><div class="dot"></div><div><h4>Days 2–6 are all about doing</h4><p>Guided practice, physical games, digital tools, creative building, sharing with others.</p></div></div>
-        <div class="hpt"><div class="dot"></div><div><h4>Day 7 is honest self-reflection</h4><p>Not a test. A conversation — what did I learn? What do I want to know next?</p></div></div>
-        <div class="hpt"><div class="dot"></div><div><h4>Ethics in every single week</h4><p>One question, every lesson, connecting technology to the humans who build and use it.</p></div></div>
-      </div>
-    </div>
+  <p style="font-size:.8rem;color:#999;margin-top:.65rem">All tools are completely free and safe for children. A device with internet access is all your child needs.</p>
   </div>
-</section>
+</div></section>
 
-<!-- SAFE -->
-<section class="safe">
-  <div class="container">
-    <div class="safe-head reveal">
-      <p class="sec-label">For parents</p>
-      <h2 class="sec-title">Safe. Structured. Joyful.</h2>
-      <p class="sec-sub">Built from the ground up with children's wellbeing at the centre. Every decision — content, stories, tools — reviewed for age-appropriateness.</p>
-    </div>
-    <div class="safe-grid reveal">
-      <div class="scard"><span class="ic">🔒</span><h4>Safety first, always</h4><p>Cybersecurity, online safety, and data rights are woven into every level — not taught once and forgotten.</p></div>
-      <div class="scard"><span class="ic">🌱</span><h4>No experience needed</h4><p>Children start exactly where they are. Curiosity is the only requirement.</p></div>
-      <div class="scard"><span class="ic">🎨</span><h4>Always a creator</h4><p>Every lesson involves making something. Children are never passive — always building, designing, inventing.</p></div>
-      <div class="scard"><span class="ic">🧭</span><h4>Ethics every week</h4><p>Every lesson asks a question about the humans behind technology. Critical thinking is built in — not bolted on.</p></div>
-      <div class="scard"><span class="ic">🌍</span><h4>Free tools only</h4><p>Every tool — Scratch, ScratchJr, Teachable Machine, ML4Kids — completely free and safe for children.</p></div>
-      <div class="scard"><span class="ic">🏳️</span><h4>Mistakes are welcome</h4><p>Bugs, wrong answers, failed experiments — these are the curriculum. Being wrong and fixing it is the most important skill.</p></div>
-    </div>
+<section class="sg"><div class="ctr">
+  <div class="rv" style="text-align:center;margin-bottom:2.5rem"><p class="sl" style="display:inline-block">For parents</p><h2 class="sh">Safe. Structured. Joyful.</h2></div>
+  <div class="sg-g rv">
+    <div class="sc"><span class="sic">&#x1F512;</span><h4>Safety first</h4><p>Cybersecurity and data rights woven into every level &#x2014; never an afterthought.</p></div>
+    <div class="sc"><span class="sic">&#x1F331;</span><h4>No experience needed</h4><p>Curiosity is the only requirement to begin.</p></div>
+    <div class="sc"><span class="sic">&#x1F3A8;</span><h4>Always a creator</h4><p>Every lesson involves making something real.</p></div>
+    <div class="sc"><span class="sic">&#x1F9ED;</span><h4>Ethics every week</h4><p>Critical thinking built in &#x2014; not bolted on.</p></div>
+    <div class="sc"><span class="sic">&#x1F30D;</span><h4>Free tools only</h4><p>Every tool used is completely free and safe for children.</p></div>
+    <div class="sc"><span class="sic">&#x1F3F3;&#xFE0F;</span><h4>Mistakes are welcome</h4><p>Being wrong and fixing it is the most important skill we teach.</p></div>
   </div>
-</section>
+</div></section>
 
-<!-- FIND MY LEVEL CTA -->
-<section class="fml">
-  <div class="container">
-    <div class="fml-inner reveal">
-      <div class="fml-ems">🔬🧩⛏️🦄</div>
-      <h2>Not sure where to start?</h2>
-      <p>Take our <strong>Find My Level</strong> quiz — 15 fun questions, no right or wrong answers, and a personalised recommendation at the end. Any child can start anywhere.</p>
-      <div class="fml-badges">
-        <span class="fbadge nano">🔬 Nano Tots — Open Entry</span>
-        <span class="fbadge pixel">🧩 Pixel Blockers Quiz</span>
-        <span class="fbadge mine">⛏️ Minecrafters Quiz</span>
-        <span class="fbadge uni">🦄 Unicorns Quiz</span>
-      </div>
-      <a href="levels.html#quiz" class="btn btn-gold" style="font-size:1.05rem;padding:17px 38px">✨ Find My Level — Take the Quiz</a>
-      <p class="fml-note">Takes about 5 minutes &nbsp;·&nbsp; No account needed &nbsp;·&nbsp; Completely free</p>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
+<section class="cb"><div class="ctr"><div class="cbi rv">
+  <div style="font-size:2.4rem;margin-bottom:1.2rem;letter-spacing:.15em">&#x1F52C;&#x1F9E9;&#x26CF;&#xFE0F;&#x1F984;</div>
+  <h2>Ready to begin?</h2>
+  <p>Take our <strong>Find My Level quiz</strong> &#x2014; 15 questions, no right or wrong answers, a personalised recommendation in 5 minutes. Or start free with Nano Tots right now.</p>
+  <div class="cbb"><a href="quiz.html" class="btn btn-gold">&#x2728; Find My Level</a><a href="pricing.html" class="btn btn-ghost">View Pricing &#x2192;</a><a href="levels.html" class="btn btn-ghost">Explore Levels &#x2192;</a></div>
+</div></div></section>
 <footer>
-  <div class="foot-inner">
-    <div class="foot-brand">cre<span class="ai">AI</span>tors Club™</div>
-    <p>© 2025 creAItors Club. All rights reserved. Unauthorised reproduction prohibited.</p>
-    <div class="foot-links">
-      <a href="nano-tots.html">Nano Tots</a>
-      <a href="pixel-blockers.html">Pixel Blockers</a>
-      <a href="minecrafters.html">Minecrafters</a>
-      <a href="ai-unicorns.html">Unicorns</a>
-      <a href="levels.html">Levels Guide</a>
-    </div>
-  </div>
+<div class="fi">
+  <div class="fbr">cre<span class="ai">AI</span>tors Club&#8482;<p>&copy; 2025 creAItors Club. All rights reserved.</p></div>
+  <div class="fc"><h4>Explore</h4><a href="levels.html">The Journey</a><a href="quiz.html">Find My Level</a><a href="pricing.html">Pricing</a><a href="about.html">About Us</a></div>
+  <div class="fc"><h4>Levels</h4><a href="levels.html#nano">&#x1F52C; Nano Tots &mdash; Free</a><a href="levels.html#pixel">&#x1F9E9; Pixel Blockers</a><a href="levels.html#mine">&#x26CF;&#xFE0F; Minecrafters</a><a href="levels.html#uni">&#x1F984; Unicorns</a></div>
+  <div class="fc"><h4>Connect</h4><a href="index.html#delivery">How It Works</a><a href="about.html#contact">Contact Us</a><a href="about.html#contact">School / Group</a><a href="pricing.html">Pricing</a></div>
+</div>
+<div class="fb2">creAItors Club&#8482; &mdash; AI literacy for every child. Unauthorised reproduction prohibited.</div>
 </footer>
-
 <script>
-const obs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
-},{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("vis");obs.unobserve(x.target)}})},{threshold:.08});
+document.querySelectorAll(".rv").forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>

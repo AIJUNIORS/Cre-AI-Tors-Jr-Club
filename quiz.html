@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Find My Level — creAItors Club</title>
+<meta name="description" content="Take our 15-question quiz and find the perfect creAItors Club starting point for your child.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f1923;--cream:#fdf8f0;--gold:#f7c948;--nano:#2ec4a9;--pixel:#ff6b6b;--mine:#5b8dee;--uni:#b97bff;--nano-bg:#e6faf7;--pixel-bg:#fff0f0;--mine-bg:#eef2ff;--uni-bg:#f5eeff;--fh:'Baloo 2',cursive;--fb:'Nunito',sans-serif;--shadow:0 4px 24px rgba(0,0,0,.08);--shadow-lg:0 16px 48px rgba(0,0,0,.14)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--fb);background:var(--cream);color:var(--ink);overflow-x:hidden}
+nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,4vw,3rem);height:64px;background:rgba(15,25,35,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(247,201,72,.18)}
+.nb{font-family:var(--fh);font-size:1.35rem;font-weight:900;color:#fff;text-decoration:none;letter-spacing:-.5px}.nb .ai{color:var(--gold)}
+.nl{display:flex;gap:4px;list-style:none;flex-wrap:wrap}
+.nl a{font-family:var(--fb);font-size:.8rem;font-weight:700;color:rgba(255,255,255,.6);text-decoration:none;padding:6px 12px;border-radius:20px;transition:all .2s;white-space:nowrap}
+.nl a:hover{color:#fff;background:rgba(255,255,255,.1)}.nl a.cta{background:var(--gold);color:var(--ink)!important}.nl a.cta:hover{background:#ffd700}.nl a.active{color:#fff;background:rgba(255,255,255,.1)}
+@media(max-width:640px){.nl{display:none}}
+section{padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,4rem)}.ctr{max-width:1100px;margin:0 auto}
+.sl{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.4;margin-bottom:.6rem;font-family:var(--fb)}
+.sh{font-family:var(--fh);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:-.5px;margin-bottom:.85rem}
+.ss{font-size:1rem;color:#666;line-height:1.7;max-width:580px}
+.btn{font-family:var(--fb);font-weight:800;font-size:.92rem;padding:12px 26px;border-radius:50px;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none}
+.btn-gold{background:var(--gold);color:var(--ink)}.btn-gold:hover{background:#ffd700;transform:translateY(-2px);box-shadow:0 8px 24px rgba(247,201,72,.35)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:2px solid rgba(255,255,255,.2)}.btn-ghost:hover{background:rgba(255,255,255,.15);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--ink);border:2px solid currentColor}.btn-outline:hover{background:var(--ink);color:#fff}
+.ph{background:var(--ink);padding:clamp(3rem,7vw,5.5rem) clamp(1rem,5vw,4rem);text-align:center;position:relative;overflow:hidden}
+.ph::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,rgba(46,196,169,.1),transparent 55%)}
+.ph h1{font-family:var(--fh);font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:#fff;letter-spacing:-.5px;margin-bottom:.65rem;position:relative;z-index:1}
+.ph h1 span{color:var(--gold)}.ph p{font-size:1rem;color:rgba(255,255,255,.58);max-width:540px;margin:0 auto;line-height:1.7;position:relative;z-index:1}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.rv.vis{opacity:1;transform:translateY(0)}
+footer{background:#080e14;color:rgba(255,255,255,.35);padding:2.5rem clamp(1rem,5vw,4rem)}
+.fi{max-width:1100px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:2rem}
+.fbr{font-family:var(--fh);font-size:1.05rem;font-weight:900;color:#fff}.fbr .ai{color:var(--gold)}.fbr p{font-size:.73rem;color:rgba(255,255,255,.3);margin-top:.3rem}
+.fc h4{font-family:var(--fh);font-size:.75rem;font-weight:800;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.55rem}
+.fc a{display:block;font-size:.77rem;font-weight:600;color:rgba(255,255,255,.32);text-decoration:none;transition:color .2s;margin-bottom:.28rem}.fc a:hover{color:var(--gold)}
+.fb2{max-width:1100px;margin:.7rem auto 0;padding-top:.7rem;border-top:1px solid rgba(255,255,255,.06);font-size:.7rem;color:rgba(255,255,255,.18)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-15px)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(max-width:600px){.fi{flex-direction:column}}
+
+.lg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.25rem}
+.lc{border-radius:22px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;border:2px solid transparent}
+.lc:hover{transform:translateY(-7px);box-shadow:var(--shadow-lg)}
+.lc.n{border-color:var(--nano)}.lc.p{border-color:var(--pixel)}.lc.m{border-color:var(--mine)}.lc.u{border-color:var(--uni)}
+.lct{padding:1.75rem 1.5rem 1.25rem;position:relative;overflow:hidden}
+.lc.n .lct{background:linear-gradient(145deg,#0a1a14,#0d2d24)}.lc.p .lct{background:linear-gradient(145deg,#1a0a0a,#2d1010)}
+.lc.m .lct{background:linear-gradient(145deg,#0a0f1a,#0f1a2f)}.lc.u .lct{background:linear-gradient(145deg,#120a1a,#1e0f30)}
+.lcg{position:absolute;width:180px;height:180px;border-radius:50%;filter:blur(60px);opacity:.23;top:-35px;right:-35px}
+.lc.n .lcg{background:var(--nano)}.lc.p .lcg{background:var(--pixel)}.lc.m .lcg{background:var(--mine)}.lc.u .lcg{background:var(--uni)}
+.lce{font-size:2.4rem;display:block;margin-bottom:.65rem;position:relative;z-index:1}
+.lcl{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.22rem;position:relative;z-index:1}
+.lc.n .lcl{color:var(--nano)}.lc.p .lcl{color:var(--pixel)}.lc.m .lcl{color:var(--mine)}.lc.u .lcl{color:var(--uni)}
+.lcn{font-family:var(--fh);font-size:1.45rem;font-weight:900;color:#fff;position:relative;z-index:1;margin-bottom:.28rem}
+.lca{display:inline-block;background:rgba(255,255,255,.09);border-radius:8px;padding:3px 9px;font-size:.7rem;font-weight:700;color:rgba(255,255,255,.62);position:relative;z-index:1}
+.lcb{padding:1.2rem 1.5rem;background:#fff;flex:1}
+.lcth{font-size:.84rem;font-weight:700;color:var(--ink);margin-bottom:.55rem}
+.lcf{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.5rem;border-top:1px solid #f0f0f0;background:#fff}
+.lcpr{font-family:var(--fh);font-size:.95rem;font-weight:900}
+.lc.n .lcpr{color:var(--nano)}.lc.p .lcpr{color:var(--pixel)}.lc.m .lcpr{color:var(--mine)}.lc.u .lcpr{color:var(--uni)}
+.lcbt{font-size:.77rem;font-weight:800;padding:6px 13px;border-radius:17px;text-decoration:none;transition:all .2s}
+.lc.n .lcbt{background:var(--nano-bg);color:var(--nano)}.lc.p .lcbt{background:var(--pixel-bg);color:var(--pixel)}
+.lc.m .lcbt{background:var(--mine-bg);color:var(--mine)}.lc.u .lcbt{background:var(--uni-bg);color:var(--uni)}
+
+
+.qsec{background:var(--ink);padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,4rem)}
+.qchooser{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.1rem;margin-top:2.5rem}
+.qch{border:2px solid rgba(255,255,255,.12);border-radius:20px;padding:1.65rem;text-align:center;cursor:pointer;transition:all .25s;background:rgba(255,255,255,.05)}
+.qch:hover{background:rgba(255,255,255,.11);transform:translateY(-4px)}
+.qch.n{border-color:rgba(46,196,169,.4)}.qch.p{border-color:rgba(255,107,107,.4)}.qch.m{border-color:rgba(91,141,238,.4)}.qch.u{border-color:rgba(185,123,255,.4)}
+.qch.no{cursor:default}.qch.no:hover{transform:none;background:rgba(46,196,169,.07)}
+.qem{font-size:2.6rem;margin-bottom:.65rem;display:block}
+.qch h3{font-family:var(--fh);font-size:1.05rem;font-weight:900;margin-bottom:.25rem}
+.qch.n h3,.qch.no h3{color:var(--nano)}.qch.p h3{color:var(--pixel)}.qch.m h3{color:var(--mine)}.qch.u h3{color:var(--uni)}
+.qsb{font-size:.8rem;color:rgba(255,255,255,.42);margin-bottom:.9rem;line-height:1.42}
+.qbt{display:inline-block;padding:7px 16px;border-radius:17px;font-size:.8rem;font-weight:800;text-decoration:none}
+.qch.n .qbt,.qch.no .qbt{background:rgba(46,196,169,.18);color:var(--nano)}.qch.no .qbt{background:var(--nano);color:#fff}
+.qch.p .qbt{background:rgba(255,107,107,.18);color:var(--pixel)}.qch.m .qbt{background:rgba(91,141,238,.18);color:var(--mine)}.qch.u .qbt{background:rgba(185,123,255,.1);color:var(--uni)}
+.how-quiz{background:#fff;padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,4rem)}
+.hqg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2.5rem}
+.hqc{text-align:center;padding:1.5rem;background:var(--cream);border-radius:16px}
+.hqc .hqi{font-size:2rem;margin-bottom:.6rem;display:block}
+.hqc h4{font-family:var(--fh);font-size:.95rem;font-weight:800;color:var(--ink);margin-bottom:.35rem}
+.hqc p{font-size:.82rem;color:#666;line-height:1.55}
+/* MODAL */
+.qov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:1000;align-items:center;justify-content:center;padding:1rem}
+.qov.open{display:flex}
+.qbox{background:#fff;border-radius:26px;width:100%;max-width:640px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.4);max-height:92vh;overflow-y:auto;animation:popIn .3s ease both}
+@keyframes popIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+.qhd{padding:1.2rem 1.65rem .85rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f0f0f0;position:sticky;top:0;background:#fff;z-index:2}
+.qhd h2{font-family:var(--fh);font-size:1rem;font-weight:900;color:var(--ink)}
+.qcl{background:none;border:none;font-size:1.35rem;cursor:pointer;color:#bbb;line-height:1;transition:color .2s}.qcl:hover{color:var(--ink)}
+.qpw{padding:.55rem 1.65rem;background:var(--cream)}
+.qpb{height:6px;background:#e5e5e5;border-radius:3px;overflow:hidden}
+.qpf{height:100%;border-radius:3px;transition:width .4s ease}
+.qpl{font-size:.7rem;font-weight:700;color:#bbb;margin-top:3px}
+.qbd{padding:1.65rem}
+.qqn{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#ccc;margin-bottom:.38rem}
+.qqt{font-family:var(--fh);font-size:1.1rem;font-weight:800;color:var(--ink);margin-bottom:.3rem;line-height:1.38}
+.qqh{font-size:.82rem;color:#aaa;margin-bottom:1.3rem;line-height:1.5}
+.qop{display:flex;flex-direction:column;gap:.6rem}
+.qo{padding:.85rem 1.05rem;border:2px solid #eee;border-radius:11px;cursor:pointer;font-size:.88rem;font-weight:600;color:var(--ink);transition:all .2s;text-align:left;background:#fff;display:flex;align-items:center;gap:.65rem;width:100%}
+.qo:hover{border-color:var(--gold);background:#fffbee;transform:translateX(3px)}
+.qo.cor{border-color:#27AE60;background:#e9f7ef;color:#1a7a40}
+.qo.wrg{border-color:#e74c3c;background:#fff0ee;color:#c0392b}
+.qo .oi{font-size:1.05rem;flex-shrink:0;font-weight:900}
+.qft{padding:.85rem 1.65rem 1.3rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f5f5f5}
+.qsk{font-size:.78rem;font-weight:700;color:#ccc;cursor:pointer;background:none;border:none;font-family:var(--fb)}.qsk:hover{color:#aaa}
+.qnx{background:var(--gold);color:var(--ink);border:none;border-radius:21px;padding:10px 24px;font-family:var(--fb);font-size:.86rem;font-weight:800;cursor:pointer;transition:all .2s;display:none}
+.qnx:hover{background:#ffd700;transform:translateY(-2px)}.qnx.show{display:block}
+.qres{display:none;padding:2.1rem 1.65rem;text-align:center}
+.rem2{font-size:3.8rem;margin-bottom:.85rem;display:block;animation:popIn .5s ease both}
+.rtt{font-family:var(--fh);font-size:1.4rem;font-weight:900;color:var(--ink);margin-bottom:.35rem}
+.rlv{display:inline-flex;align-items:center;gap:7px;padding:8px 20px;border-radius:21px;font-family:var(--fh);font-size:1rem;font-weight:900;margin:.85rem 0;color:#fff}
+.rlv.n{background:var(--nano)}.rlv.p{background:var(--pixel)}.rlv.m{background:var(--mine)}.rlv.u{background:var(--uni)}
+.rmg{font-size:.92rem;color:#555;line-height:1.7;max-width:440px;margin:.75rem auto 1.25rem}
+.rtopics{text-align:left;max-width:420px;margin:1rem auto}
+.rtopics h4{font-family:var(--fh);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;margin-bottom:.5rem}
+.rtopics h4.good{color:#27AE60}.rtopics h4.focus{color:#e67e22}
+.rtopics ul{list-style:none;display:flex;flex-direction:column;gap:.3rem;margin-bottom:1rem}
+.rtopics ul li{font-size:.84rem;color:#444;padding-left:1.4rem;position:relative;line-height:1.5}
+.rtopics ul li::before{position:absolute;left:0;font-size:.9rem}
+.rtopics ul.good li::before{content:'✅'}.rtopics ul.focus li::before{content:'📚'}
+.rbt{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:1.25rem}
+.rb{padding:10px 22px;border-radius:21px;font-family:var(--fb);font-size:.86rem;font-weight:800;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
+.rb-gold{background:var(--gold);color:var(--ink)}.rb-gold:hover{background:#ffd700;transform:translateY(-2px)}
+.rb-ghost{background:var(--cream);color:var(--ink)}.rb-ghost:hover{background:#ece7da}
+.qtimer{height:5px;background:#eee;border-radius:3px;overflow:hidden;margin:.4rem 1.65rem 0}
+.qtbar{height:100%;border-radius:3px;transition:width 1s linear;background:#27AE60}
+.qtbar.amber{background:#f39c12}.qtbar.red{background:#e74c3c}
+</style>
+</head>
+<body>
+<nav><a href="index.html" class="nb">cre<span class="ai">AI</span>tors Club</a><ul class="nl"><li><a href="index.html" class="">Home</a></li><li><a href="levels.html" class="">Levels</a></li><li><a href="quiz.html" class="cta">&#x2728; Find My Level</a></li><li><a href="pricing.html" class="">Pricing</a></li><li><a href="about.html" class="">About Us</a></li></ul></nav>
+<div class="ph"><h1>&#x2728; Find My <span>Level</span></h1><p>15 concept-based questions per quiz. No right or wrong answers. Just a personalised recommendation in 5 minutes.</p></div>
+
+<section class="qsec"><div class="ctr">
+  <div class="rv" style="text-align:center">
+    <p class="sl" style="color:rgba(255,255,255,.35);display:inline-block">Choose your quiz</p>
+    <h2 class="sh" style="color:#fff">Which level are you aiming for?</h2>
+    <p class="ss" style="color:rgba(255,255,255,.48);margin:0 auto">Each quiz tests concepts from the PREVIOUS level. Get your recommendation and we point you to the right starting place.</p>
+  </div>
+  <div class="qchooser rv">
+    <div class="qch n no">
+      <span class="qem">&#x1F52C;</span>
+      <h3>Nano Tots</h3>
+      <p class="qsb">Open entry &#x2014; no quiz needed! Every child is welcome. Curiosity is the only requirement. And it is free.</p>
+      <a href="pricing.html#nano" class="qbt">Start for free &#x2192;</a>
+    </div>
+    <div class="qch p" onclick="startQ('pixel')">
+      <span class="qem">&#x1F9E9;</span>
+      <h3>Pixel Blockers</h3>
+      <p class="qsb">Tests Nano Tots concepts &#x2014; patterns, sequences, debugging, IPO model. Ready for Level 1?</p>
+      <span class="qbt">Take the quiz &#x2192;</span>
+    </div>
+    <div class="qch m" onclick="startQ('mine')">
+      <span class="qem">&#x26CF;&#xFE0F;</span>
+      <h3>Minecrafters</h3>
+      <p class="qsb">Tests Pixel Blockers concepts &#x2014; Scratch, variables, conditionals, loops, AI basics. Ready for real AI tools?</p>
+      <span class="qbt">Take the quiz &#x2192;</span>
+    </div>
+    <div class="qch u" onclick="startQ('uni')">
+      <span class="qem">&#x1F984;</span>
+      <h3>Unicorns</h3>
+      <p class="qsb">Tests Minecrafters concepts &#x2014; training data, bias, human-centred design, AI ethics. Ready to graduate?</p>
+      <span class="qbt">Take the quiz &#x2192;</span>
+    </div>
+  </div>
+  <p class="rv" style="text-align:center;font-size:.8rem;color:rgba(255,255,255,.22);margin-top:1.5rem">Takes about 5 minutes &nbsp;&#x2027;&nbsp; No account needed &nbsp;&#x2027;&nbsp; Any child can start Nano Tots right now for free</p>
+</div></section>
+
+<section class="how-quiz"><div class="ctr">
+  <div class="rv" style="text-align:center;margin-bottom:2rem">
+    <p class="sl" style="display:inline-block">How the quiz works</p>
+    <h2 class="sh">Simple. Friendly. Honest.</h2>
+  </div>
+  <div class="hqg rv">
+    <div class="hqc"><span class="hqi">&#x2753;</span><h4>15 questions</h4><p>Concept-based &#x2014; testing ideas, not technical skills. Written in plain, friendly language for children and parents.</p></div>
+    <div class="hqc"><span class="hqi">&#x26A1;</span><h4>5 minutes</h4><p>Quick, engaging, one question at a time. Progress bar so you always know where you are.</p></div>
+    <div class="hqc"><span class="hqi">&#x1F3AF;</span><h4>A recommendation</h4><p>Never a pass or fail. Always a personalised starting point with a direct link to enrol.</p></div>
+    <div class="hqc"><span class="hqi">&#x1F331;</span><h4>Anyone, anytime</h4><p>No account needed. No age requirement. Any child can take any quiz. Any child can start free.</p></div>
+  </div>
+</div></section>
+
+<!-- QUIZ MODAL -->
+<div class="qov" id="qov">
+  <div class="qbox">
+    <div class="qhd"><h2>Find My Level</h2><button class="qcl" onclick="closeQ()">&#x2715;</button></div>
+    <div class="qpw"><div class="qpb"><div class="qpf" id="qpf" style="width:0%"></div></div><div class="qpl" id="qpl">Question 1 of 15</div></div>
+    <div class="qtimer"><div class="qtbar" id="qtbar" style="width:100%"></div></div>
+    <div class="qbd" id="qbd"></div>
+    <div class="qft"><button class="qsk" onclick="skipQ()">Skip this question</button><button class="qnx" id="qnx" onclick="nextQ()">Next &#x2192;</button></div>
+    <div class="qres" id="qres"></div>
+  </div>
+</div>
+<footer><div class="fi"><div class="fbr">cre<span class="ai">AI</span>tors Club&#8482;<p>&copy; 2025 creAItors Club. All rights reserved.</p></div><div class="fc"><h4>Explore</h4><a href="levels.html">The Journey</a><a href="quiz.html">Find My Level</a><a href="pricing.html">Pricing</a><a href="about.html">About Us</a></div><div class="fc"><h4>Levels</h4><a href="levels.html#nano">&#x1F52C; Nano Tots</a><a href="levels.html#pixel">&#x1F9E9; Pixel Blockers</a><a href="levels.html#mine">&#x26CF;&#xFE0F; Minecrafters</a><a href="levels.html#uni">&#x1F984; Unicorns</a></div><div class="fc"><h4>Connect</h4><a href="about.html#contact">Contact Us</a><a href="about.html#contact">School/Group</a><a href="pricing.html">Pricing</a></div></div><div class="fb2">creAItors Club&#8482; &mdash; AI literacy for every child.</div></footer><script>const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("vis");obs.unobserve(x.target)}})},{threshold:.08});document.querySelectorAll(".rv").forEach(el=>obs.observe(el));</script><script>
+const TIMER_SEC=30;let timerInt=null,timerLeft=0;
+function startTimer(){
+  clearInterval(timerInt);timerLeft=TIMER_SEC;
+  const bar=document.getElementById('qtbar');
+  bar.style.transition='none';bar.style.width='100%';bar.className='qtbar';
+  setTimeout(()=>{
+    bar.style.transition='width 1s linear';
+    timerInt=setInterval(()=>{
+      timerLeft--;
+      const pct=(timerLeft/TIMER_SEC)*100;
+      bar.style.width=pct+'%';
+      if(timerLeft<=10)bar.className='qtbar red';
+      else if(timerLeft<=20)bar.className='qtbar amber';
+      if(timerLeft<=0){clearInterval(timerInt);timeOut();}
+    },1000);
+  },50);
+}
+function stopTimer(){clearInterval(timerInt);document.getElementById('qtbar').style.transition='none';}
+function timeOut(){if(!done){done=true;wrongs.push(cI);nextQ();}}
+const QZ={
+pixel:{t:'\u{1F9E9} Pixel Blockers Entry Quiz',c:'#ff6b6b',q:[
+{q:'Look at this sequence: \u{1F534}\u{1F535}\u{1F534}\u{1F535}\u{1F534} \u2014 What comes next?',h:'What rule does this pattern follow?',o:['\u{1F535} Blue circle','\u{1F534} Red circle','\u2B50 Star','\u{1F7E2} Green circle'],a:0,t:'Pattern recognition'},
+{q:'A robot needs to make toast. Which step comes FIRST?',h:'What has to happen before anything else?',o:['Push down the toaster lever','Put bread in the toaster','Eat the toast','Spread butter on the toast'],a:1,t:'Sequencing'},
+{q:'Can a computer feel happy?',h:'Think about what makes humans different from machines.',o:['Yes \u2014 computers have feelings just like us','No \u2014 computers follow instructions but cannot feel','Only if someone programs them to','Yes \u2014 AI is almost human'],a:1,t:'Human vs machine'},
+{q:'What does IPO stand for in computing?',h:'Every computer system has three parts.',o:['Internet, Program, Output','Input, Process, Output','Inside, Print, Open','Image, Pattern, Order'],a:1,t:'IPO model'},
+{q:'Which of these is a PATTERN?',h:'A pattern has a rule that repeats.',o:['\u{1F431}\u{1F32E}\u{1F3B8}\u{1F355} \u2014 random things','1 2 3 4 5 6 \u2014 counting up by 1 each time','Monday, then lunch, then a nap','Anything colourful'],a:1,t:'Pattern recognition'},
+{q:'You give a robot the wrong instruction. What happens?',h:'Think about how machines follow instructions.',o:['The robot figures out the right thing to do','The robot asks you to try again','The robot does the wrong thing \u2014 exactly as told','The robot stops and waits'],a:2,t:'Following instructions'},
+{q:'What is debugging?',h:'Grace Hopper found the first computer bug in 1947!',o:['Adding insects to a computer','Finding and fixing mistakes in instructions','Making a program go faster','Cleaning the keyboard'],a:1,t:'Debugging'},
+{q:'A washing machine takes dirty clothes, washes them, gives you clean clothes. What is the "process" part?',h:'Think Input \u2192 Process \u2192 Output.',o:['The dirty clothes going in','The clean clothes coming out','The washing and spinning inside','The soap powder'],a:2,t:'IPO model'},
+{q:'Have you ever used ScratchJr or Scratch to make something?',h:'Be honest \u2014 this helps us find your level!',o:['Yes \u2014 I have made projects with Scratch or ScratchJr','I have tried it a little bit','I have seen it but not used it','No \u2014 never'],a:0,t:'Scratch experience'},
+{q:'What is a LOOP in computing?',h:'Think about something that repeats.',o:['A circle you draw on screen','An instruction that repeats over and over','A mistake in your code','A type of computer'],a:1,t:'Loops'},
+{q:'Why is it important to have a strong password?',h:'Think about what a password protects.',o:['Because computers like long words','To protect your personal information from others','Because short passwords do not work','So you can remember it more easily'],a:1,t:'Cybersecurity'},
+{q:'IF it is raining THEN bring an umbrella. What kind of thinking is this?',h:'This is one of the most important ideas in computing!',o:['Pattern thinking','Sorting thinking','If-then conditional thinking','Loop thinking'],a:2,t:'Conditionals'},
+{q:'What makes a game FUN?',h:'Think about the four pillars of game design.',o:['Good graphics only','Rules, a goal, challenge, and feedback working together','Being very easy to win','Having lots of colours'],a:1,t:'Game design'},
+{q:'A computer program always does the same thing with the same input. AI is different because...',h:'This is the key difference between a program and AI.',o:['AI is always faster','AI learns from examples and can improve over time','AI has feelings','AI is just a very big program'],a:1,t:'AI vs program'},
+{q:'If you built a game and a friend could not figure out how to play \u2014 what would you do first?',h:'Think like a game designer!',o:['Tell them they are doing it wrong','Blame the game','Watch how they play and find what confused them','Make the game easier'],a:2,t:'Design thinking'}
+],res(goods,bads){
+if(goods.length>=12)return{lk:'p',e:'\u{1F9E9}',n:'Pixel Blockers',m:'You have a strong understanding of the core ideas. You are ready to start Pixel Blockers \u2014 game design, Scratch, and your first taste of AI!',pl:'pricing.html#pixel',ll:'levels.html#pixel'};
+if(goods.length>=7)return{lk:'p',e:'\u{1F9E9}',n:'Pixel Blockers',m:'Good understanding of the basics. Starting Pixel Blockers will build on what you already know and fill in the gaps nicely.',pl:'pricing.html#pixel',ll:'levels.html#pixel'};
+return{lk:'n',e:'\u{1F52C}',n:'Nano Tots',m:'Nano Tots is the perfect place to build a really solid foundation \u2014 it is completely free and every child is welcome!',pl:'pricing.html#nano',ll:'levels.html#nano'};
+}},
+mine:{t:'\u26CF\uFE0F Minecrafters Entry Quiz',c:'#5b8dee',q:[
+{q:'In a game, what is a SCORE and why does it change?',h:'Think about what a variable does.',o:['A score is a fixed number that never changes','A score is a variable \u2014 it tracks something and updates when events happen','A score is just decoration','A score is the name of the player'],a:1,t:'Variables'},
+{q:'If a character touches a wall, it bounces back. What kind of thinking created this rule?',h:'IF something happens THEN something else happens.',o:['Loop thinking','Pattern thinking','Conditional thinking \u2014 IF this THEN that','Debugging thinking'],a:2,t:'Conditionals'},
+{q:'In Scratch, what is a LOOP used for?',h:'Think about what would happen without a loop.',o:['Making the sprite bigger','Making the game over','Repeating instructions without writing them out over and over','Connecting two sprites'],a:2,t:'Loops'},
+{q:'What makes a game FAIR?',h:'Think about the rules and equal chances.',o:['A game is fair when the player always wins','Rules are consistent and everyone has the same chance to succeed','A game is fair when it is easy for everyone','Fairness does not matter in games'],a:1,t:'Game design and fairness'},
+{q:'You built a Scratch game. A classmate gets confused at the start. What do you do?',h:'Think like a designer!',o:['Explain they are doing it wrong','Add a title screen and instructions','Make the game easier','Nothing \u2014 it is their problem'],a:1,t:'Design thinking'},
+{q:'Your code makes a character go the wrong way. What do you do FIRST?',h:'Think systematically!',o:['Delete everything and start again','Ask a friend','Check the motion blocks and test one change at a time','Ignore it'],a:2,t:'Debugging'},
+{q:'The key difference between a normal program and AI is...',h:'How does each one get its instructions?',o:['AI is faster','Normal programs follow fixed rules; AI learns new rules from examples','AI is always connected to the internet','There is no real difference'],a:1,t:'AI vs program'},
+{q:'Why use DIFFERENT strong passwords for different accounts?',h:'What happens if one password is stolen?',o:['It is not important','Strong different passwords protect each account \u2014 if one is stolen, others stay safe','So you can remember them easily','Only important for adults'],a:1,t:'Cybersecurity'},
+{q:'Have you ever built a game or story in Scratch?',h:'Be honest \u2014 this helps us find your level!',o:['Yes \u2014 I have built full games or stories with Scratch','I have tried Scratch a few times','I have seen it but not built anything','No \u2014 never'],a:0,t:'Scratch experience'},
+{q:'What does AND do in programming logic?',h:'Think about George Boole\'s three words.',o:['It adds two numbers together','It means EITHER condition can be true','It means BOTH conditions must be true at the same time','It connects two sprites'],a:2,t:'Boolean logic'},
+{q:'If an AI only learned from pictures of cats, what happens when it sees a dog?',h:'What has the AI learned and what has it not?',o:['It correctly identifies the dog','It refuses to answer','It gets confused \u2014 might call the dog a cat','It learns immediately'],a:2,t:'AI bias'},
+{q:'What is TRAINING DATA for an AI?',h:'How does AI learn?',o:['The computer that runs the AI','The examples the AI learns from to recognise patterns','The code that programs the AI','The output the AI produces'],a:1,t:'Training data'},
+{q:'What does it mean to design for a REAL PERSON \u2014 not just yourself?',h:'Think human-centred design.',o:['Making it look nice for yourself','Talking to real users, understanding their needs, designing to solve their problems','Building the most impressive version','Copying what exists'],a:1,t:'Human-centred design'},
+{q:'Every click, search, and post online leaves a permanent trace. What is this called?',h:'Imagine footprints in snow.',o:['Your username','Your digital footprint','Your online history','Your cookie'],a:1,t:'Digital footprint'},
+{q:'If AI makes a mistake that causes harm, who is responsible?',h:'One of the most important questions in AI ethics!',o:['Nobody \u2014 AI makes its own decisions','Only the AI itself','The humans who built it, trained it, and deployed it','The person who was harmed'],a:2,t:'AI responsibility'}
+],res(goods,bads){
+if(goods.length>=12)return{lk:'m',e:'\u26CF\uFE0F',n:'Minecrafters',m:'You have strong foundations across the key ideas. You are ready for Minecrafters \u2014 real AI tools, training data, and building things that actually matter!',pl:'pricing.html#mine',ll:'levels.html#mine'};
+if(goods.length>=7)return{lk:'m',e:'\u26CF\uFE0F',n:'Minecrafters',m:'Good understanding across the core concepts. Starting Minecrafters from the beginning will build on your strengths and fill in the gaps.',pl:'pricing.html#mine',ll:'levels.html#mine'};
+if(goods.length>=4)return{lk:'p',e:'\u{1F9E9}',n:'Pixel Blockers',m:'You have some great ideas already. Pixel Blockers will build your Scratch skills and logic so you are fully ready for real AI tools.',pl:'pricing.html#pixel',ll:'levels.html#pixel'};
+return{lk:'n',e:'\u{1F52C}',n:'Nano Tots',m:'The strongest builders start with the strongest foundations! Nano Tots is free and will set you up brilliantly for everything that follows.',pl:'pricing.html#nano',ll:'levels.html#nano'};
+}},
+uni:{t:'\u{1F984} Unicorns Entry Quiz',c:'#b97bff',q:[
+{q:'What is TRAINING DATA and why does it matter for AI?',h:'How does AI learn?',o:['The computer hardware running the AI','Examples the AI learns from to recognise patterns and make predictions','The code that programs the AI','The final output the AI produces'],a:1,t:'Training data'},
+{q:'If AI only learned from pictures of cats, what would happen when it sees a dog?',h:'What has the AI learned and what has it missed?',o:['It correctly identifies the dog','It refuses to answer','It gets confused \u2014 might call the dog a cat or be very unsure','It instantly learns what a dog is'],a:2,t:'AI bias'},
+{q:'Have you ever used Teachable Machine or ML4Kids?',h:'Be honest \u2014 this helps us find your level!',o:['Yes \u2014 I have trained real AI models with these tools','I have heard of them but not used them','No \u2014 never','I have used similar tools'],a:0,t:'AI tool experience'},
+{q:'What does it mean to design for a REAL PERSON \u2014 not just yourself?',h:'Think human-centred design.',o:['Making it look impressive','Talking to real users, understanding their actual needs, testing with them','Building the most technically sophisticated version','Copying what works elsewhere'],a:1,t:'Human-centred design'},
+{q:'If AI makes a mistake that hurts someone, whose responsibility is it?',h:'One of the most important AI ethics questions!',o:['Nobody \u2014 AI makes its own decisions','Only the AI itself','The humans who built it, trained it, and deployed it','Only the end user'],a:2,t:'AI responsibility'},
+{q:'Name ONE way AI helps people AND one way it has caused harm.',h:'Think balanced \u2014 AI is neither all good nor all bad.',o:['AI only helps, it never causes harm','AI only causes harm, it never helps','AI helps (e.g. medical diagnosis) AND harms (e.g. biased decisions)','AI cannot cause harm because it has no intentions'],a:2,t:'Balanced AI awareness'},
+{q:'What does FAIRNESS mean when AI is making decisions?',h:'Think about who gets included and who gets left out.',o:['The AI is always right','Everyone treated equally, training data represents everyone, no group systematically excluded','The AI makes quick decisions','Fairness is not relevant to AI'],a:1,t:'Fairness in AI'},
+{q:'If AI is trained mostly on data from one type of person, what happens?',h:'Think about what training data shapes.',o:['It works equally well for everyone','It works better for that type of person and fails others','It refuses to work','It automatically corrects for the imbalance'],a:1,t:'Data representation'},
+{q:'The DIFFERENCE between a regular program and AI that learns is...',h:'Think about how each gets its instructions.',o:['Regular programs are slower','AI learns rules from examples; regular programs follow rules written by humans','There is no meaningful difference','AI is just a much bigger program'],a:1,t:'AI vs program'},
+{q:'You want to build an AI tool for your school. What do you do FIRST?',h:'Think human-centred design.',o:['Start training the AI model immediately','Research the best AI tools','Talk to the people at your school who have the problem you want to solve','Build a prototype and test it'],a:2,t:'Design-first thinking'},
+{q:'What is a digital footprint?',h:'Think about traces left online.',o:['A photo you post online','The permanent trace left by every online action \u2014 clicks, searches, posts','Your username','Your device\'s location'],a:1,t:'Digital footprint'},
+{q:'When should you show the CONFIDENCE SCORE of an AI prediction?',h:'Think about when uncertainty matters to the user.',o:['Never \u2014 it confuses users','Always \u2014 users deserve to know how sure the AI is','Only when the AI is 100% confident','Only for unimportant decisions'],a:1,t:'Confidence scores'},
+{q:'What is HUMAN-CENTRED DESIGN?',h:'Who is at the centre?',o:['Designing what the designer finds most interesting','Starting with the real needs of real people and designing to meet those needs','Building the most technically impressive solution','Designing for the average user'],a:1,t:'HCD definition'},
+{q:'AI art is created by learning from millions of human artworks. What is the ethical concern?',h:'Think about the artists whose work trained the AI.',o:['There is no ethical concern \u2014 AI art is just different','Artists whose work trained the AI were often not asked or paid','AI art is lower quality','People might confuse AI art with human art'],a:1,t:'AI ethics and art'},
+{q:'If you could build one AI tool for your community, what would guide your FIRST design decision?',h:'Think about what makes a project genuinely useful.',o:['What is most technically impressive','What tools are available','What real problem affects real people in your community and how AI could help','What would look best in a presentation'],a:2,t:'Community design thinking'}
+],res(goods,bads){
+if(goods.length>=12)return{lk:'u',e:'\u{1F984}',n:'Unicorns',m:'You have strong understanding across the Minecrafters concepts. You are ready for Unicorns \u2014 complex AI projects, a real science fair investigation, and Young AI Pioneer graduation!',pl:'pricing.html#uni',ll:'levels.html#uni'};
+if(goods.length>=7)return{lk:'u',e:'\u{1F984}',n:'Unicorns',m:'Good foundations! Starting Unicorns from the beginning will consolidate your knowledge before pushing into the most ambitious AI projects in the curriculum.',pl:'pricing.html#uni',ll:'levels.html#uni'};
+if(goods.length>=4)return{lk:'m',e:'\u26CF\uFE0F',n:'Minecrafters',m:'You have great AI awareness. Minecrafters will give you the hands-on tool experience \u2014 real models, real data, real design thinking \u2014 that sets you up for Unicorns.',pl:'pricing.html#mine',ll:'levels.html#mine'};
+return{lk:'p',e:'\u{1F9E9}',n:'Pixel Blockers',m:'Strong foundations before tools make the best AI builders. Pixel Blockers builds your Scratch and logic skills so when you reach real AI tools, you are completely ready.',pl:'pricing.html#pixel',ll:'levels.html#pixel'};
+}}};
+let cQ=null,cI=0,score=0,done=false,wrongs=[];
+function startQ(t){cQ=t;cI=0;score=0;done=false;wrongs=[];
+  document.getElementById('qres').style.display='none';
+  document.getElementById('qbd').style.display='block';
+  document.querySelector('.qft').style.display='flex';
+  document.querySelector('.qhd h2').textContent=QZ[t].t;
+  document.getElementById('qpf').style.background=QZ[t].c;
+  document.getElementById('qov').classList.add('open');
+  renderQ();}
+function closeQ(){clearInterval(timerInt);document.getElementById('qov').classList.remove('open')}
+function renderQ(){
+  const q=QZ[cQ].q[cI],tot=QZ[cQ].q.length;done=false;
+  document.getElementById('qnx').classList.remove('show');
+  document.getElementById('qpf').style.width=(cI/tot*100)+'%';
+  document.getElementById('qpl').textContent='Question '+(cI+1)+' of '+tot;
+  document.getElementById('qbd').innerHTML='<div class="qqn">Question '+(cI+1)+' of '+tot+'</div>'+
+    '<div class="qqt">'+q.q+'</div><div class="qqh">'+q.h+'</div>'+
+    '<div class="qop">'+q.o.map((o,i)=>
+      '<button class="qo" onclick="selO(this,'+i+','+q.a+')"><span class="oi">'+['A','B','C','D'][i]+'</span>'+o+'</button>'
+    ).join('')+'</div>';
+  startTimer();}
+function selO(el,i,a){
+  if(done)return;done=true;stopTimer();
+  document.querySelectorAll('.qo').forEach((o,j)=>{
+    if(j===a)o.classList.add('cor');
+    else if(j===i&&i!==a)o.classList.add('wrg');
+    o.style.pointerEvents='none';});
+  if(i===a)score++;
+  else wrongs.push(cI);
+  document.getElementById('qnx').classList.add('show');}
+function skipQ(){if(!done){done=true;stopTimer();wrongs.push(cI);nextQ();}}
+function nextQ(){cI++;if(cI>=QZ[cQ].q.length)showRes();else renderQ();}
+function showRes(){
+  stopTimer();
+  const qs=QZ[cQ].q;
+  const goods=qs.filter((_,i)=>!wrongs.includes(i)).map(q=>q.t);
+  const bads=[...new Set(wrongs.map(i=>qs[i].t))];
+  const uniqueGoods=[...new Set(goods)];
+  const r=QZ[cQ].res(uniqueGoods,bads);
+  const cols={n:'#2ec4a9',p:'#ff6b6b',m:'#5b8dee',u:'#b97bff'};
+  document.getElementById('qbd').style.display='none';
+  document.querySelector('.qft').style.display='none';
+  document.getElementById('qpf').style.width='100%';
+  document.getElementById('qpl').textContent='Done!';
+  const goodHTML=uniqueGoods.length?'<div class="rtopics"><h4 class="good">What you are great at</h4><ul class="good">'+uniqueGoods.map(t=>'<li>'+t+'</li>').join('')+'</ul></div>':'';
+  const badHTML=bads.length?'<div class="rtopics"><h4 class="focus">Areas to explore before you start</h4><ul class="focus">'+bads.map(t=>'<li>'+t+'</li>').join('')+'</ul></div>':'';
+  const res=document.getElementById('qres');
+  res.style.display='block';
+  res.innerHTML='<span class="rem2">'+r.e+'</span>'+
+    '<div class="rtt">Your best level is...</div>'+
+    '<div class="rlv '+r.lk+'">'+r.e+' '+r.n+'</div>'+
+    '<div class="rmg">'+r.m+'</div>'+
+    goodHTML+badHTML+
+    '<div class="rbt"><a href="'+r.pl+'" class="rb rb-gold" style="background:'+cols[r.lk]+';color:#fff">Enrol in '+r.n+' \u2192</a>'+
+    '<a href="'+r.ll+'" class="rb rb-ghost">See Level Details</a>'+
+    '<button onclick="retake()" class="rb rb-ghost">Try again \u21BA</button></div>';}
+function retake(){startQ(cQ);}
+document.getElementById('qov').addEventListener('click',function(e){if(e.target===this)closeQ();});
+const h=window.location.hash;
+if(['#pixel','#mine','#uni'].includes(h))setTimeout(()=>startQ(h.slice(1)),400);
+</script>
+</body>
+</html>

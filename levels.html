@@ -2,1026 +2,148 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Levels Guide & Find My Level — creAItors Club</title>
-<meta name="description" content="Explore all 4 levels of creAItors Club and find the perfect starting point for your child with our interactive quiz.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Levels &#x2014; creAItors Club</title>
+<meta name="description" content="Explore all 4 levels of creAItors Club and find the perfect starting point.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#0f1923;--cream:#fdf8f0;--white:#fff;
-  --gold:#f7c948;--gold2:#ffb703;
-  --nano:#2ec4a9;--pixel:#ff6b6b;--mine:#5b8dee;--uni:#b97bff;
-  --nano-bg:#e6faf7;--pixel-bg:#fff0f0;--mine-bg:#eef2ff;--uni-bg:#f5eeff;
-  --font-h:'Baloo 2',cursive;--font-b:'Nunito',sans-serif;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--font-b);background:var(--cream);color:var(--ink);overflow-x:hidden}
-
-/* NAV */
+:root{--ink:#0f1923;--cream:#fdf8f0;--gold:#f7c948;--nano:#2ec4a9;--pixel:#ff6b6b;--mine:#5b8dee;--uni:#b97bff;--nano-bg:#e6faf7;--pixel-bg:#fff0f0;--mine-bg:#eef2ff;--uni-bg:#f5eeff;--fh:'Baloo 2',cursive;--fb:'Nunito',sans-serif;--shadow:0 4px 24px rgba(0,0,0,.08);--shadow-lg:0 16px 48px rgba(0,0,0,.14)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--fb);background:var(--cream);color:var(--ink);overflow-x:hidden}
 nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,4vw,3rem);height:64px;background:rgba(15,25,35,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(247,201,72,.18)}
-.nav-brand{font-family:var(--font-h);font-size:1.4rem;font-weight:900;color:#fff;text-decoration:none;letter-spacing:-.5px}
-.nav-brand .ai{color:var(--gold)}
-.nav-links{display:flex;gap:6px;list-style:none}
-.nav-links a{font-family:var(--font-b);font-size:.82rem;font-weight:700;color:rgba(255,255,255,.6);text-decoration:none;padding:6px 14px;border-radius:20px;transition:all .2s}
-.nav-links a:hover{color:#fff;background:rgba(255,255,255,.1)}
-.nav-links a.cta{background:var(--gold);color:var(--ink)!important}
-.nav-links a.cta:hover{background:#ffd700}
-@media(max-width:600px){.nav-links{display:none}}
+.nb{font-family:var(--fh);font-size:1.35rem;font-weight:900;color:#fff;text-decoration:none;letter-spacing:-.5px}.nb .ai{color:var(--gold)}
+.nl{display:flex;gap:4px;list-style:none;flex-wrap:wrap}
+.nl a{font-family:var(--fb);font-size:.8rem;font-weight:700;color:rgba(255,255,255,.6);text-decoration:none;padding:6px 12px;border-radius:20px;transition:all .2s;white-space:nowrap}
+.nl a:hover{color:#fff;background:rgba(255,255,255,.1)}.nl a.cta{background:var(--gold);color:var(--ink)!important}.nl a.cta:hover{background:#ffd700}.nl a.active{color:#fff;background:rgba(255,255,255,.1)}
+@media(max-width:640px){.nl{display:none}}
+section{padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,4rem)}.ctr{max-width:1100px;margin:0 auto}
+.sl{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.4;margin-bottom:.6rem;font-family:var(--fb)}
+.sh{font-family:var(--fh);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:-.5px;margin-bottom:.85rem}
+.ss{font-size:1rem;color:#666;line-height:1.7;max-width:580px}
+.btn{font-family:var(--fb);font-weight:800;font-size:.92rem;padding:12px 26px;border-radius:50px;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none}
+.btn-gold{background:var(--gold);color:var(--ink)}.btn-gold:hover{background:#ffd700;transform:translateY(-2px);box-shadow:0 8px 24px rgba(247,201,72,.35)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:2px solid rgba(255,255,255,.2)}.btn-ghost:hover{background:rgba(255,255,255,.15);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--ink);border:2px solid currentColor}.btn-outline:hover{background:var(--ink);color:#fff}
+.ph{background:var(--ink);padding:clamp(3rem,7vw,5.5rem) clamp(1rem,5vw,4rem);text-align:center;position:relative;overflow:hidden}
+.ph::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,rgba(46,196,169,.1),transparent 55%)}
+.ph h1{font-family:var(--fh);font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:#fff;letter-spacing:-.5px;margin-bottom:.65rem;position:relative;z-index:1}
+.ph h1 span{color:var(--gold)}.ph p{font-size:1rem;color:rgba(255,255,255,.58);max-width:540px;margin:0 auto;line-height:1.7;position:relative;z-index:1}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.rv.vis{opacity:1;transform:translateY(0)}
+footer{background:#080e14;color:rgba(255,255,255,.35);padding:2.5rem clamp(1rem,5vw,4rem)}
+.fi{max-width:1100px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:2rem}
+.fbr{font-family:var(--fh);font-size:1.05rem;font-weight:900;color:#fff}.fbr .ai{color:var(--gold)}.fbr p{font-size:.73rem;color:rgba(255,255,255,.3);margin-top:.3rem}
+.fc h4{font-family:var(--fh);font-size:.75rem;font-weight:800;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.55rem}
+.fc a{display:block;font-size:.77rem;font-weight:600;color:rgba(255,255,255,.32);text-decoration:none;transition:color .2s;margin-bottom:.28rem}.fc a:hover{color:var(--gold)}
+.fb2{max-width:1100px;margin:.7rem auto 0;padding-top:.7rem;border-top:1px solid rgba(255,255,255,.06);font-size:.7rem;color:rgba(255,255,255,.18)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-15px)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(max-width:600px){.fi{flex-direction:column}}
 
-/* HERO */
-.pg-hero{background:var(--ink);padding:clamp(3rem,7vw,6rem) clamp(1rem,5vw,4rem);text-align:center;position:relative;overflow:hidden}
-.pg-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(46,196,169,.1),transparent 60%)}
-.pg-hero h1{font-family:var(--font-h);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;color:#fff;letter-spacing:-.5px;margin-bottom:.75rem;position:relative;z-index:1}
-.pg-hero h1 span{color:var(--gold)}
-.pg-hero p{font-size:1.05rem;color:rgba(255,255,255,.6);max-width:560px;margin:0 auto;line-height:1.7;position:relative;z-index:1}
-.pg-tabs{display:flex;gap:8px;justify-content:center;margin-top:2rem;flex-wrap:wrap;position:relative;z-index:1}
-.ptab{padding:9px 22px;border-radius:25px;font-family:var(--font-b);font-size:.85rem;font-weight:800;text-decoration:none;border:2px solid rgba(255,255,255,.18);color:rgba(255,255,255,.65);transition:all .2s}
-.ptab:hover{border-color:rgba(255,255,255,.4);color:#fff}
-.ptab.active{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.lg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.25rem}
+.lc{border-radius:22px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;border:2px solid transparent}
+.lc:hover{transform:translateY(-7px);box-shadow:var(--shadow-lg)}
+.lc.n{border-color:var(--nano)}.lc.p{border-color:var(--pixel)}.lc.m{border-color:var(--mine)}.lc.u{border-color:var(--uni)}
+.lct{padding:1.75rem 1.5rem 1.25rem;position:relative;overflow:hidden}
+.lc.n .lct{background:linear-gradient(145deg,#0a1a14,#0d2d24)}.lc.p .lct{background:linear-gradient(145deg,#1a0a0a,#2d1010)}
+.lc.m .lct{background:linear-gradient(145deg,#0a0f1a,#0f1a2f)}.lc.u .lct{background:linear-gradient(145deg,#120a1a,#1e0f30)}
+.lcg{position:absolute;width:180px;height:180px;border-radius:50%;filter:blur(60px);opacity:.23;top:-35px;right:-35px}
+.lc.n .lcg{background:var(--nano)}.lc.p .lcg{background:var(--pixel)}.lc.m .lcg{background:var(--mine)}.lc.u .lcg{background:var(--uni)}
+.lce{font-size:2.4rem;display:block;margin-bottom:.65rem;position:relative;z-index:1}
+.lcl{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.22rem;position:relative;z-index:1}
+.lc.n .lcl{color:var(--nano)}.lc.p .lcl{color:var(--pixel)}.lc.m .lcl{color:var(--mine)}.lc.u .lcl{color:var(--uni)}
+.lcn{font-family:var(--fh);font-size:1.45rem;font-weight:900;color:#fff;position:relative;z-index:1;margin-bottom:.28rem}
+.lca{display:inline-block;background:rgba(255,255,255,.09);border-radius:8px;padding:3px 9px;font-size:.7rem;font-weight:700;color:rgba(255,255,255,.62);position:relative;z-index:1}
+.lcb{padding:1.2rem 1.5rem;background:#fff;flex:1}
+.lcth{font-size:.84rem;font-weight:700;color:var(--ink);margin-bottom:.55rem}
+.lcf{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.5rem;border-top:1px solid #f0f0f0;background:#fff}
+.lcpr{font-family:var(--fh);font-size:.95rem;font-weight:900}
+.lc.n .lcpr{color:var(--nano)}.lc.p .lcpr{color:var(--pixel)}.lc.m .lcpr{color:var(--mine)}.lc.u .lcpr{color:var(--uni)}
+.lcbt{font-size:.77rem;font-weight:800;padding:6px 13px;border-radius:17px;text-decoration:none;transition:all .2s}
+.lc.n .lcbt{background:var(--nano-bg);color:var(--nano)}.lc.p .lcbt{background:var(--pixel-bg);color:var(--pixel)}
+.lc.m .lcbt{background:var(--mine-bg);color:var(--mine)}.lc.u .lcbt{background:var(--uni-bg);color:var(--uni)}
 
-/* SECTIONS */
-section{padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,4rem)}
-.container{max-width:1100px;margin:0 auto}
-.sec-label{font-family:var(--font-b);font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.4;margin-bottom:.6rem}
-.sec-title{font-family:var(--font-h);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:-.5px;margin-bottom:.85rem}
-.sec-sub{font-size:1rem;color:#666;line-height:1.7;max-width:580px}
 
-/* JOURNEY FLOW */
-.flow{background:#fff}
-.flow-track{display:flex;align-items:flex-start;gap:0;margin-top:3rem;overflow-x:auto;padding-bottom:1rem}
-.flow-step{flex:1;min-width:200px;text-align:center;padding:0 1rem;position:relative}
-.flow-step::after{content:'→';position:absolute;right:-10px;top:32px;font-size:1.8rem;color:#ddd;font-family:var(--font-h)}
-.flow-step:last-child::after{display:none}
-.flow-icon{width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1rem;border:3px solid transparent;transition:transform .3s}
-.flow-step:hover .flow-icon{transform:scale(1.1)}
-.flow-step.nano .flow-icon{background:var(--nano-bg);border-color:var(--nano)}
-.flow-step.pixel .flow-icon{background:var(--pixel-bg);border-color:var(--pixel)}
-.flow-step.mine .flow-icon{background:var(--mine-bg);border-color:var(--mine)}
-.flow-step.uni .flow-icon{background:var(--uni-bg);border-color:var(--uni)}
-.flow-name{font-family:var(--font-h);font-size:1.05rem;font-weight:900;color:var(--ink);margin-bottom:.3rem}
-.flow-age{display:inline-block;font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:12px;margin-bottom:.5rem}
-.flow-step.nano .flow-age{background:var(--nano-bg);color:var(--nano)}
-.flow-step.pixel .flow-age{background:var(--pixel-bg);color:var(--pixel)}
-.flow-step.mine .flow-age{background:var(--mine-bg);color:var(--mine)}
-.flow-step.uni .flow-age{background:var(--uni-bg);color:var(--uni)}
-.flow-desc{font-size:.82rem;color:#666;line-height:1.5}
-.flow-note{margin-top:2rem;background:var(--cream);border-radius:14px;padding:1.25rem 1.5rem;border-left:4px solid var(--gold);font-size:.9rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:.75rem}
+.lg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.25rem}
+.lc{border-radius:22px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;box-shadow:0 4px 24px rgba(0,0,0,.08);transition:transform .3s,box-shadow .3s;border:2px solid transparent}
+.lc:hover{transform:translateY(-7px);box-shadow:0 16px 48px rgba(0,0,0,.14)}
+.lc.n{border-color:var(--nano)}.lc.p{border-color:var(--pixel)}.lc.m{border-color:var(--mine)}.lc.u{border-color:var(--uni)}
+.lct{padding:1.75rem 1.5rem 1.25rem;position:relative;overflow:hidden}
+.lc.n .lct{background:linear-gradient(145deg,#0a1a14,#0d2d24)}.lc.p .lct{background:linear-gradient(145deg,#1a0a0a,#2d1010)}
+.lc.m .lct{background:linear-gradient(145deg,#0a0f1a,#0f1a2f)}.lc.u .lct{background:linear-gradient(145deg,#120a1a,#1e0f30)}
+.lcg{position:absolute;width:180px;height:180px;border-radius:50%;filter:blur(60px);opacity:.23;top:-35px;right:-35px}
+.lc.n .lcg{background:var(--nano)}.lc.p .lcg{background:var(--pixel)}.lc.m .lcg{background:var(--mine)}.lc.u .lcg{background:var(--uni)}
+.lce{font-size:2.4rem;display:block;margin-bottom:.65rem;position:relative;z-index:1}
+.lcl{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.22rem;position:relative;z-index:1}
+.lc.n .lcl{color:var(--nano)}.lc.p .lcl{color:var(--pixel)}.lc.m .lcl{color:var(--mine)}.lc.u .lcl{color:var(--uni)}
+.lcn{font-family:var(--fh);font-size:1.45rem;font-weight:900;color:#fff;position:relative;z-index:1;margin-bottom:.28rem}
+.lca{display:inline-block;background:rgba(255,255,255,.09);border-radius:8px;padding:3px 9px;font-size:.7rem;font-weight:700;color:rgba(255,255,255,.62);position:relative;z-index:1}
+.lcb{padding:1.2rem 1.5rem;background:#fff;flex:1}
+.lcth{font-size:.84rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+.lcul{list-style:none;display:flex;flex-direction:column;gap:.35rem;margin-bottom:.6rem}
+.lcul li{font-size:.81rem;color:#555;padding-left:1.15rem;position:relative;line-height:1.45}
+.lcul li::before{content:'\2713';position:absolute;left:0;font-weight:800}
+.lc.n .lcul li::before{color:var(--nano)}.lc.p .lcul li::before{color:var(--pixel)}.lc.m .lcul li::before{color:var(--mine)}.lc.u .lcul li::before{color:var(--uni)}
+.lcf{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.5rem;border-top:1px solid #f0f0f0;background:#fff}
+.lcpr{font-family:var(--fh);font-size:.95rem;font-weight:900}
+.lc.n .lcpr{color:var(--nano)}.lc.p .lcpr{color:var(--pixel)}.lc.m .lcpr{color:var(--mine)}.lc.u .lcpr{color:var(--uni)}
+.lcbt{font-size:.77rem;font-weight:800;padding:6px 13px;border-radius:17px;text-decoration:none}
+.lc.n .lcbt{background:var(--nano-bg);color:var(--nano)}.lc.p .lcbt{background:var(--pixel-bg);color:var(--pixel)}
+.lc.m .lcbt{background:var(--mine-bg);color:var(--mine)}.lc.u .lcbt{background:var(--uni-bg);color:var(--uni)}
 
-/* LEVEL DETAIL CARDS */
-.levels-detail{background:var(--cream)}
-.ldet-grid{display:flex;flex-direction:column;gap:2rem;margin-top:2rem}
-.ldet{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.07);display:grid;grid-template-columns:300px 1fr;border:2px solid transparent}
-@media(max-width:760px){.ldet{grid-template-columns:1fr}}
-.ldet.nano{border-color:var(--nano)}.ldet.pixel{border-color:var(--pixel)}.ldet.mine{border-color:var(--mine)}.ldet.uni{border-color:var(--uni)}
-.ldet-left{padding:2.5rem 2rem;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
-.ldet.nano .ldet-left{background:linear-gradient(145deg,#0a1a14,#0d2d24)}
-.ldet.pixel .ldet-left{background:linear-gradient(145deg,#1a0a0a,#2d1010)}
-.ldet.mine .ldet-left{background:linear-gradient(145deg,#0a0f1a,#0f1a2f)}
-.ldet.uni .ldet-left{background:linear-gradient(145deg,#120a1a,#1e0f30)}
-.ldet-glow{position:absolute;width:250px;height:250px;border-radius:50%;filter:blur(70px);opacity:.22;top:-50px;right:-50px}
-.ldet.nano .ldet-glow{background:var(--nano)}.ldet.pixel .ldet-glow{background:var(--pixel)}.ldet.mine .ldet-glow{background:var(--mine)}.ldet.uni .ldet-glow{background:var(--uni)}
-.ldet-em{font-size:3.5rem;display:block;margin-bottom:1rem;position:relative;z-index:1}
-.ldet-num{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem;position:relative;z-index:1}
-.ldet.nano .ldet-num{color:var(--nano)}.ldet.pixel .ldet-num{color:var(--pixel)}.ldet.mine .ldet-num{color:var(--mine)}.ldet.uni .ldet-num{color:var(--uni)}
-.ldet-name{font-family:var(--font-h);font-size:1.8rem;font-weight:900;color:#fff;position:relative;z-index:1;margin-bottom:.5rem}
-.ldet-age{display:inline-block;background:rgba(255,255,255,.1);border-radius:10px;padding:5px 12px;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.7);position:relative;z-index:1;margin-bottom:1.5rem}
-.ldet-link{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:22px;font-size:.85rem;font-weight:800;text-decoration:none;position:relative;z-index:1;transition:all .2s}
-.ldet.nano .ldet-link{background:var(--nano);color:#fff}.ldet.pixel .ldet-link{background:var(--pixel);color:#fff}.ldet.mine .ldet-link{background:var(--mine);color:#fff}.ldet.uni .ldet-link{background:var(--uni);color:#fff}
-.ldet-link:hover{opacity:.85;transform:translateY(-2px)}
-.ldet-right{padding:2.5rem}
-.ldet-theme{font-family:var(--font-h);font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:1.25rem}
-.ldet-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-@media(max-width:600px){.ldet-cols{grid-template-columns:1fr}}
-.ldet-col h4{font-family:var(--font-h);font-size:.88rem;font-weight:800;color:var(--ink);margin-bottom:.6rem;opacity:.6;text-transform:uppercase;font-size:.72rem;letter-spacing:.06em}
-.ldet-col ul{list-style:none;display:flex;flex-direction:column;gap:.4rem}
-.ldet-col ul li{font-size:.84rem;color:#555;padding-left:1.2rem;position:relative;line-height:1.5}
-.ldet-col ul li::before{content:'✓';position:absolute;left:0;font-weight:800}
-.ldet.nano .ldet-col ul li::before{color:var(--nano)}.ldet.pixel .ldet-col ul li::before{color:var(--pixel)}.ldet.mine .ldet-col ul li::before{color:var(--mine)}.ldet.uni .ldet-col ul li::before{color:var(--uni)}
-.ldet-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:1.5rem}
-.lpill{font-size:.72rem;font-weight:800;padding:4px 12px;border-radius:12px;background:var(--cream);color:var(--ink);opacity:.75}
-
-/* QUIZ SECTION */
-.quiz-sec{background:var(--ink)}
-.quiz-sec .sec-label{color:rgba(255,255,255,.35)}
-.quiz-sec .sec-title{color:#fff}
-.quiz-sec .sec-sub{color:rgba(255,255,255,.55)}
-.quiz-chooser{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:2.5rem}
-.qchoice{background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.1);border-radius:20px;padding:1.75rem;text-align:center;cursor:pointer;transition:all .25s;display:block;text-decoration:none}
-.qchoice:hover{background:rgba(255,255,255,.12);transform:translateY(-4px)}
-.qchoice.nano{border-color:rgba(46,196,169,.3)}.qchoice.pixel{border-color:rgba(255,107,107,.3)}.qchoice.mine{border-color:rgba(91,141,238,.3)}.qchoice.uni{border-color:rgba(185,123,255,.25)}
-.qchoice .qem{font-size:2.8rem;margin-bottom:.75rem;display:block}
-.qchoice h3{font-family:var(--font-h);font-size:1.1rem;font-weight:900;color:#fff;margin-bottom:.3rem}
-.qchoice .qsub{font-size:.8rem;color:rgba(255,255,255,.45);margin-bottom:1rem;line-height:1.4}
-.qchoice .qbtn{display:inline-block;padding:8px 18px;border-radius:20px;font-size:.82rem;font-weight:800}
-.qchoice.nano .qbtn{background:rgba(46,196,169,.15);color:var(--nano)}
-.qchoice.pixel .qbtn{background:rgba(255,107,107,.15);color:var(--pixel)}
-.qchoice.mine .qbtn{background:rgba(91,141,238,.15);color:var(--mine)}
-.qchoice.uni{opacity:.5;cursor:default;pointer-events:none}
-.qchoice.uni .qbtn{background:rgba(185,123,255,.1);color:var(--uni)}
-.qchoice.nano-open{background:rgba(46,196,169,.08);border-color:rgba(46,196,169,.25);cursor:default}
-.qchoice.nano-open h3{color:var(--nano)}
-.qchoice.nano-open .qbtn{background:var(--nano);color:#fff;text-decoration:none;display:inline-block}
-
-/* QUIZ MODAL */
-.quiz-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;align-items:center;justify-content:center;padding:1rem}
-.quiz-overlay.open{display:flex}
-.quiz-box{background:#fff;border-radius:28px;width:100%;max-width:680px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.4);animation:popIn .3s ease both}
-@keyframes popIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
-.quiz-header{padding:1.5rem 2rem 1rem;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;justify-content:space-between}
-.quiz-header h2{font-family:var(--font-h);font-size:1.1rem;font-weight:900;color:var(--ink)}
-.quiz-close{background:none;border:none;font-size:1.5rem;cursor:pointer;color:#aaa;transition:color .2s;line-height:1}
-.quiz-close:hover{color:var(--ink)}
-.quiz-prog-wrap{padding:.75rem 2rem;background:var(--cream)}
-.quiz-prog-bar{height:8px;background:#e5e5e5;border-radius:4px;overflow:hidden}
-.quiz-prog-fill{height:100%;border-radius:4px;transition:width .4s ease;background:var(--gold)}
-.quiz-prog-label{font-size:.75rem;font-weight:700;color:#999;margin-top:5px}
-.quiz-body{padding:2rem}
-.quiz-q-num{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#bbb;margin-bottom:.5rem}
-.quiz-q-text{font-family:var(--font-h);font-size:1.2rem;font-weight:800;color:var(--ink);margin-bottom:.4rem;line-height:1.4}
-.quiz-q-hint{font-size:.85rem;color:#888;margin-bottom:1.5rem;line-height:1.5}
-.quiz-opts{display:flex;flex-direction:column;gap:.75rem}
-.qopt{padding:1rem 1.25rem;border:2px solid #eee;border-radius:14px;cursor:pointer;font-family:var(--font-b);font-size:.92rem;font-weight:600;color:var(--ink);transition:all .2s;text-align:left;background:#fff;display:flex;align-items:center;gap:.75rem}
-.qopt:hover{border-color:var(--gold);background:#fffbee;transform:translateX(4px)}
-.qopt.selected{border-color:var(--gold);background:#fffbee;font-weight:800}
-.qopt.correct{border-color:#27AE60;background:#e9f7ef;color:#1a7a40}
-.qopt.wrong{border-color:#e74c3c;background:#fff0ee;color:#c0392b}
-.qopt .opt-icon{font-size:1.2rem;flex-shrink:0}
-.quiz-footer{padding:1rem 2rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
-.quiz-skip{font-size:.82rem;font-weight:700;color:#bbb;cursor:pointer;background:none;border:none;font-family:var(--font-b)}
-.quiz-skip:hover{color:#888}
-.quiz-next{background:var(--gold);color:var(--ink);border:none;border-radius:25px;padding:12px 28px;font-family:var(--font-b);font-size:.9rem;font-weight:800;cursor:pointer;transition:all .2s;display:none}
-.quiz-next:hover{background:#ffd700;transform:translateY(-2px)}
-.quiz-next.show{display:block}
-
-/* RESULT */
-.quiz-result{display:none;padding:2.5rem 2rem;text-align:center}
-.result-em{font-size:4rem;margin-bottom:1rem;display:block;animation:popIn .5s ease both}
-.result-title{font-family:var(--font-h);font-size:1.6rem;font-weight:900;color:var(--ink);margin-bottom:.5rem}
-.result-level{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:25px;font-family:var(--font-h);font-size:1.1rem;font-weight:900;margin:1rem 0;color:#fff}
-.result-level.nano{background:var(--nano)}.result-level.pixel{background:var(--pixel)}.result-level.mine{background:var(--mine)}.result-level.uni{background:var(--uni)}
-.result-score{font-size:.88rem;color:#888;margin-bottom:.5rem}
-.result-msg{font-size:1rem;color:#555;line-height:1.7;max-width:480px;margin:0 auto 2rem}
-.result-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.rbtn{padding:12px 26px;border-radius:25px;font-family:var(--font-b);font-size:.9rem;font-weight:800;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
-.rbtn-primary{background:var(--gold);color:var(--ink)}
-.rbtn-primary:hover{background:#ffd700;transform:translateY(-2px)}
-.rbtn-ghost{background:var(--cream);color:var(--ink)}
-.rbtn-ghost:hover{background:#f0ebe0}
-.score-bar{background:#f0f0f0;border-radius:8px;height:12px;overflow:hidden;margin:1rem auto;max-width:300px}
-.score-fill{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--gold),#ff9f43);transition:width 1s ease .3s}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-
-/* FOOTER */
-footer{background:#080e14;color:rgba(255,255,255,.35);padding:2rem clamp(1rem,5vw,4rem)}
-.foot-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.foot-brand{font-family:var(--font-h);font-size:1.05rem;font-weight:900;color:#fff}
-.foot-brand .ai{color:var(--gold)}
-footer p{font-size:.74rem}
-.foot-links{display:flex;gap:1rem;flex-wrap:wrap}
-.foot-links a{font-size:.74rem;font-weight:700;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s}
-.foot-links a:hover{color:var(--gold)}
+.ft{display:flex;align-items:flex-start;gap:0;margin-top:2.5rem;overflow-x:auto;padding-bottom:.75rem}
+.fs{flex:1;min-width:175px;text-align:center;padding:0 .7rem;position:relative}
+.fs::after{content:'\2192';position:absolute;right:-8px;top:28px;font-size:1.5rem;color:#ddd;font-family:var(--fh)}
+.fs:last-child::after{display:none}
+.fi2{width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.9rem;margin:0 auto .8rem;border:3px solid transparent;transition:transform .3s}
+.fs:hover .fi2{transform:scale(1.1)}
+.fs.n .fi2{background:var(--nano-bg);border-color:var(--nano)}.fs.p .fi2{background:var(--pixel-bg);border-color:var(--pixel)}
+.fs.m .fi2{background:var(--mine-bg);border-color:var(--mine)}.fs.u .fi2{background:var(--uni-bg);border-color:var(--uni)}
+.fn{font-family:var(--fh);font-size:.95rem;font-weight:900;color:var(--ink);margin-bottom:.22rem}
+.fa{display:inline-block;font-size:.68rem;font-weight:800;padding:2px 9px;border-radius:11px;margin-bottom:.4rem}
+.fs.n .fa{background:var(--nano-bg);color:var(--nano)}.fs.p .fa{background:var(--pixel-bg);color:var(--pixel)}
+.fs.m .fa{background:var(--mine-bg);color:var(--mine)}.fs.u .fa{background:var(--uni-bg);color:var(--uni)}
+.fd{font-size:.78rem;color:#666;line-height:1.4}
+.fn2{margin-top:1.75rem;background:var(--cream);border-radius:13px;padding:1.05rem 1.3rem;border-left:4px solid var(--gold);font-size:.87rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:.65rem}
+.cb{background:linear-gradient(135deg,var(--ink),#1a2535);text-align:center;position:relative;overflow:hidden}
+.cb::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(247,201,72,.06),transparent 60%)}
+.cbi{position:relative;z-index:1;max-width:560px;margin:0 auto}
+.cbi h2{font-family:var(--fh);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:#fff;margin-bottom:.65rem;letter-spacing:-.5px}
+.cbi p{font-size:.95rem;color:rgba(255,255,255,.58);margin-bottom:1.6rem;line-height:1.7}.cbi p strong{color:var(--gold)}
+.cbb{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 </style>
 </head>
 <body>
+<nav><a href="index.html" class="nb">cre<span class="ai">AI</span>tors Club</a><ul class="nl"><li><a href="index.html" class="">Home</a></li><li><a href="levels.html" class="active">Levels</a></li><li><a href="quiz.html" class="cta">&#x2728; Find My Level</a></li><li><a href="pricing.html" class="">Pricing</a></li><li><a href="about.html" class="">About Us</a></li></ul></nav>
+<div class="ph"><h1>The <span>creAItors</span> Journey</h1><p>Four levels. One adventure. Enter at the level that matches your child&#x2019;s readiness &#x2014; not their age.</p></div>
 
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-brand">cre<span class="ai">AI</span>tors Club</a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="nano-tots.html">🔬 Nano Tots</a></li>
-    <li><a href="#quiz" class="cta">✨ Find My Level</a></li>
-  </ul>
-</nav>
-
-<!-- PAGE HERO -->
-<div class="pg-hero">
-  <h1>Your <span>creAItors</span> Journey</h1>
-  <p>Explore the four levels, understand what your child will experience at each stage, and find the perfect place to begin.</p>
-  <div class="pg-tabs">
-    <a href="#flow" class="ptab">🗺️ The Journey</a>
-    <a href="#levels" class="ptab">📚 Level Details</a>
-    <a href="#quiz" class="ptab active">✨ Find My Level</a>
+<section style="background:#fff"><div class="ctr">
+  <div class="rv"><p class="sl">The path</p><h2 class="sh">Not a ladder. A journey.</h2><p class="ss">Age suggestions are guides, not gates. Use our <a href="quiz.html" style="color:var(--gold);font-weight:800">Find My Level quiz</a> to find the perfect starting point.</p></div>
+  <div class="ft rv">
+    <div class="fs n"><div class="fi2">&#x1F52C;</div><div class="fn">Nano Tots</div><div class="fa">6+ &#x2027; Free</div><p class="fd">Patterns, sequences, ScratchJr. The invisible science behind AI.</p></div>
+    <div class="fs p"><div class="fi2">&#x1F9E9;</div><div class="fn">Pixel Blockers</div><div class="fa">7+ &#x2027; $5</div><p class="fd">Scratch games, logic, cybersecurity, first AI concepts.</p></div>
+    <div class="fs m"><div class="fi2">&#x26CF;&#xFE0F;</div><div class="fn">Minecrafters</div><div class="fa">8+ &#x2027; $10</div><p class="fd">Real AI tools, training data, bias, ethics, design thinking.</p></div>
+    <div class="fs u"><div class="fi2">&#x1F984;</div><div class="fn">Unicorns</div><div class="fa">9+ &#x2027; $15</div><p class="fd">Complex AI, investigation, capstone, graduation.</p></div>
   </div>
-</div>
+  <div class="fn2 rv">&#x1F4A1; <span><strong>Age is a guide, not a gate.</strong> Take our <a href="quiz.html" style="color:var(--gold);font-weight:800">Find My Level quiz</a> to get a personalised recommendation in 5 minutes.</span></div>
+</div></section>
 
-<!-- JOURNEY FLOW -->
-<section class="flow" id="flow">
-  <div class="container">
-    <div class="reveal">
-      <p class="sec-label">The Learning Journey</p>
-      <h2 class="sec-title">Not a ladder. A journey.</h2>
-      <p class="sec-sub">Children enter at the level that matches their readiness — not their age. Age suggestions are guides, not gates.</p>
-    </div>
-    <div class="flow-track reveal">
-      <div class="flow-step nano">
-        <div class="flow-icon">🔬</div>
-        <div class="flow-name">Nano Tots</div>
-        <div class="flow-age">6 and above</div>
-        <p class="flow-desc">The tiny invisible science behind AI. Patterns, sequences, ScratchJr stories.</p>
-      </div>
-      <div class="flow-step pixel">
-        <div class="flow-icon">🧩</div>
-        <div class="flow-name">Pixel Blockers</div>
-        <div class="flow-age">7 and above</div>
-        <p class="flow-desc">How parts make a picture. Scratch games, logic, cybersecurity, first AI concepts.</p>
-      </div>
-      <div class="flow-step mine">
-        <div class="flow-icon">⛏️</div>
-        <div class="flow-name">Minecrafters</div>
-        <div class="flow-age">8 and above</div>
-        <p class="flow-desc">Build and survive in AI. Real AI tools, training data, bias, ethics, design thinking.</p>
-      </div>
-      <div class="flow-step uni">
-        <div class="flow-icon">🦄</div>
-        <div class="flow-name">Unicorns</div>
-        <div class="flow-age">9 and above</div>
-        <p class="flow-desc">Create from pure imagination. Complex AI projects, investigation, capstone, graduation.</p>
-      </div>
-    </div>
-    <div class="flow-note reveal">
-      <span>💡</span>
-      <span><strong>Age is a guide, not a gate.</strong> A curious child who is ready can move through levels faster. A child new to computers starts at Nano Tots regardless of age. Use our <a href="#quiz" style="color:var(--gold);font-weight:800">Find My Level quiz</a> to find the perfect starting point.</span>
-    </div>
-  </div>
-</section>
+<section style="background:var(--cream)"><div class="ctr">
+  <div class="rv"><p class="sl">Level details</p><h2 class="sh">What happens at each level?</h2></div>
+  <div style="display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem">
+<a href="pricing.html#nano" class="lc n" id="nano"><div class="lct"><div class="lcg"></div><span class="lce">&#x1F52C;</span><div class="lcl">Level 0 &#x2027; Entry</div><div class="lcn">Nano Tots</div><div class="lca">6 and above &#x2027; Open entry &#x2027; No experience needed</div></div><div class="lcb"><p class="lcth">The tiny invisible science behind AI &#x2014; patterns, data, sequences, and the first ideas of how computers think.</p><ul class="lcul"><li>Patterns in nature, music, numbers</li><li>Machines follow instructions humans wrote</li><li>Sorting and classification</li><li>Cause and effect in technology</li><li>Computers as human-made tools</li><li>ScratchJr animated stories</li></ul></div><div class="lcf"><span class="lcpr">Free</span><span class="lcbt">Start free &#x2192;</span></div></a><a href="pricing.html#pixel" class="lc p" id="pixel"><div class="lct"><div class="lcg"></div><span class="lce">&#x1F9E9;</span><div class="lcl">Level 1</div><div class="lcn">Pixel Blockers</div><div class="lca">7 and above &#x2027; Builds on Nano Tots</div></div><div class="lcb"><p class="lcth">How parts make a picture &#x2014; computing foundations, game design, logic, and first AI concepts.</p><ul class="lcul"><li>Full Scratch &#x2014; sprites, events, loops</li><li>Game design: score, lives, timer, levels</li><li>Nested logic and boolean thinking</li><li>Cybersecurity and online safety</li><li>AI concepts introduced &#x2014; no tools yet</li><li>10 pioneer story lessons</li></ul></div><div class="lcf"><span class="lcpr">$5</span><span class="lcbt">Enrol &#x2192;</span></div></a><a href="pricing.html#mine" class="lc m" id="mine"><div class="lct"><div class="lcg"></div><span class="lce">&#x26CF;&#xFE0F;</span><div class="lcl">Level 2</div><div class="lcn">Minecrafters</div><div class="lca">8 and above &#x2027; Builds on Pixel Blockers</div></div><div class="lcb"><p class="lcth">How to build and survive in AI &#x2014; real AI tools, training data, bias, ethics, and design thinking.</p><ul class="lcul"><li>Teachable Machine &#x2014; image, sound, pose AI</li><li>ML4Kids &#x2014; text AI and NLP basics</li><li>Training data, bias, and fairness hands-on</li><li>Human-centred design thinking</li><li>AI in medicine, environment, creativity</li><li>Personal AI ethics framework</li></ul></div><div class="lcf"><span class="lcpr">$10</span><span class="lcbt">Enrol &#x2192;</span></div></a><a href="pricing.html#uni" class="lc u" id="uni"><div class="lct"><div class="lcg"></div><span class="lce">&#x1F984;</span><div class="lcl">Level 3 &#x2027; Graduation</div><div class="lcn">Unicorns</div><div class="lca">9 and above &#x2027; Builds on Minecrafters</div></div><div class="lcb"><p class="lcth">Creating from pure imagination &#x2014; complex AI, investigation, capstone, and Young AI Pioneer graduation.</p><ul class="lcul"><li>Complex multi-tool AI projects</li><li>AI science fair investigation</li><li>AI and the world: rights, planet, fairness</li><li>Capstone project for a real audience</li><li>AI advocacy and civic voice</li><li>Young AI Pioneer graduation &#x1F393;</li></ul></div><div class="lcf"><span class="lcpr">$15</span><span class="lcbt">Enrol &#x2192;</span></div></a>  </div>
+</div></section>
 
-<!-- LEVEL DETAILS -->
-<section class="levels-detail" id="levels">
-  <div class="container">
-    <div class="reveal">
-      <p class="sec-label">Level Details</p>
-      <h2 class="sec-title">What happens at each level?</h2>
-      <p class="sec-sub">High-level themes and what your child will experience — no curriculum jargon.</p>
-    </div>
-    <div class="ldet-grid">
-
-      <!-- NANO TOTS -->
-      <div class="ldet nano reveal">
-        <div class="ldet-left">
-          <div class="ldet-glow"></div>
-          <div>
-            <span class="ldet-em">🔬</span>
-            <div class="ldet-num">Level 0 · Entry Level</div>
-            <div class="ldet-name">Nano Tots</div>
-            <div class="ldet-age">🌱 6 and above · No experience needed</div>
-          </div>
-          <a href="nano-tots.html" class="ldet-link">View Full Curriculum →</a>
-        </div>
-        <div class="ldet-right">
-          <p class="ldet-theme">The tiny invisible science behind AI — patterns, data, signals, and the first ideas of how computers think.</p>
-          <div class="ldet-cols">
-            <div class="ldet-col">
-              <h4>What they explore</h4>
-              <ul>
-                <li>Patterns in nature, music, and numbers</li>
-                <li>How machines follow instructions</li>
-                <li>Sorting and classification</li>
-                <li>Cause and effect in technology</li>
-                <li>Computers as human-made tools</li>
-              </ul>
-            </div>
-            <div class="ldet-col">
-              <h4>What they create</h4>
-              <ul>
-                <li>ScratchJr animated stories</li>
-                <li>Original pattern designs</li>
-                <li>Step-by-step algorithms</li>
-                <li>Debugging challenges</li>
-                <li>Bee-Bot adventure maps</li>
-              </ul>
-            </div>
-          </div>
-          <div class="ldet-pills">
-            <span class="lpill">No prior knowledge</span>
-            <span class="lpill">50 weeks</span>
-            <span class="lpill">Open entry</span>
-            <span class="lpill">ScratchJr</span>
-            <span class="lpill">Unplugged activities</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- PIXEL BLOCKERS -->
-      <div class="ldet pixel reveal">
-        <div class="ldet-left">
-          <div class="ldet-glow"></div>
-          <div>
-            <span class="ldet-em">🧩</span>
-            <div class="ldet-num">Level 1</div>
-            <div class="ldet-name">Pixel Blockers</div>
-            <div class="ldet-age">🧩 7 and above · Builds on Nano Tots</div>
-          </div>
-          <a href="pixel-blockers.html" class="ldet-link">View Full Curriculum →</a>
-        </div>
-        <div class="ldet-right">
-          <p class="ldet-theme">How parts make a picture — the foundations of computing, game design, logic, and first encounters with AI concepts.</p>
-          <div class="ldet-cols">
-            <div class="ldet-col">
-              <h4>What they explore</h4>
-              <ul>
-                <li>Full Scratch — sprites, events, loops</li>
-                <li>Game design: score, lives, timer, levels</li>
-                <li>Nested logic and boolean thinking</li>
-                <li>Cybersecurity and online safety</li>
-                <li>What AI is — concepts only, no tools yet</li>
-              </ul>
-            </div>
-            <div class="ldet-col">
-              <h4>What they create</h4>
-              <ul>
-                <li>Complete playable games</li>
-                <li>Interactive stories</li>
-                <li>Sound-designed animations</li>
-                <li>A personal cybersecurity guide</li>
-                <li>An AI-inspired Scratch project</li>
-              </ul>
-            </div>
-          </div>
-          <div class="ldet-pills">
-            <span class="lpill">Scratch</span>
-            <span class="lpill">Game design</span>
-            <span class="lpill">50 weeks</span>
-            <span class="lpill">10 pioneer stories</span>
-            <span class="lpill">Assessment available</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- MINECRAFTERS -->
-      <div class="ldet mine reveal">
-        <div class="ldet-left">
-          <div class="ldet-glow"></div>
-          <div>
-            <span class="ldet-em">⛏️</span>
-            <div class="ldet-num">Level 2</div>
-            <div class="ldet-name">Minecrafters</div>
-            <div class="ldet-age">⛏️ 8 and above · Builds on Pixel Blockers</div>
-          </div>
-          <a href="minecrafters.html" class="ldet-link">View Full Curriculum →</a>
-        </div>
-        <div class="ldet-right">
-          <p class="ldet-theme">How to build and survive in AI — this is where AI becomes real. Children train actual models, experience bias, and build things that matter.</p>
-          <div class="ldet-cols">
-            <div class="ldet-col">
-              <h4>What they explore</h4>
-              <ul>
-                <li>Teachable Machine — image, sound, pose AI</li>
-                <li>ML4Kids — text AI and NLP basics</li>
-                <li>Training data, bias, and fairness</li>
-                <li>AI in medicine, environment, creativity</li>
-                <li>Human-centred design thinking</li>
-              </ul>
-            </div>
-            <div class="ldet-col">
-              <h4>What they create</h4>
-              <ul>
-                <li>Real trained AI models</li>
-                <li>AI-powered Scratch applications</li>
-                <li>A personal AI ethics framework</li>
-                <li>An AI capstone project</li>
-                <li>A human-centred design prototype</li>
-              </ul>
-            </div>
-          </div>
-          <div class="ldet-pills">
-            <span class="lpill">Teachable Machine</span>
-            <span class="lpill">ML4Kids</span>
-            <span class="lpill">50 weeks</span>
-            <span class="lpill">🇨🇦 Canadian AI</span>
-            <span class="lpill">Assessment available</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- UNICORNS -->
-      <div class="ldet uni reveal">
-        <div class="ldet-left">
-          <div class="ldet-glow"></div>
-          <div>
-            <span class="ldet-em">🦄</span>
-            <div class="ldet-num">Level 3 · Graduation</div>
-            <div class="ldet-name">Unicorns</div>
-            <div class="ldet-age">🦄 9 and above · Builds on Minecrafters</div>
-          </div>
-          <a href="ai-unicorns.html" class="ldet-link">View Full Curriculum →</a>
-        </div>
-        <div class="ldet-right">
-          <p class="ldet-theme">Creating from pure imagination — the graduation level. Children build ambitious AI projects, investigate real questions, and graduate as Young AI Pioneers.</p>
-          <div class="ldet-cols">
-            <div class="ldet-col">
-              <h4>What they explore</h4>
-              <ul>
-                <li>Complex multi-tool AI projects</li>
-                <li>Scientific investigation of AI questions</li>
-                <li>AI and the world — rights, planet, fairness</li>
-                <li>Capstone project — build something real</li>
-                <li>AI advocacy and civic voice</li>
-              </ul>
-            </div>
-            <div class="ldet-col">
-              <h4>What they create</h4>
-              <ul>
-                <li>A gesture, voice, or text-controlled AI project</li>
-                <li>An AI science fair investigation</li>
-                <li>A letter to a real decision-maker</li>
-                <li>A capstone project for a real audience</li>
-                <li>A 4-level portfolio — their whole journey</li>
-              </ul>
-            </div>
-          </div>
-          <div class="ldet-pills">
-            <span class="lpill">Graduation level</span>
-            <span class="lpill">50 weeks</span>
-            <span class="lpill">Young AI Pioneer certificate</span>
-            <span class="lpill">Assessment available</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- QUIZ SECTION -->
-<section class="quiz-sec" id="quiz">
-  <div class="container">
-    <div class="reveal">
-      <p class="sec-label">Find My Level</p>
-      <h2 class="sec-title" style="color:#fff">Which level is right<br>for your child?</h2>
-      <p class="sec-sub">15 concept-based questions per quiz. No right or wrong answers — just a friendly recommendation. Any child can start anywhere!</p>
-    </div>
-    <div class="quiz-chooser reveal">
-
-      <div class="qchoice nano-open">
-        <span class="qem">🔬</span>
-        <h3>Nano Tots</h3>
-        <p class="qsub">Open entry — no quiz needed! Every child is welcome here. Curiosity is the only requirement.</p>
-        <a href="nano-tots.html" class="qbtn">Start here →</a>
-      </div>
-
-      <div class="qchoice pixel" onclick="startQuiz('pixel')">
-        <span class="qem">🧩</span>
-        <h3>Pixel Blockers</h3>
-        <p class="qsub">15 questions testing Nano Tots concepts. Find out if your child is ready for Level 1!</p>
-        <span class="qbtn">Take the quiz →</span>
-      </div>
-
-      <div class="qchoice mine" onclick="startQuiz('mine')">
-        <span class="qem">⛏️</span>
-        <h3>Minecrafters</h3>
-        <p class="qsub">15 questions testing Pixel Blockers concepts. See if Level 2 is the right challenge!</p>
-        <span class="qbtn">Take the quiz →</span>
-      </div>
-
-      <div class="qchoice uni">
-        <span class="qem">🦄</span>
-        <h3>Unicorns</h3>
-        <p class="qsub">Complete Minecrafters first — the Unicorns assessment is built into that level's curriculum page.</p>
-        <span class="qbtn">View in Minecrafters →</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="foot-inner">
-    <div class="foot-brand">cre<span class="ai">AI</span>tors Club™</div>
-    <p>© 2025 creAItors Club. All rights reserved.</p>
-    <div class="foot-links">
-      <a href="index.html">Home</a>
-      <a href="nano-tots.html">Nano Tots</a>
-      <a href="pixel-blockers.html">Pixel Blockers</a>
-      <a href="minecrafters.html">Minecrafters</a>
-      <a href="ai-unicorns.html">Unicorns</a>
-    </div>
-  </div>
-</footer>
-
-<!-- QUIZ MODAL -->
-<div class="quiz-overlay" id="quizOverlay">
-  <div class="quiz-box" id="quizBox">
-    <div class="quiz-header">
-      <h2 id="quizTitle">Find My Level</h2>
-      <button class="quiz-close" onclick="closeQuiz()">✕</button>
-    </div>
-    <div class="quiz-prog-wrap">
-      <div class="quiz-prog-bar"><div class="quiz-prog-fill" id="progFill" style="width:0%"></div></div>
-      <div class="quiz-prog-label" id="progLabel">Question 1 of 15</div>
-    </div>
-    <div class="quiz-body" id="quizBody">
-      <!-- question injected here -->
-    </div>
-    <div class="quiz-footer">
-      <button class="quiz-skip" onclick="skipQ()">Skip this question</button>
-      <button class="quiz-next" id="nextBtn" onclick="nextQ()">Next →</button>
-    </div>
-    <div class="quiz-result" id="quizResult"></div>
-  </div>
-</div>
-
-<script>
-const QUIZZES = {
-  pixel: {
-    title: '🧩 Pixel Blockers Entry Quiz',
-    color: '#ff6b6b',
-    questions: [
-      {
-        q: 'Look at this sequence: 🔴🔵🔴🔵🔴 — What comes next?',
-        hint: 'Think about what rule the pattern follows.',
-        opts: ['🔵 Blue circle','🔴 Red circle','⭐ Star','🟢 Green circle'],
-        correct: 0, points: 1
-      },
-      {
-        q: 'A robot needs to make toast. Which step comes FIRST?',
-        hint: 'Think about what has to happen before anything else.',
-        opts: ['Push down the toaster lever','Put bread in the toaster','Eat the toast','Spread butter on the toast'],
-        correct: 1, points: 1
-      },
-      {
-        q: 'Can a computer feel happy?',
-        hint: 'Think about what makes humans different from machines.',
-        opts: [
-          'Yes — computers have feelings just like us',
-          'No — computers follow instructions but cannot feel',
-          'Only if someone programs them to',
-          'Yes — AI is almost human'
-        ],
-        correct: 1, points: 1
-      },
-      {
-        q: 'What does IPO stand for in computing?',
-        hint: 'Every computer system has three parts.',
-        opts: [
-          'Internet, Program, Output',
-          'Input, Process, Output',
-          'Inside, Print, Open',
-          'Image, Pattern, Order'
-        ],
-        correct: 1, points: 1
-      },
-      {
-        q: 'Which of these is a PATTERN?',
-        hint: 'A pattern has a rule that repeats.',
-        opts: [
-          '🐱🌮🎸🍕🚀 — these random things',
-          '1 2 3 4 5 6 7 — counting up by one each time',
-          'Monday, then lunch, then a nap',
-          'Anything colourful'
-        ],
-        correct: 1, points: 1
-      },
-      {
-        q: 'You give a robot the wrong instruction. What happens?',
-        hint: 'Think about how machines follow instructions.',
-        opts: [
-          'The robot figures out the right thing to do',
-          'The robot asks you to try again',
-          'The robot does the wrong thing — exactly as told',
-          'The robot stops and waits'
-        ],
-        correct: 2, points: 1
-      },
-      {
-        q: 'What is debugging?',
-        hint: 'Grace Hopper found the first computer bug in 1947!',
-        opts: [
-          'Adding insects to a computer',
-          'Finding and fixing mistakes in instructions',
-          'Making a program go faster',
-          'Cleaning the keyboard'
-        ],
-        correct: 1, points: 1
-      },
-      {
-        q: 'A washing machine takes dirty clothes, washes them, and gives you clean clothes. What is the "process" part?',
-        hint: 'Think about Input → Process → Output.',
-        opts: [
-          'The dirty clothes going in',
-          'The clean clothes coming out',
-          'The washing and spinning inside',
-          'The soap powder'
-        ],
-        correct: 2, points: 1
-      },
-      {
-        q: 'Have you ever used ScratchJr or Scratch to make something?',
-        hint: 'Be honest — this helps us find the right level for you!',
-        opts: [
-          'Yes — I have made projects with ScratchJr or Scratch',
-          'I have tried it a little bit',
-          'I have seen it but not used it',
-          'No — I have never used either'
-        ],
-        correct: 0, points: 1
-      },
-      {
-        q: 'What is a LOOP in computing?',
-        hint: 'Think about something that repeats.',
-        opts: [
-          'A circle you draw on screen',
-          'An instruction that repeats over and over',
-          'A mistake in your code',
-          'A type of computer'
-        ],
-        correct: 1, points: 1
-      },
-      {
-        q: 'Why is it important to have a strong password?',
-        hint: 'Think about what a password protects.',
-        opts: [
-          'Because computers like long words',
-          'To protect your personal information from others',
-          'Because short passwords do not work',
-          'So you can remember it more easily'
-        ],
-        correct: 1, points: 1
-      },
-      {
-        q: 'IF it is raining THEN bring an umbrella. What kind of thinking is this?',
-        hint: 'This is one of the most important ideas in computing!',
-        opts: [
-          'Pattern thinking',
-          'Sorting thinking',
-          'If-then conditional thinking',
-          'Loop thinking'
-        ],
-        correct: 2, points: 1
-      },
-      {
-        q: 'What makes a game FUN? Pick the best answer.',
-        hint: 'Think about the four pillars of game design.',
-        opts: [
-          'Good graphics only',
-          'Rules, a goal, challenge, and feedback working together',
-          'Being very easy to win',
-          'Having lots of colours'
-        ],
-        correct: 1, points: 1
-      },
-      {
-        q: 'A computer program always does the SAME thing when you give it the SAME input. AI is different because...',
-        hint: 'This is the key difference between a program and AI.',
-        opts: [
-          'AI is always faster than regular programs',
-          'AI learns from examples and can improve over time',
-          'AI has feelings and makes choices',
-          'AI is just a very big program'
-        ],
-        correct: 1, points: 1
-      },
-      {
-        q: 'If you built a game and a friend could not figure out how to play — what would you do first?',
-        hint: 'Think like a game designer!',
-        opts: [
-          'Tell them they are doing it wrong',
-          'Blame the game for being bad',
-          'Watch how they play and find out what confused them',
-          'Make the game easier by removing the challenge'
-        ],
-        correct: 2, points: 1
-      }
-    ],
-    result(score) {
-      if (score >= 12) return {
-        level: 'pixel', emoji: '🧩', name: 'Pixel Blockers',
-        msg: 'Amazing! You already know the core ideas from Nano Tots really well. You are ready to jump straight into Pixel Blockers — game design, Scratch, and your first taste of AI await!',
-        link: 'pixel-blockers.html', linkText: 'Start Pixel Blockers →'
-      };
-      if (score >= 7) return {
-        level: 'pixel', emoji: '🧩', name: 'Pixel Blockers',
-        msg: 'Great foundation! You have got some solid understanding of the basics. Starting at Pixel Blockers from the beginning will fill in any gaps and set you up perfectly.',
-        link: 'pixel-blockers.html', linkText: 'Start Pixel Blockers →'
-      };
-      return {
-        level: 'nano', emoji: '🔬', name: 'Nano Tots',
-        msg: 'Everyone starts somewhere! Nano Tots is the perfect place to build a really solid foundation. You will be amazed how quickly it all clicks into place.',
-        link: 'nano-tots.html', linkText: 'Start Nano Tots →'
-      };
-    }
-  },
-
-  mine: {
-    title: '⛏️ Minecrafters Entry Quiz',
-    color: '#5b8dee',
-    questions: [
-      {
-        q: 'In a game, what is a SCORE and why does it change?',
-        hint: 'Think about what a variable does.',
-        opts: [
-          'A score is a fixed number that never changes',
-          'A score is a variable — a number that tracks something and updates when events happen',
-          'A score is just decoration — it does not affect the game',
-          'A score is the name of the player'
-        ],
-        correct: 1, points: 1
-      },
-      {
-        q: 'If a character touches a wall, it bounces back. What kind of thinking created this rule?',
-        hint: 'IF something happens THEN something else happens.',
-        opts: [
-          'Loop thinking — it keeps repeating',
-          'Pattern thinking — it follows a visual rule',
-          'Conditional thinking — IF this THEN that',
-          'Debugging thinking — fixing a mistake'
-        ],
-        correct: 2, points: 1
-      },
-      {
-        q: 'In Scratch, what is a LOOP used for?',
-        hint: 'Think about what would happen without a loop.',
-        opts: [
-          'Making the sprite bigger',
-          'Making the game over',
-          'Repeating instructions without writing them out over and over',
-          'Connecting two sprites together'
-        ],
-        correct: 2, points: 1
-      },
-      {
-        q: 'What makes a game FAIR or UNFAIR?',
-        hint: 'Think about the rules and whether everyone has the same chance.',
-        opts: [
-          'A game is fair when the player always wins',
-          'A game is fair when the rules are consistent and everyone has the same chance to succeed',
-          'A game is fair when it is easy enough for everyone',
-          'Fairness does not matter in games'
-        ],
-        correct: 1, points: 1
-      },
-      {
-        q: 'You have built a Scratch game. A classmate plays it and gets confused at the start. What do you do?',
-        hint: 'Think like a designer — not a defender!',
-        opts: [
-          'Explain that your game is correct and they are doing it wrong',
-          'Add a title screen and simple instructions to help players understand',
-          'Make the game easier so nobody gets confused',
-          'Nothing — it is their problem'
-        ],
-        correct: 1, points: 1
-      },
-      {
-        q: 'Your code makes a character go the wrong way. What do you do FIRST?',
-        hint: 'Think systematically!',
-        opts: [
-          'Delete everything and start again',
-          'Ask a friend to fix it for me',
-          'Check the motion blocks and test one change at a time to find the problem',
-          'Ignore it and hope it fixes itself'
-        ],
-        correct: 2, points: 1
-      },
-      {
-        q: 'What is the key difference between a normal computer program and AI?',
-        hint: 'Think about how each one gets its instructions.',
-        opts: [
-          'AI is faster than normal programs',
-          'Normal programs follow fixed rules; AI learns new rules from examples',
-          'AI is always connected to the internet',
-          'There is no real difference'
-        ],
-        correct: 1, points: 1
-      },
-      {
-        q: 'Why is it important to have strong, different passwords for different accounts?',
-        hint: 'Think about what happens if one password is stolen.',
-        opts: [
-          'It is not important — passwords do not matter much',
-          'Strong different passwords protect each account — if one is stolen, others stay safe',
-          'It is important so you can remember them all easily',
-          'Only important for adults'
-        ],
-        correct: 1, points: 1
-      },
-      {
-        q: 'Have you ever used Scratch or ScratchJr to build a game or story?',
-        hint: 'Be honest — this helps us find your right level!',
-        opts: [
-          'Yes — I have built full games or stories with Scratch',
-          'I have tried Scratch or ScratchJr a few times',
-          'I have seen it but not really built anything',
-          'No — I have never used either'
-        ],
-        correct: 0, points: 1
-      },
-      {
-        q: 'What does AND do in programming logic?',
-        hint: 'Think about George Boole\'s three words.',
-        opts: [
-          'It adds two numbers together',
-          'It means EITHER condition can be true',
-          'It means BOTH conditions must be true at the same time',
-          'It connects two sprites'
-        ],
-        correct: 2, points: 1
-      },
-      {
-        q: 'If an AI is trained ONLY on pictures of cats, what happens when it sees a dog?',
-        hint: 'Think about what the AI has learned and what it has not.',
-        opts: [
-          'It correctly identifies the dog',
-          'It refuses to answer',
-          'It gets confused — it might call the dog a cat or be very unsure',
-          'It learns immediately that it is a dog'
-        ],
-        correct: 2, points: 1
-      },
-      {
-        q: 'What is TRAINING DATA for an AI?',
-        hint: 'Think about how AI learns.',
-        opts: [
-          'The computer that runs the AI',
-          'The examples the AI learns from to recognise patterns',
-          'The code that programs the AI',
-          'The output the AI produces'
-        ],
-        correct: 1, points: 1
-      },
-      {
-        q: 'What does it mean to design something for a REAL PERSON — not just yourself?',
-        hint: 'Think about human-centred design.',
-        opts: [
-          'Making it look nice for yourself',
-          'Talking to real users, understanding their needs, and designing to solve their actual problems',
-          'Building the most impressive version possible',
-          'Copying what already exists'
-        ],
-        correct: 1, points: 1
-      },
-      {
-        q: 'Every click, search, and post you make online leaves a trace. What is this called?',
-        hint: 'Imagine footprints in snow that cannot be erased.',
-        opts: [
-          'Your username',
-          'Your digital footprint',
-          'Your online history',
-          'Your cookie'
-        ],
-        correct: 1, points: 1
-      },
-      {
-        q: 'If AI makes a mistake that causes harm, who is responsible?',
-        hint: 'This is one of the most important questions in AI ethics!',
-        opts: [
-          'Nobody — AI makes its own decisions',
-          'Only the AI itself',
-          'The humans who built it, trained it, and decided to use it',
-          'The person who was harmed'
-        ],
-        correct: 2, points: 1
-      }
-    ],
-    result(score) {
-      if (score >= 12) return {
-        level: 'mine', emoji: '⛏️', name: 'Minecrafters',
-        msg: 'Impressive! You have got strong Pixel Blockers foundations. You are absolutely ready for Minecrafters — real AI tools, training data, and building things that matter!',
-        link: 'minecrafters.html', linkText: 'Start Minecrafters →'
-      };
-      if (score >= 7) return {
-        level: 'mine', emoji: '⛏️', name: 'Minecrafters',
-        msg: 'Good understanding! Starting Minecrafters from Week 1 will consolidate your knowledge and then take you into exciting new territory with real AI tools.',
-        link: 'minecrafters.html', linkText: 'Start Minecrafters →'
-      };
-      if (score >= 4) return {
-        level: 'pixel', emoji: '🧩', name: 'Pixel Blockers',
-        msg: 'You have some great ideas but a few more foundations would help. Pixel Blockers will build your Scratch skills and logic before you dive into real AI tools.',
-        link: 'pixel-blockers.html', linkText: 'Start Pixel Blockers →'
-      };
-      return {
-        level: 'nano', emoji: '🔬', name: 'Nano Tots',
-        msg: 'Let\'s build from the very beginning — the strongest programmers start with the strongest foundations! Nano Tots will set you up brilliantly for everything that follows.',
-        link: 'nano-tots.html', linkText: 'Start Nano Tots →'
-      };
-    }
-  }
-};
-
-let currentQuiz = null;
-let currentQ = 0;
-let score = 0;
-let answered = false;
-
-function startQuiz(type) {
-  currentQuiz = type;
-  currentQ = 0;
-  score = 0;
-  answered = false;
-  document.getElementById('quizTitle').textContent = QUIZZES[type].title;
-  document.getElementById('progFill').style.background = QUIZZES[type].color;
-  document.getElementById('quizResult').style.display = 'none';
-  document.getElementById('quizBody').style.display = 'block';
-  document.querySelector('.quiz-footer').style.display = 'flex';
-  document.getElementById('quizOverlay').classList.add('open');
-  renderQ();
-}
-
-function closeQuiz() {
-  document.getElementById('quizOverlay').classList.remove('open');
-}
-
-function renderQ() {
-  const q = QUIZZES[currentQuiz].questions[currentQ];
-  const total = QUIZZES[currentQuiz].questions.length;
-  answered = false;
-  document.getElementById('nextBtn').classList.remove('show');
-  document.getElementById('progFill').style.width = ((currentQ / total) * 100) + '%';
-  document.getElementById('progLabel').textContent = 'Question ' + (currentQ + 1) + ' of ' + total;
-  document.getElementById('quizBody').innerHTML =
-    '<div class="quiz-q-num">Question ' + (currentQ + 1) + ' of ' + total + '</div>' +
-    '<div class="quiz-q-text">' + q.q + '</div>' +
-    '<div class="quiz-q-hint">' + q.hint + '</div>' +
-    '<div class="quiz-opts">' +
-    q.opts.map((opt, i) =>
-      '<button class="qopt" onclick="selectOpt(this,' + i + ',' + q.correct + ',' + q.points + ')">' +
-      '<span class="opt-icon">' + ['🅐','🅑','🅒','🅓'][i] + '</span>' + opt + '</button>'
-    ).join('') +
-    '</div>';
-}
-
-function selectOpt(el, idx, correct, pts) {
-  if (answered) return;
-  answered = true;
-  const opts = document.querySelectorAll('.qopt');
-  opts.forEach((o, i) => {
-    if (i === correct) o.classList.add('correct');
-    else if (i === idx && idx !== correct) o.classList.add('wrong');
-    o.style.pointerEvents = 'none';
-  });
-  if (idx === correct) score += pts;
-  document.getElementById('nextBtn').classList.add('show');
-}
-
-function skipQ() {
-  if (!answered) {
-    answered = true;
-    nextQ();
-  }
-}
-
-function nextQ() {
-  currentQ++;
-  const total = QUIZZES[currentQuiz].questions.length;
-  if (currentQ >= total) {
-    showResult();
-  } else {
-    renderQ();
-  }
-}
-
-function showResult() {
-  const quiz = QUIZZES[currentQuiz];
-  const total = quiz.questions.length;
-  const pct = Math.round((score / total) * 100);
-  const res = quiz.result(score);
-  document.getElementById('quizBody').style.display = 'none';
-  document.querySelector('.quiz-footer').style.display = 'none';
-  document.getElementById('progFill').style.width = '100%';
-  document.getElementById('progLabel').textContent = 'Complete! Score: ' + score + '/' + total;
-
-  const levelColors = {nano:'#2ec4a9',pixel:'#ff6b6b',mine:'#5b8dee',uni:'#b97bff'};
-  const col = levelColors[res.level];
-
-  document.getElementById('quizResult').style.display = 'block';
-  document.getElementById('quizResult').innerHTML =
-    '<span class="result-em">' + res.emoji + '</span>' +
-    '<div class="result-title">Your recommended level is...</div>' +
-    '<div class="result-level ' + res.level + '">' + res.emoji + ' ' + res.name + '</div>' +
-    '<div class="result-score">You scored ' + score + ' out of ' + total + ' (' + pct + '%)</div>' +
-    '<div class="score-bar"><div class="score-fill" style="width:' + pct + '%;background:' + col + '"></div></div>' +
-    '<div class="result-msg">' + res.msg + '</div>' +
-    '<div class="result-btns">' +
-    '<a href="' + res.link + '" class="rbtn rbtn-primary">' + res.linkText + '</a>' +
-    '<button onclick="retakeQuiz()" class="rbtn rbtn-ghost">Try again ↺</button>' +
-    '</div>';
-}
-
-function retakeQuiz() {
-  startQuiz(currentQuiz);
-}
-
-// Close on overlay click
-document.getElementById('quizOverlay').addEventListener('click', function(e) {
-  if (e.target === this) closeQuiz();
-});
-
-// Scroll reveal
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-// Auto-open quiz if hash
-if (window.location.hash === '#quiz') {
-  document.querySelector('#quiz').scrollIntoView({ behavior: 'smooth' });
-}
-</script>
+<section class="cb"><div class="ctr"><div class="cbi rv">
+  <h2>Not sure where to start?</h2>
+  <p>Take our <strong>Find My Level quiz</strong> &#x2014; 15 questions, personalised recommendation, completely free.</p>
+  <div class="cbb"><a href="quiz.html" class="btn btn-gold">&#x2728; Find My Level</a><a href="pricing.html" class="btn btn-ghost">View Pricing &#x2192;</a></div>
+</div></div></section>
+<footer><div class="fi">
+  <div class="fbr">cre<span class="ai">AI</span>tors Club&#8482;<p>&copy; 2025 creAItors Club. All rights reserved.</p></div>
+  <div class="fc"><h4>Explore</h4><a href="levels.html">The Journey</a><a href="quiz.html">Find My Level</a><a href="pricing.html">Pricing</a><a href="about.html">About Us</a></div>
+  <div class="fc"><h4>Levels</h4><a href="levels.html#nano">&#x1F52C; Nano Tots &mdash; Free</a><a href="levels.html#pixel">&#x1F9E9; Pixel Blockers</a><a href="levels.html#mine">&#x26CF;&#xFE0F; Minecrafters</a><a href="levels.html#uni">&#x1F984; Unicorns</a></div>
+  <div class="fc"><h4>Connect</h4><a href="index.html#delivery">How It Works</a><a href="about.html#contact">Contact Us</a><a href="about.html#contact">School/Group</a><a href="pricing.html">Pricing</a></div>
+</div><div class="fb2">creAItors Club&#8482; &mdash; AI literacy for every child. Unauthorised reproduction prohibited.</div></footer>
+<script>const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("vis");obs.unobserve(x.target)}})},{threshold:.08});document.querySelectorAll(".rv").forEach(el=>obs.observe(el));</script>
 </body>
 </html>
