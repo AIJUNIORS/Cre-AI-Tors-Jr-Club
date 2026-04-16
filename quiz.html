@@ -131,7 +131,7 @@ footer{background:#080e14;color:rgba(255,255,255,.35);padding:2.5rem clamp(1rem,
 </style>
 </head>
 <body>
-<nav><a href="index.html" class="nb">cre<span class="ai">AI</span>tors Club</a><ul class="nl"><li><a href="index.html" class="">Home</a></li><li><a href="levels.html" class="">Levels</a></li><li><a href="quiz.html" class="cta">&#x2728; Find My Level</a></li><li><a href="pricing.html" class="">Pricing</a></li><li><a href="about.html" class="">About Us</a></li></ul></nav>
+<nav><a href="index.html" class="nb">cre<span class="ai">AI</span>tors Club</a><ul class="nl"><li><a href="index.html" class="">Home</a></li><li><a href="levels.html" class="">Levels</a></li><li><a href="quiz.html" class="cta">&#x2728; Find My Level</a></li><li><a href="pricing.html#fees">Pricing</a></li><li><a href="pricing.html#ways" class="">How to Join</a></li><li><a href="about.html" class="">About Us</a></li></ul></nav>
 <div class="ph"><h1>&#x2728; Find My <span>Level</span></h1><p>15 concept-based questions per quiz. No right or wrong answers. Just a personalised recommendation in 5 minutes.</p></div>
 
 <section class="qsec"><div class="ctr">
@@ -145,7 +145,7 @@ footer{background:#080e14;color:rgba(255,255,255,.35);padding:2.5rem clamp(1rem,
       <span class="qem">&#x1F52C;</span>
       <h3>Nano Tots</h3>
       <p class="qsb">Open entry &#x2014; no quiz needed! Every child is welcome. Curiosity is the only requirement. And it is free.</p>
-      <a href="pricing.html#nano" class="qbt">Start for free &#x2192;</a>
+      <a href="pricing.html" class="qbt">How to Join &#x2192;</a>
     </div>
     <div class="qch p" onclick="startQ('pixel')">
       <span class="qem">&#x1F9E9;</span>
@@ -193,7 +193,7 @@ footer{background:#080e14;color:rgba(255,255,255,.35);padding:2.5rem clamp(1rem,
     <div class="qres" id="qres"></div>
   </div>
 </div>
-<footer><div class="fi"><div class="fbr">cre<span class="ai">AI</span>tors Club&#8482;<p>&copy; 2025 creAItors Club. All rights reserved.</p></div><div class="fc"><h4>Explore</h4><a href="levels.html">The Journey</a><a href="quiz.html">Find My Level</a><a href="pricing.html">Pricing</a><a href="about.html">About Us</a></div><div class="fc"><h4>Levels</h4><a href="levels.html#nano">&#x1F52C; Nano Tots</a><a href="levels.html#pixel">&#x1F9E9; Pixel Blockers</a><a href="levels.html#mine">&#x26CF;&#xFE0F; Minecrafters</a><a href="levels.html#uni">&#x1F984; Unicorns</a></div><div class="fc"><h4>Connect</h4><a href="about.html#contact">Contact Us</a><a href="about.html#contact">School/Group</a><a href="pricing.html">Pricing</a></div></div><div class="fb2">creAItors Club&#8482; &mdash; AI literacy for every child.</div></footer><script>const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("vis");obs.unobserve(x.target)}})},{threshold:.08});document.querySelectorAll(".rv").forEach(el=>obs.observe(el));</script><script>
+<footer><div class="fi"><div class="fbr">cre<span class="ai">AI</span>tors Club&#8482;<p>&copy; 2025 creAItors Club. All rights reserved.</p></div><div class="fc"><h4>Explore</h4><a href="levels.html">The Journey</a><a href="quiz.html">Find My Level</a><a href="pricing.html#fees">Pricing</a><a href="pricing.html#ways">How to Join</a><a href="about.html">About Us</a></div><div class="fc"><h4>Levels</h4><a href="levels.html#nano">&#x1F52C; Nano Tots</a><a href="levels.html#pixel">&#x1F9E9; Pixel Blockers</a><a href="levels.html#mine">&#x26CF;&#xFE0F; Minecrafters</a><a href="levels.html#uni">&#x1F984; Unicorns</a></div><div class="fc"><h4>Connect</h4><a href="about.html#contact">Contact Us</a><a href="about.html#contact">School/Group</a><a href="pricing.html#fees">Pricing</a><a href="pricing.html#ways">How to Join</a></div></div><div class="fb2">creAItors Club&#8482; &mdash; AI literacy for every child.</div></footer><script>const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("vis");obs.unobserve(x.target)}})},{threshold:.08});document.querySelectorAll(".rv").forEach(el=>obs.observe(el));</script><script>
 const TIMER_SEC=30;let timerInt=null,timerLeft=0;
 function startTimer(){
   clearInterval(timerInt);timerLeft=TIMER_SEC;
@@ -231,9 +231,9 @@ pixel:{t:'\u{1F9E9} Pixel Blockers Entry Quiz',c:'#ff6b6b',q:[
 {q:'A computer program always does the same thing with the same input. AI is different because...',h:'This is the key difference between a program and AI.',o:['AI is always faster','AI learns from examples and can improve over time','AI has feelings','AI is just a very big program'],a:1,t:'AI vs program'},
 {q:'If you built a game and a friend could not figure out how to play \u2014 what would you do first?',h:'Think like a game designer!',o:['Tell them they are doing it wrong','Blame the game','Watch how they play and find what confused them','Make the game easier'],a:2,t:'Design thinking'}
 ],res(goods,bads){
-if(goods.length>=12)return{lk:'p',e:'\u{1F9E9}',n:'Pixel Blockers',m:'You have a strong understanding of the core ideas. You are ready to start Pixel Blockers \u2014 game design, Scratch, and your first taste of AI!',pl:'pricing.html#pixel',ll:'levels.html#pixel'};
-if(goods.length>=7)return{lk:'p',e:'\u{1F9E9}',n:'Pixel Blockers',m:'Good understanding of the basics. Starting Pixel Blockers will build on what you already know and fill in the gaps nicely.',pl:'pricing.html#pixel',ll:'levels.html#pixel'};
-return{lk:'n',e:'\u{1F52C}',n:'Nano Tots',m:'Nano Tots is the perfect place to build a really solid foundation \u2014 it is completely free and every child is welcome!',pl:'pricing.html#nano',ll:'levels.html#nano'};
+if(goods.length>=12)return{lk:'p',e:'\u{1F9E9}',n:'Pixel Blockers',m:'You have a strong understanding of the core ideas. You are ready to start Pixel Blockers \u2014 game design, Scratch, and your first taste of AI!',pl:'pricing.html',ll:'levels.html#pixel'};
+if(goods.length>=7)return{lk:'p',e:'\u{1F9E9}',n:'Pixel Blockers',m:'Good understanding of the basics. Starting Pixel Blockers will build on what you already know and fill in the gaps nicely.',pl:'pricing.html',ll:'levels.html#pixel'};
+return{lk:'n',e:'\u{1F52C}',n:'Nano Tots',m:'Nano Tots is the perfect place to build a really solid foundation \u2014 the community will help you find your path.',pl:'pricing.html',ll:'levels.html#nano'};
 }},
 mine:{t:'\u26CF\uFE0F Minecrafters Entry Quiz',c:'#5b8dee',q:[
 {q:'In a game, what is a SCORE and why does it change?',h:'Think about what a variable does.',o:['A score is a fixed number that never changes','A score is a variable \u2014 it tracks something and updates when events happen','A score is just decoration','A score is the name of the player'],a:1,t:'Variables'},
@@ -252,10 +252,10 @@ mine:{t:'\u26CF\uFE0F Minecrafters Entry Quiz',c:'#5b8dee',q:[
 {q:'Every click, search, and post online leaves a permanent trace. What is this called?',h:'Imagine footprints in snow.',o:['Your username','Your digital footprint','Your online history','Your cookie'],a:1,t:'Digital footprint'},
 {q:'If AI makes a mistake that causes harm, who is responsible?',h:'One of the most important questions in AI ethics!',o:['Nobody \u2014 AI makes its own decisions','Only the AI itself','The humans who built it, trained it, and deployed it','The person who was harmed'],a:2,t:'AI responsibility'}
 ],res(goods,bads){
-if(goods.length>=12)return{lk:'m',e:'\u26CF\uFE0F',n:'Minecrafters',m:'You have strong foundations across the key ideas. You are ready for Minecrafters \u2014 real AI tools, training data, and building things that actually matter!',pl:'pricing.html#mine',ll:'levels.html#mine'};
-if(goods.length>=7)return{lk:'m',e:'\u26CF\uFE0F',n:'Minecrafters',m:'Good understanding across the core concepts. Starting Minecrafters from the beginning will build on your strengths and fill in the gaps.',pl:'pricing.html#mine',ll:'levels.html#mine'};
-if(goods.length>=4)return{lk:'p',e:'\u{1F9E9}',n:'Pixel Blockers',m:'You have some great ideas already. Pixel Blockers will build your Scratch skills and logic so you are fully ready for real AI tools.',pl:'pricing.html#pixel',ll:'levels.html#pixel'};
-return{lk:'n',e:'\u{1F52C}',n:'Nano Tots',m:'The strongest builders start with the strongest foundations! Nano Tots is free and will set you up brilliantly for everything that follows.',pl:'pricing.html#nano',ll:'levels.html#nano'};
+if(goods.length>=12)return{lk:'m',e:'\u26CF\uFE0F',n:'Minecrafters',m:'You have strong foundations across the key ideas. You are ready for Minecrafters \u2014 real AI tools, training data, and building things that actually matter!',pl:'pricing.html',ll:'levels.html#mine'};
+if(goods.length>=7)return{lk:'m',e:'\u26CF\uFE0F',n:'Minecrafters',m:'Good understanding across the core concepts. Starting Minecrafters from the beginning will build on your strengths and fill in the gaps.',pl:'pricing.html',ll:'levels.html#mine'};
+if(goods.length>=4)return{lk:'p',e:'\u{1F9E9}',n:'Pixel Blockers',m:'You have some great ideas already. Pixel Blockers will build your Scratch skills and logic so you are fully ready for real AI tools.',pl:'pricing.html',ll:'levels.html#pixel'};
+return{lk:'n',e:'\u{1F52C}',n:'Nano Tots',m:'The strongest builders start with the strongest foundations! Nano Tots is free and will set you up brilliantly for everything that follows.',pl:'pricing.html',ll:'levels.html#nano'};
 }},
 uni:{t:'\u{1F984} Unicorns Entry Quiz',c:'#b97bff',q:[
 {q:'What is TRAINING DATA and why does it matter for AI?',h:'How does AI learn?',o:['The computer hardware running the AI','Examples the AI learns from to recognise patterns and make predictions','The code that programs the AI','The final output the AI produces'],a:1,t:'Training data'},
@@ -274,10 +274,10 @@ uni:{t:'\u{1F984} Unicorns Entry Quiz',c:'#b97bff',q:[
 {q:'AI art is created by learning from millions of human artworks. What is the ethical concern?',h:'Think about the artists whose work trained the AI.',o:['There is no ethical concern \u2014 AI art is just different','Artists whose work trained the AI were often not asked or paid','AI art is lower quality','People might confuse AI art with human art'],a:1,t:'AI ethics and art'},
 {q:'If you could build one AI tool for your community, what would guide your FIRST design decision?',h:'Think about what makes a project genuinely useful.',o:['What is most technically impressive','What tools are available','What real problem affects real people in your community and how AI could help','What would look best in a presentation'],a:2,t:'Community design thinking'}
 ],res(goods,bads){
-if(goods.length>=12)return{lk:'u',e:'\u{1F984}',n:'Unicorns',m:'You have strong understanding across the Minecrafters concepts. You are ready for Unicorns \u2014 complex AI projects, a real science fair investigation, and Young AI Pioneer graduation!',pl:'pricing.html#uni',ll:'levels.html#uni'};
-if(goods.length>=7)return{lk:'u',e:'\u{1F984}',n:'Unicorns',m:'Good foundations! Starting Unicorns from the beginning will consolidate your knowledge before pushing into the most ambitious AI projects in the curriculum.',pl:'pricing.html#uni',ll:'levels.html#uni'};
-if(goods.length>=4)return{lk:'m',e:'\u26CF\uFE0F',n:'Minecrafters',m:'You have great AI awareness. Minecrafters will give you the hands-on tool experience \u2014 real models, real data, real design thinking \u2014 that sets you up for Unicorns.',pl:'pricing.html#mine',ll:'levels.html#mine'};
-return{lk:'p',e:'\u{1F9E9}',n:'Pixel Blockers',m:'Strong foundations before tools make the best AI builders. Pixel Blockers builds your Scratch and logic skills so when you reach real AI tools, you are completely ready.',pl:'pricing.html#pixel',ll:'levels.html#pixel'};
+if(goods.length>=12)return{lk:'u',e:'\u{1F984}',n:'Unicorns',m:'You have strong understanding across the Minecrafters concepts. You are ready for Unicorns \u2014 complex AI projects, a real science fair investigation, and Young AI Pioneer graduation!',pl:'pricing.html',ll:'levels.html#uni'};
+if(goods.length>=7)return{lk:'u',e:'\u{1F984}',n:'Unicorns',m:'Good foundations! Starting Unicorns from the beginning will consolidate your knowledge before pushing into the most ambitious AI projects in the curriculum.',pl:'pricing.html',ll:'levels.html#uni'};
+if(goods.length>=4)return{lk:'m',e:'\u26CF\uFE0F',n:'Minecrafters',m:'You have great AI awareness. Minecrafters will give you the hands-on tool experience \u2014 real models, real data, real design thinking \u2014 that sets you up for Unicorns.',pl:'pricing.html',ll:'levels.html#mine'};
+return{lk:'p',e:'\u{1F9E9}',n:'Pixel Blockers',m:'Strong foundations before tools make the best AI builders. Pixel Blockers builds your Scratch and logic skills so when you reach real AI tools, you are completely ready.',pl:'pricing.html',ll:'levels.html#pixel'};
 }}};
 let cQ=null,cI=0,score=0,done=false,wrongs=[];
 function startQ(t){cQ=t;cI=0;score=0;done=false;wrongs=[];
@@ -332,7 +332,7 @@ function showRes(){
     '<div class="rlv '+r.lk+'">'+r.e+' '+r.n+'</div>'+
     '<div class="rmg">'+r.m+'</div>'+
     goodHTML+badHTML+
-    '<div class="rbt"><a href="'+r.pl+'" class="rb rb-gold" style="background:'+cols[r.lk]+';color:#fff">Enrol in '+r.n+' \u2192</a>'+
+    '<div class="rbt"><a href="'+r.pl+'" class="rb rb-gold" style="background:'+cols[r.lk]+';color:#fff">Find How to Join \u2192</a>'+
     '<a href="'+r.ll+'" class="rb rb-ghost">See Level Details</a>'+
     '<button onclick="retake()" class="rb rb-ghost">Try again \u21BA</button></div>';}
 function retake(){startQ(cQ);}

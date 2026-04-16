@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Pricing — creAItors Club</title>
-<meta name="description" content="Simple, honest pricing for every level of creAItors Club. Start free with Nano Tots.">
+<title>Course Fee, Your Way — creAItors Club</title>
+<meta name="description" content="Access to creAItors Club courses is earned through contribution. Find the path that works for you.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#0f1923;--cream:#fdf8f0;--gold:#f7c948;--nano:#2ec4a9;--pixel:#ff6b6b;--mine:#5b8dee;--uni:#b97bff;--nano-bg:#e6faf7;--pixel-bg:#fff0f0;--mine-bg:#eef2ff;--uni-bg:#f5eeff;--fh:'Baloo 2',cursive;--fb:'Nunito',sans-serif;--shadow:0 4px 24px rgba(0,0,0,.08);--shadow-lg:0 16px 48px rgba(0,0,0,.14)}
@@ -63,92 +63,307 @@ footer{background:#080e14;color:rgba(255,255,255,.35);padding:2.5rem clamp(1rem,
 .lc.m .lcbt{background:var(--mine-bg);color:var(--mine)}.lc.u .lcbt{background:var(--uni-bg);color:var(--uni)}
 
 
-.pgsec{background:var(--cream);padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,4rem)}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:1.15rem;margin-top:2.5rem;align-items:start}
-.pc{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);border:2px solid transparent;transition:transform .25s,box-shadow .25s;scroll-margin-top:80px}
-.pc:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.14)}
-.pc.n{border-color:var(--nano)}.pc.p{border-color:var(--pixel)}.pc.m{border-color:var(--mine)}.pc.u{border-color:var(--uni)}.pc.b{border-color:var(--gold);transform:scale(1.03)}
-.pc.b:hover{transform:scale(1.03) translateY(-5px)}
-.pct{padding:1.65rem 1.4rem 1.2rem;position:relative;overflow:hidden}
-.pc.n .pct{background:linear-gradient(145deg,#0a1a14,#0d2d24)}.pc.p .pct{background:linear-gradient(145deg,#1a0a0a,#2d1010)}
-.pc.m .pct{background:linear-gradient(145deg,#0a0f1a,#0f1a2f)}.pc.u .pct{background:linear-gradient(145deg,#120a1a,#1e0f30)}.pc.b .pct{background:linear-gradient(145deg,#1a1200,#2d2000)}
-.pcg{position:absolute;width:150px;height:150px;border-radius:50%;filter:blur(50px);opacity:.22;top:-25px;right:-25px}
-.pc.n .pcg{background:var(--nano)}.pc.p .pcg{background:var(--pixel)}.pc.m .pcg{background:var(--mine)}.pc.u .pcg{background:var(--uni)}.pc.b .pcg{background:var(--gold)}
-.pce{font-size:2.1rem;display:block;margin-bottom:.55rem;position:relative;z-index:1}
-.pcn{font-family:var(--fh);font-size:1.25rem;font-weight:900;color:#fff;position:relative;z-index:1;margin-bottom:.18rem}
-.pcl{font-size:.63rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;position:relative;z-index:1;display:block;margin-bottom:.65rem}
-.pc.n .pcl{color:var(--nano)}.pc.p .pcl{color:var(--pixel)}.pc.m .pcl{color:var(--mine)}.pc.u .pcl{color:var(--uni)}.pc.b .pcl{color:var(--gold)}
-.pcp{font-family:var(--fh);font-size:2.6rem;font-weight:900;position:relative;z-index:1;line-height:1}
-.pc.n .pcp{color:var(--nano)}.pc.p .pcp{color:var(--pixel)}.pc.m .pcp{color:var(--mine)}.pc.u .pcp{color:var(--uni)}.pc.b .pcp{color:var(--gold)}
-.pcper{font-size:.74rem;color:rgba(255,255,255,.42);font-weight:600;position:relative;z-index:1;display:block;margin-top:.18rem}
-.best{display:inline-block;background:var(--gold);color:var(--ink);font-size:.65rem;font-weight:800;padding:3px 9px;border-radius:9px;position:relative;z-index:1;margin-top:.55rem}
-.pcb{padding:1.4rem}
-.pcl2{list-style:none;display:flex;flex-direction:column;gap:.38rem;margin-bottom:1.15rem}
-.pcl2 li{font-size:.82rem;color:#555;padding-left:1.2rem;position:relative;line-height:1.5}
-.pcl2 li::before{content:'✓';position:absolute;left:0;font-weight:800}
-.pc.n .pcl2 li::before{color:var(--nano)}.pc.p .pcl2 li::before{color:var(--pixel)}.pc.m .pcl2 li::before{color:var(--mine)}.pc.u .pcl2 li::before{color:var(--uni)}.pc.b .pcl2 li::before{color:var(--gold)}
-.pcbtn{display:block;text-align:center;padding:10px 18px;border-radius:21px;font-family:var(--fb);font-size:.85rem;font-weight:800;text-decoration:none;transition:all .2s}
-.pc.n .pcbtn{background:var(--nano-bg);color:var(--nano)}.pc.p .pcbtn{background:var(--pixel-bg);color:var(--pixel)}
-.pc.m .pcbtn{background:var(--mine-bg);color:var(--mine)}.pc.u .pcbtn{background:var(--uni-bg);color:var(--uni)}.pc.b .pcbtn{background:var(--gold);color:var(--ink)}
-.pcbtn:hover{opacity:.85;transform:translateY(-2px)}
-.guar{background:#fff;border-radius:16px;padding:1.4rem 1.75rem;margin-top:1.75rem;display:flex;gap:.9rem;align-items:center;box-shadow:0 2px 16px rgba(0,0,0,.07);border-left:4px solid var(--gold)}
-.guar .gi{font-size:2.2rem;flex-shrink:0}
-.guar h4{font-family:var(--fh);font-size:.95rem;font-weight:800;color:var(--ink);margin-bottom:.28rem}
-.guar p{font-size:.82rem;color:#666;line-height:1.55}
-.faqsec{background:#fff;padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,4rem)}
+.ph{background:var(--ink);padding:clamp(3rem,7vw,5.5rem) clamp(1rem,5vw,4rem);text-align:center;position:relative;overflow:hidden}
+.ph::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,rgba(46,196,169,.1),transparent 55%)}
+.ph h1{font-family:var(--fh);font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:#fff;letter-spacing:-.5px;margin-bottom:.65rem;position:relative;z-index:1}
+.ph h1 span{color:var(--gold)}.ph p{font-size:1.05rem;color:rgba(255,255,255,.58);max-width:560px;margin:.5rem auto 0;line-height:1.7;position:relative;z-index:1}
+/* CARDS */
+.wsec{padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,4rem)}
+.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2.5rem}
+.cc{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
+.cc:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.14)}
+.cc-top{padding:2rem 1.75rem 1.5rem;position:relative;overflow:hidden}
+.cc.fee .cc-top{background:linear-gradient(145deg,#0a1a14,#0d2d24)}
+.cc.time .cc-top{background:linear-gradient(145deg,#1a1200,#2d2000)}
+.cc.idea .cc-top{background:linear-gradient(145deg,#0a0f1a,#0f1a2f)}
+.cc.grow .cc-top{background:linear-gradient(145deg,#120a1a,#1e0f30)}
+.cc-glow{position:absolute;width:200px;height:200px;border-radius:50%;filter:blur(65px);opacity:.25;top:-40px;right:-40px}
+.cc.fee .cc-glow{background:var(--nano)}.cc.time .cc-glow{background:var(--gold)}
+.cc.idea .cc-glow{background:var(--mine)}.cc.grow .cc-glow{background:var(--uni)}
+.cc-em{font-size:2.8rem;display:block;margin-bottom:.9rem;position:relative;z-index:1}
+.cc-head{font-family:var(--fh);font-size:1.4rem;font-weight:900;position:relative;z-index:1;margin-bottom:.35rem}
+.cc.fee .cc-head{color:var(--nano)}.cc.time .cc-head{color:var(--gold)}
+.cc.idea .cc-head{color:var(--mine)}.cc.grow .cc-head{color:var(--uni)}
+.cc-tag{display:inline-block;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;padding:3px 10px;border-radius:10px;position:relative;z-index:1}
+.cc.fee .cc-tag{background:rgba(46,196,169,.15);color:var(--nano)}
+.cc.time .cc-tag{background:rgba(247,201,72,.15);color:var(--gold)}
+.cc.idea .cc-tag{background:rgba(91,141,238,.15);color:var(--mine)}
+.cc.grow .cc-tag{background:rgba(185,123,255,.15);color:var(--uni)}
+.cc-body{padding:1.5rem 1.75rem;flex:1;display:flex;flex-direction:column}
+.cc-desc{font-size:.88rem;color:#555;line-height:1.65;margin-bottom:1.25rem;flex:1}
+.cc-what{background:var(--cream);border-radius:12px;padding:.85rem 1rem;margin-bottom:1.25rem}
+.cc-what h4{font-family:var(--fh);font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:#aaa;margin-bottom:.45rem}
+.cc-what ul{list-style:none;display:flex;flex-direction:column;gap:.3rem}
+.cc-what ul li{font-size:.82rem;color:#444;padding-left:1.3rem;position:relative;line-height:1.45}
+.cc-what ul li::before{position:absolute;left:0;font-weight:800;content:'✓'}
+.cc.fee .cc-what ul li::before{color:var(--nano)}.cc.time .cc-what ul li::before{color:var(--gold)}
+.cc.idea .cc-what ul li::before{color:var(--mine)}.cc.grow .cc-what ul li::before{color:var(--uni)}
+.cc-btn{display:block;text-align:center;padding:11px 20px;border-radius:22px;font-family:var(--fb);font-size:.88rem;font-weight:800;text-decoration:none;transition:all .2s}
+.cc.fee .cc-btn{background:var(--nano-bg);color:var(--nano)}
+.cc.time .cc-btn{background:#fff9e6;color:#7a5f00}
+.cc.idea .cc-btn{background:var(--mine-bg);color:var(--mine)}
+.cc.grow .cc-btn{background:var(--uni-bg);color:var(--uni)}
+.cc-btn:hover{opacity:.82;transform:translateY(-2px)}
+/* NANO OPEN */
+.nano-open{background:#fff;border-radius:18px;padding:1.5rem 2rem;margin-top:2rem;display:flex;gap:1rem;align-items:center;box-shadow:0 2px 16px rgba(0,0,0,.07);border-left:4px solid var(--nano)}
+.nano-open .ni{font-size:2.2rem;flex-shrink:0}
+.nano-open h4{font-family:var(--fh);font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:.28rem}
+.nano-open p{font-size:.84rem;color:#666;line-height:1.55}
+.nano-open a{display:inline-flex;align-items:center;gap:6px;margin-top:.6rem;font-size:.82rem;font-weight:800;color:var(--nano);text-decoration:none}
+/* INSTITUTIONAL */
+.inst-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:2.5rem}
+.ic2{background:var(--cream);border-radius:18px;padding:1.75rem;border-top:4px solid transparent;transition:transform .2s}
+.ic2:hover{transform:translateY(-3px)}
+.ic2.school{border-color:var(--mine)}.ic2.centre{border-color:var(--pixel)}
+.ic2 .ii{font-size:2rem;margin-bottom:.65rem;display:block}
+.ic2 h4{font-family:var(--fh);font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:.35rem}
+.ic2 p{font-size:.84rem;color:#666;line-height:1.55;margin-bottom:.85rem}
+.ic2 a{font-size:.82rem;font-weight:800;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:1px}
+/* SKILLS PARTNER */
+.sp-sec{background:var(--ink);padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,4rem);position:relative;overflow:hidden}
+.sp-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(247,201,72,.08),transparent 55%),radial-gradient(circle at 10% 80%,rgba(46,196,169,.07),transparent 50%)}
+.sp-inner{position:relative;z-index:1;max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+@media(max-width:720px){.sp-inner{grid-template-columns:1fr}}
+.sp-left h2{font-family:var(--fh);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;color:#fff;letter-spacing:-.5px;margin-bottom:.75rem}
+.sp-left h2 span{color:var(--gold)}
+.sp-left p{font-size:.95rem;color:rgba(255,255,255,.58);line-height:1.7;margin-bottom:1.5rem}
+.sp-skills{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem}
+.sp-tag{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:5px 14px;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.7)}
+.sp-right{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:2rem}
+.sp-right h4{font-family:var(--fh);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:1rem}
+.sp-right ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.sp-right ul li{font-size:.88rem;color:rgba(255,255,255,.7);padding-left:1.4rem;position:relative;line-height:1.5}
+.sp-right ul li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:800}
+/* FAQ */
+.faqsec{background:var(--cream);padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,4rem)}
 .faqlist{display:flex;flex-direction:column;gap:.7rem;max-width:700px;margin:2rem auto 0}
-.faqitem{border:1.5px solid #eee;border-radius:13px;overflow:hidden}
+.faqitem{border:1.5px solid #eee;border-radius:13px;overflow:hidden;background:#fff}
 .faqq{padding:.95rem 1.2rem;font-family:var(--fh);font-size:.9rem;font-weight:800;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:background .2s}
 .faqq:hover{background:var(--cream)}.faqq.open .arr{transform:rotate(180deg)}
 .arr{font-size:.9rem;transition:transform .25s;color:#bbb}
-.faqa{display:none;padding:0 1.2rem .95rem;font-size:.85rem;color:#666;line-height:1.65}
-.faqa.open{display:block}
-.cb2{background:linear-gradient(135deg,var(--ink),#1a2535);text-align:center;position:relative;overflow:hidden;padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,4rem)}
-.cb2::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(247,201,72,.06),transparent 60%)}
-.cb2 .cbi2{position:relative;z-index:1;max-width:540px;margin:0 auto}
-.cbi2 h2{font-family:var(--fh);font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;color:#fff;margin-bottom:.65rem;letter-spacing:-.5px}
-.cbi2 p{font-size:.95rem;color:rgba(255,255,255,.55);margin-bottom:1.65rem;line-height:1.7}.cbi2 p strong{color:var(--gold)}
-.cbb2{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.faqa{display:none;padding:0 1.2rem .95rem;font-size:.85rem;color:#666;line-height:1.65}.faqa.open{display:block}
+/* CTA */
+.jcta{background:linear-gradient(135deg,var(--ink),#1a2535);text-align:center;position:relative;overflow:hidden;padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,4rem)}
+.jcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(247,201,72,.06),transparent 60%)}
+.jcta-i{position:relative;z-index:1;max-width:560px;margin:0 auto}
+.jcta-i h2{font-family:var(--fh);font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;color:#fff;margin-bottom:.65rem;letter-spacing:-.5px}
+.jcta-i p{font-size:.97rem;color:rgba(255,255,255,.55);margin-bottom:1.65rem;line-height:1.7}.jcta-i p strong{color:var(--gold)}
+.jcbb{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 </style>
 </head>
 <body>
-<nav><a href="index.html" class="nb">cre<span class="ai">AI</span>tors Club</a><ul class="nl"><li><a href="index.html" class="">Home</a></li><li><a href="levels.html" class="">Levels</a></li><li><a href="quiz.html" class="cta">&#x2728; Find My Level</a></li><li><a href="pricing.html" class="active">Pricing</a></li><li><a href="about.html" class="">About Us</a></li></ul></nav>
-<div class="ph"><h1>Simple, Honest <span>Pricing</span></h1><p>Pay per level. Start free. Upgrade as your child grows. One-time payment, lifetime access. No subscriptions.</p></div>
+<nav><a href="index.html" class="nb">cre<span class="ai">AI</span>tors Club</a><ul class="nl"><li><a href="index.html" class="">Home</a></li><li><a href="levels.html" class="">Levels</a></li><li><a href="quiz.html" class="cta">&#x2728; Find My Level</a></li><li><a href="pricing.html#fees" class="">Pricing</a></li><li><a href="pricing.html#ways" class="active">How to Join</a></li><li><a href="about.html" class="">About Us</a></li></ul></nav>
+<!-- HERO -->
+<div class="ph">
+  <h1>Course Fee, <span>Your Way</span></h1>
+  <p>Access to creAItors Club courses is earned through contribution &#x2014; and contribution takes many forms. Find the path that works for you.</p>
+</div>
 
-<section class="pgsec"><div class="ctr">
-  <div class="rv" style="text-align:center;margin-bottom:2.5rem">
-    <p class="sl" style="display:inline-block">Choose a level</p>
-    <h2 class="sh">Start free. Grow at your pace.</h2>
-    <p class="ss" style="margin:0 auto">Every level is a complete 50-week curriculum. Pay once, access forever.</p>
+<!-- SECTION 1: FOUR WAYS -->
+<section class="wsec" id="ways" style="background:var(--cream)">
+  <div class="ctr">
+    <div class="rv" style="text-align:center;margin-bottom:.5rem"><p class="sl" style="display:inline-block">Four ways in</p></div>
+    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+      <h2 class="sh">Pay the course fee &#x2014; or contribute another way.</h2>
+      <p class="ss" style="margin:0 auto">Every path leads to the same place. Choose what works for your family.</p>
+    </div>
+    <div class="cg rv">
+
+      <!-- COURSE FEE -->
+      <div class="cc fee" id="fees">
+        <div class="cc-top">
+          <div class="cc-glow"></div>
+          <span class="cc-em">&#x1F4B0;</span>
+          <div class="cc-head">Course Fee</div>
+          <span class="cc-tag">Pay per level</span>
+        </div>
+        <div class="cc-body">
+          <p class="cc-desc">The most direct path. Pay for your child&#x2019;s level and get started right away. Fees are fair and kept accessible. Get in touch and we will share the details for your chosen level.</p>
+          <div class="cc-what">
+            <h4>What you receive</h4>
+            <ul>
+              <li>Full level access for your child</li>
+              <li>Complete 50-week curriculum and workbooks</li>
+              <li>Tutor support via Google Classroom and Meet</li>
+              <li>Your contribution helps keep the community running</li>
+            </ul>
+          </div>
+          <a href="about.html#contact" class="cc-btn">Get in touch &#x2192;</a>
+        </div>
+      </div>
+
+      <!-- GIVE YOUR TIME -->
+      <div class="cc time">
+        <div class="cc-top">
+          <div class="cc-glow"></div>
+          <span class="cc-em">&#x23F0;</span>
+          <div class="cc-head">Give your time</div>
+          <span class="cc-tag">2 weeks of sessions</span>
+        </div>
+        <div class="cc-body">
+          <p class="cc-desc">Volunteer at sessions, assist tutors, create content, help run events. Your hours make the community run. A minimum of two weeks of active participation earns your family&#x2019;s level access.</p>
+          <div class="cc-what">
+            <h4>What you receive</h4>
+            <ul>
+              <li>Full level access for your child</li>
+              <li>Volunteer recognition badge</li>
+              <li>Reference letter available on request</li>
+              <li>Community membership</li>
+            </ul>
+          </div>
+          <a href="about.html#contact" class="cc-btn">Express interest &#x2192;</a>
+        </div>
+      </div>
+
+      <!-- SHARE THE IDEA -->
+      <div class="cc idea">
+        <div class="cc-top">
+          <div class="cc-glow"></div>
+          <span class="cc-em">&#x1F3AC;</span>
+          <div class="cc-head">Share the idea</div>
+          <span class="cc-tag">1 week of content</span>
+        </div>
+        <div class="cc-body">
+          <p class="cc-desc">Create a short video covering one week of course content for our community channel. Ideas will be shared. Your contribution builds a library that inspires families everywhere &#x2014; and your name travels with it.</p>
+          <div class="cc-what">
+            <h4>What you receive</h4>
+            <ul>
+              <li>Full level access for your child</li>
+              <li>Named credit on the video</li>
+              <li>Featured on our community channel</li>
+              <li>Content creator recognition</li>
+            </ul>
+          </div>
+          <a href="about.html#contact" class="cc-btn">Start creating &#x2192;</a>
+        </div>
+      </div>
+
+      <!-- GROW THE COMMUNITY -->
+      <div class="cc grow">
+        <div class="cc-top">
+          <div class="cc-glow"></div>
+          <span class="cc-em">&#x1F91D;</span>
+          <div class="cc-head">Grow the community</div>
+          <span class="cc-tag">Community building</span>
+        </div>
+        <div class="cc-body">
+          <p class="cc-desc">Know a family who would love creAItors Club? Bring them in. Growing the community is one of the most powerful things you can do &#x2014; and the families you bring benefit too.</p>
+          <div class="cc-what">
+            <h4>What you receive</h4>
+            <ul>
+              <li>Level access for your child</li>
+              <li>Community builder recognition</li>
+              <li>The families you bring get a warm welcome</li>
+              <li>Growing your local AI literacy network</li>
+            </ul>
+          </div>
+          <a href="about.html#contact" class="cc-btn">Tell us who &#x2192;</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- NANO TOTS OPEN ENTRY -->
+    <div class="nano-open rv">
+      <div class="ni">&#x1F52C;</div>
+      <div>
+        <h4>Nano Tots is always open.</h4>
+        <p>Every child is welcome to begin with Nano Tots &#x2014; no contribution required. It is the starting point for every creAItors journey. When your family is ready to go further, one of the four paths above opens the next level.</p>
+        <a href="levels.html#nano">Explore Nano Tots &#x2192;</a>
+      </div>
+    </div>
   </div>
-  <div class="pgrid rv">
-<div class="pc n" id="n"><div class="pct"><div class="pcg"></div><span class="pce">&#x1F52C;</span><div class="pcn">Nano Tots</div><span class="pcl">Level 0 &#x2027; Entry</span><div class="pcp">Free</div><span class="pcper">Always free &#x2027; No card needed</span></div><div class="pcb"><ul class="pcl2"><li>Full 50-week curriculum</li><li>All ScratchJr activities</li><li>Unplugged learning games</li><li>Weekly workbook guidance</li><li>Google Classroom resources</li><li>Community access</li></ul><a href="about.html#contact" class="pcbtn">Get Started Free &#x2192;</a></div></div><div class="pc p" id="p"><div class="pct"><div class="pcg"></div><span class="pce">&#x1F9E9;</span><div class="pcn">Pixel Blockers</div><span class="pcl">Level 1</span><div class="pcp">$5</div><span class="pcper">One-time &#x2027; Lifetime access</span></div><div class="pcb"><ul class="pcl2"><li>Full 50-week curriculum</li><li>Scratch game design projects</li><li>10 pioneer story lessons</li><li>Cybersecurity module</li><li>Weekly workbooks</li><li>Google Classroom resources</li><li>Entry assessment quiz</li></ul><a href="about.html#contact" class="pcbtn">Enrol &#x2014; $5 &#x2192;</a></div></div><div class="pc b" id="b"><div class="pct"><div class="pcg"></div><span class="pce">&#x1F680;</span><div class="pcn">All Levels</div><span class="pcl">Complete Journey</span><div class="pcp">$25</div><span class="pcper">One-time &#x2027; All 4 levels forever</span><span class="best">&#x2B50; Save $5 &#x2014; Best Value</span></div><div class="pcb"><ul class="pcl2"><li>All 4 levels (200 weeks total)</li><li>Nano Tots through Unicorns</li><li>All projects, workbooks, quizzes</li><li>All Google Classroom resources</li><li>All 3 entry assessment quizzes</li><li>Priority tutor support</li><li>Young AI Pioneer graduation kit</li><li>4-level portfolio template</li></ul><a href="about.html#contact" class="pcbtn">Enrol &#x2014; $25 &#x2192;</a></div></div><div class="pc m" id="m"><div class="pct"><div class="pcg"></div><span class="pce">&#x26CF;&#xFE0F;</span><div class="pcn">Minecrafters</div><span class="pcl">Level 2</span><div class="pcp">$10</div><span class="pcper">One-time &#x2027; Lifetime access</span></div><div class="pcb"><ul class="pcl2"><li>Full 50-week curriculum</li><li>Teachable Machine projects</li><li>ML4Kids text AI module</li><li>Bias and fairness hands-on</li><li>Human-centred design unit</li><li>Canadian AI spotlight</li><li>Google Classroom resources</li><li>Entry assessment quiz</li></ul><a href="about.html#contact" class="pcbtn">Enrol &#x2014; $10 &#x2192;</a></div></div><div class="pc u" id="u"><div class="pct"><div class="pcg"></div><span class="pce">&#x1F984;</span><div class="pcn">Unicorns</div><span class="pcl">Level 3 &#x2027; Graduation</span><div class="pcp">$15</div><span class="pcper">One-time &#x2027; Lifetime access</span></div><div class="pcb"><ul class="pcl2"><li>Full 50-week curriculum</li><li>Complex multi-tool AI projects</li><li>AI science fair investigation</li><li>Capstone project guidance</li><li>AI advocacy module</li><li>Google Classroom resources</li><li>Young AI Pioneer certificate</li><li>Entry assessment quiz</li></ul><a href="about.html#contact" class="pcbtn">Enrol &#x2014; $15 &#x2192;</a></div></div>  </div>
-  <div class="guar rv"><div class="gi">&#x1F6E1;&#xFE0F;</div><div>
-    <h4>Not sure? Start with Nano Tots for free.</h4>
-    <p>Nano Tots is completely free &#x2014; no card, no commitment. Try the full first level with your child. If you love it, the next level is just $5. Nothing to cancel, nothing to lose.</p>
-  </div></div>
-</div></section>
+</section>
 
-<section class="faqsec"><div class="ctr">
-  <div class="rv" style="text-align:center;margin-bottom:.5rem"><p class="sl" style="display:inline-block">Questions</p></div>
-  <div class="rv" style="text-align:center;margin-bottom:1.5rem"><h2 class="sh">Common questions</h2></div>
-  <div class="faqlist rv">
-    <div class="faqitem"><div class="faqq" onclick="tFaq(this)">What is included in each level? <span class="arr">&#x25BC;</span></div><div class="faqa">Each level includes the full 50-week curriculum, weekly workbooks, lesson plans, all project resources, and Google Classroom materials. Pixel Blockers, Minecrafters, and Unicorns include the entry assessment quiz. Unicorns includes the Young AI Pioneer graduation certificate.</div></div>
-    <div class="faqitem"><div class="faqq" onclick="tFaq(this)">Do I need a tutor or can we do this at home? <span class="arr">&#x25BC;</span></div><div class="faqa">Both work well. Many families work through levels together at home &#x2014; self-paced, one lesson per week. If you prefer guided support, our tutors deliver sessions via Google Meet and track progress in Google Classroom. School and group delivery is also available &#x2014; contact us for details.</div></div>
-    <div class="faqitem"><div class="faqq" onclick="tFaq(this)">What devices and tools do we need? <span class="arr">&#x25BC;</span></div><div class="faqa">A tablet, laptop, or desktop with internet access. All tools used &#x2014; Scratch, ScratchJr, Teachable Machine, ML4Kids, and Google Classroom &#x2014; are completely free. No additional software purchases needed.</div></div>
-    <div class="faqitem"><div class="faqq" onclick="tFaq(this)">Is there a refund policy? <span class="arr">&#x25BC;</span></div><div class="faqa">Since Nano Tots is free, we encourage every family to start there before purchasing. If you purchase a level and are not satisfied within the first two weeks, contact us and we will work something out. Our goal is that every child succeeds.</div></div>
-    <div class="faqitem"><div class="faqq" onclick="tFaq(this)">Can my child skip levels? <span class="arr">&#x25BC;</span></div><div class="faqa">Yes &#x2014; that is exactly what the entry quiz is for. Take the quiz for any level and if your child demonstrates strong understanding of the prerequisite concepts, they can start at that level directly. Age is a guide, not a gate.</div></div>
-    <div class="faqitem"><div class="faqq" onclick="tFaq(this)">How long does each level take? <span class="arr">&#x25BC;</span></div><div class="faqa">Each level is 50 weeks &#x2014; roughly one school year at one lesson per week. Families working faster (2 lessons per week) can complete a level in about 6 months. Access is lifetime once purchased.</div></div>
-    <div class="faqitem"><div class="faqq" onclick="tFaq(this)">Is there a group or school discount? <span class="arr">&#x25BC;</span></div><div class="faqa">Yes &#x2014; we work with schools and community groups at custom rates. Contact us via the About page and we will respond within 48 hours.</div></div>
+<!-- SECTION 2: INSTITUTIONAL -->
+<section class="wsec" id="institutional" style="background:#fff">
+  <div class="ctr">
+    <div class="rv" style="max-width:640px;margin-bottom:2.5rem">
+      <p class="sl">For institutions</p>
+      <h2 class="sh">Schools &amp; community centres</h2>
+      <p class="ss">Institutions are welcome to bring creAItors Club into their programs. We work with schools, libraries, and community centres on a program basis. Contact us to discuss what works for your setting.</p>
+    </div>
+    <div class="inst-grid rv">
+      <div class="ic2 school">
+        <span class="ii">&#x1F3EB;</span>
+        <h4>Schools &amp; Classrooms</h4>
+        <p>Program delivery for one class, one term. Full curriculum, tutor support, and progress reporting. Delivered via Google Classroom and Google Meet.</p>
+        <a href="about.html#contact">Contact us about school programs &#x2192;</a>
+      </div>
+      <div class="ic2 centre">
+        <span class="ii">&#x1F3D8;&#xFE0F;</span>
+        <h4>Community Centres &amp; Libraries</h4>
+        <p>Weekly sessions, full level delivery, community cohort approach. We bring the curriculum &#x2014; you bring the space and the families.</p>
+        <a href="about.html#contact">Contact us about community programs &#x2192;</a>
+      </div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<div class="cb2"><div class="cbi2 rv">
-  <h2>Not sure where to start?</h2>
-  <p>Take our <strong>Find My Level quiz</strong> &#x2014; free, 5 minutes, no account needed.</p>
-  <div class="cbb2"><a href="quiz.html" class="btn btn-gold">&#x2728; Find My Level</a><a href="levels.html" class="btn btn-ghost">Explore Levels &#x2192;</a></div>
-</div></div>
-<footer><div class="fi"><div class="fbr">cre<span class="ai">AI</span>tors Club&#8482;<p>&copy; 2025 creAItors Club. All rights reserved.</p></div><div class="fc"><h4>Explore</h4><a href="levels.html">The Journey</a><a href="quiz.html">Find My Level</a><a href="pricing.html">Pricing</a><a href="about.html">About Us</a></div><div class="fc"><h4>Levels</h4><a href="levels.html#nano">&#x1F52C; Nano Tots</a><a href="levels.html#pixel">&#x1F9E9; Pixel Blockers</a><a href="levels.html#mine">&#x26CF;&#xFE0F; Minecrafters</a><a href="levels.html#uni">&#x1F984; Unicorns</a></div><div class="fc"><h4>Connect</h4><a href="about.html#contact">Contact Us</a><a href="about.html#contact">School/Group</a><a href="pricing.html">Pricing</a></div></div><div class="fb2">creAItors Club&#8482; &mdash; AI literacy for every child.</div></footer><script>const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("vis");obs.unobserve(x.target)}})},{threshold:.08});document.querySelectorAll(".rv").forEach(el=>obs.observe(el));</script><script>function tFaq(el){const a=el.nextElementSibling,open=el.classList.contains('open');document.querySelectorAll('.faqq').forEach(q=>{q.classList.remove('open');q.nextElementSibling.classList.remove('open');});if(!open){el.classList.add('open');a.classList.add('open');}}
-const ph=window.location.hash;if(ph){const t=document.querySelector(ph);if(t)setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'center'}),200);}</script>
+<!-- SECTION 3: FAQ -->
+<section class="faqsec" id="faq">
+  <div class="ctr">
+    <div class="rv" style="text-align:center;margin-bottom:1.5rem">
+      <p class="sl" style="display:inline-block">Questions</p>
+      <h2 class="sh">How it works</h2>
+    </div>
+    <div class="faqlist rv">
+      <div class="faqitem"><div class="faqq" onclick="tFaq(this)">Does my child get access immediately? <span class="arr">&#x25BC;</span></div><div class="faqa">Nano Tots is open to every child right away &#x2014; no contribution needed. For other levels, access is confirmed once your contribution is agreed and underway. Contact us and we will sort it together, usually within a few days.</div></div>
+      <div class="faqitem"><div class="faqq" onclick="tFaq(this)">What does volunteering actually involve? <span class="arr">&#x25BC;</span></div><div class="faqa">Volunteering means actively participating in creAItors Club sessions for a minimum of two weeks. This could be assisting a tutor during a class, helping with session logistics, supporting content creation, or helping run a community event. We will agree the specifics with you before you begin.</div></div>
+      <div class="faqitem"><div class="faqq" onclick="tFaq(this)">What kind of content can I create? <span class="arr">&#x25BC;</span></div><div class="faqa">Content covers one week of our curriculum &#x2014; explaining a concept, walking through an activity, or demonstrating what children learn. We review all content before it goes live and will give you a clear brief. Your name and contribution are credited on the video.</div></div>
+      <div class="faqitem"><div class="faqq" onclick="tFaq(this)">How does community referral work? <span class="arr">&#x25BC;</span></div><div class="faqa">Tell a family about creAItors Club and let us know you referred them. When they get in touch and join the community, your referral is confirmed. Both families benefit &#x2014; you for bringing them, them for joining through someone they trust.</div></div>
+      <div class="faqitem"><div class="faqq" onclick="tFaq(this)">Can I combine contribution types? <span class="arr">&#x25BC;</span></div><div class="faqa">Absolutely. Families who contribute consistently across multiple forms become valued long-term community members &#x2014; and we recognise that in how we work with you. Get in touch and we will have a conversation about what makes sense.</div></div>
+      <div class="faqitem"><div class="faqq" onclick="tFaq(this)">What if our situation is complicated? <span class="arr">&#x25BC;</span></div><div class="faqa">Just contact us. We will have a real conversation. creAItors Club exists to make AI literacy accessible &#x2014; we will always find a way to make it work for families who are genuinely committed to being part of the community.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: SKILLS PARTNER -->
+<section class="sp-sec" id="skills-partner">
+  <div class="sp-inner">
+    <div class="sp-left rv">
+      <h2>Become a<br><span>Skills Partner</span></h2>
+      <p>Are you a designer, developer, marketer, writer, or educator? creAItors Club welcomes professional skills partnerships. Contribute your expertise to help build and grow the program &#x2014; and be recognised formally as a creAItors Club Skills Partner.</p>
+      <div class="sp-skills">
+        <span class="sp-tag">&#x1F3A8; Design</span>
+        <span class="sp-tag">&#x1F4BB; Development</span>
+        <span class="sp-tag">&#x1F4E3; Marketing</span>
+        <span class="sp-tag">&#x270F;&#xFE0F; Writing</span>
+        <span class="sp-tag">&#x1F9D1;&#x200D;&#x1F3EB; Education</span>
+        <span class="sp-tag">&#x1F4F8; Content</span>
+      </div>
+      <a href="about.html#contact" class="btn btn-gold">Become a Skills Partner &#x2192;</a>
+    </div>
+    <div class="sp-right rv">
+      <h4>What Skills Partners receive</h4>
+      <ul>
+        <li>Named on the creAItors Club website under Skills Partners</li>
+        <li>Portfolio credit &#x2014; formally recognised contribution</li>
+        <li>Full curriculum access for one child</li>
+        <li>Invited to provide input on program development</li>
+        <li>Part of something being built to last</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="jcta">
+  <div class="jcta-i rv">
+    <h2>Ready to join?</h2>
+    <p>Get in touch and tell us how you would like to contribute. <strong>No complicated process</strong> &#x2014; just a conversation.</p>
+    <div class="jcbb">
+      <a href="about.html#contact" class="btn btn-gold">Get in touch &#x2192;</a>
+      <a href="quiz.html" class="btn btn-ghost">&#x2728; Find My Level first</a>
+    </div>
+  </div>
+</div>
+<footer><div class="fi">
+<div class="fbr">cre<span class="ai">AI</span>tors Club&#8482;<p>&copy; 2025 creAItors Club. All rights reserved.</p></div>
+<div class="fc"><h4>Explore</h4><a href="levels.html">The Journey</a><a href="quiz.html">Find My Level</a><a href="pricing.html#fees">Pricing</a><a href="pricing.html#ways">How to Join</a><a href="about.html">About Us</a></div>
+<div class="fc"><h4>Levels</h4><a href="levels.html#nano">&#x1F52C; Nano Tots</a><a href="levels.html#pixel">&#x1F9E9; Pixel Blockers</a><a href="levels.html#mine">&#x26CF;&#xFE0F; Minecrafters</a><a href="levels.html#uni">&#x1F984; Unicorns</a></div>
+<div class="fc"><h4>Connect</h4><a href="index.html#delivery">How It Works</a><a href="about.html#contact">Contact Us</a><a href="about.html#contact">School / Group</a></div>
+</div><div class="fb2">creAItors Club&#8482; &mdash; AI literacy for every child. Powered by community.</div></footer>
+<script>const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("vis");obs.unobserve(x.target)}})},{threshold:.08});document.querySelectorAll(".rv").forEach(el=>obs.observe(el));</script><script>function tFaq(el){const a=el.nextElementSibling,o=el.classList.contains('open');document.querySelectorAll('.faqq').forEach(q=>{q.classList.remove('open');q.nextElementSibling.classList.remove('open')});if(!o){el.classList.add('open');a.classList.add('open');}}</script>
 </body>
 </html>
