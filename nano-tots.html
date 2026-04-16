@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="creAItors Club">
+<meta name="copyright" content="© 2025 creAItors Club — All Rights Reserved">
+<title>Nano Tots 🔬 — by creAItors Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   © 2025 creAItors Club — All Rights Reserved
+   Nano Tots · 6 and above · Entry Level
+   Unauthorised reproduction is prohibited.
+   ============================================================ */
+
+:root {
+  --ink:    #12243A;
+  --navy:   #1A2F50;
+  --teal:   #0B8A78;
+  --coral:  #E8593A;
+  --amber:  #F5A623;
+  --purple: #7B2FBE;
+  --blue:   #2176AE;
+  --gold:   #FFB703;
+  --bg:     #F3F6FB;
+  --card:   #FFFFFF;
+  --border: #DDE3EE;
+  --muted:  #556070;
+  --hint:   #8A95AD;
+  --lt:     #F8F9FC;
+  --u1c: #0B8A78; --u1l: #E0F5F2;
+  --u2c: #E8593A; --u2l: #FDECEA;
+  --u3c: #7B2FBE; --u3l: #F5EEF8;
+  --u4c: #2176AE; --u4l: #EBF5FF;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+/* ── WATERMARK BAR ─────────────────────────────────────────── */
+.wm-bar {
+  background: var(--navy);
+  color: rgba(255,255,255,.75);
+  text-align: center;
+  padding: 5px 1rem;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .7px;
+  position: sticky;
+  top: 0;
+  z-index: 300;
+  border-bottom: 3px solid var(--gold);
+  font-family: 'Nunito Sans', sans-serif;
+}
+.wm-bar span { color: var(--gold); }
+
+/* ── HERO ──────────────────────────────────────────────────── */
+.hero {
+  background: linear-gradient(150deg, #0d1e38 0%, #1A2F50 55%, #1a3e6e 100%);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 80% 20%, rgba(255,183,3,.07) 0%, transparent 60%),
+                    radial-gradient(circle at 10% 80%, rgba(11,138,120,.1) 0%, transparent 50%);
+}
+.hero-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2.5rem;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2rem;
+  align-items: center;
+}
+/* BRAND LOCKUP */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 1.2rem;
+}
+.brand-badge {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--gold) 0%, #e69b00 100%);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 20px rgba(255,183,3,.3);
+}
+.brand-text {}
+.brand-club {
+  font-family: 'Baloo 2', cursive;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+.brand-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 38px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.brand-title span {
+  color: var(--gold);
+}
+.brand-dot {
+  color: rgba(255,255,255,.4);
+  font-weight: 400;
+  font-size: 32px;
+  margin: 0 2px;
+}
+.brand-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,.65);
+  margin-bottom: 1.4rem;
+  line-height: 1.5;
+  max-width: 520px;
+}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 1.6rem;
+}
+.hbadge {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 20px;
+  padding: 4px 13px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+}
+/* HERO RIGHT — stats */
+.hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hstat {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.hstat-icon { font-size: 24px; flex-shrink: 0; }
+.hstat-n {
+  font-family: 'Baloo 2', cursive;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+}
+.hstat-l {
+  font-size: 11px;
+  color: rgba(255,255,255,.6);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  margin-top: 2px;
+}
+
+/* ── STICKY NAV ────────────────────────────────────────────── */
+.nav-wrap {
+  background: var(--card);
+  border-bottom: 1.5px solid var(--border);
+  position: sticky;
+  top: 29px;
+  z-index: 200;
+  box-shadow: 0 2px 12px rgba(0,0,0,.05);
+}
+.nav {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: .55rem 1.5rem;
+  flex-wrap: wrap;
+}
+.nav-btn {
+  padding: 7px 17px;
+  border-radius: 22px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  border: 2px solid var(--border);
+  background: var(--card);
+  color: var(--muted);
+  transition: all .15s;
+  font-family: 'Nunito', sans-serif;
+  white-space: nowrap;
+}
+.nav-btn:hover { background: var(--lt); transform: translateY(-1px); }
+.nav-btn.active { color: #fff !important; border-color: transparent !important; background: var(--navy) !important; }
+.nav-search {
+  margin-left: auto;
+  position: relative;
+}
+.nav-search svg {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: .45;
+}
+.search-inp {
+  padding: 7px 14px 7px 32px;
+  border-radius: 22px;
+  border: 1.5px solid var(--border);
+  font-size: 13px;
+  background: var(--lt);
+  color: var(--ink);
+  outline: none;
+  width: 230px;
+  font-family: 'Nunito Sans', sans-serif;
+  transition: border-color .15s;
+}
+.search-inp:focus { border-color: var(--navy); }
+
+/* ── MAIN LAYOUT ───────────────────────────────────────────── */
+.main { max-width: 1080px; margin: 0 auto; padding: 1.5rem; }
+
+/* ── ACADEMIC NOTE ─────────────────────────────────────────── */
+.acad-note {
+  background: #FFFCEC;
+  border: 2px solid var(--gold);
+  border-radius: 14px;
+  padding: 15px 20px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+}
+.acad-note h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #6A5000;
+  margin-bottom: 5px;
+}
+.acad-note p { font-size: 12.5px; color: #6A5200; line-height: 1.65; }
+.acad-note p strong { color: #3A2E00; }
+
+/* ── UNIT OVERVIEW TABS ────────────────────────────────────── */
+.unit-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+.utab {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all .15s;
+}
+.utab:hover, .utab.active { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(0,0,0,.12); }
+.utab-hdr {
+  padding: 12px 14px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.utab-icon { font-size: 20px; }
+.utab-name {
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.25;
+}
+.utab-body {
+  padding: 9px 14px 13px;
+  background: var(--card);
+}
+.utab-range {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  margin-bottom: 4px;
+}
+.utab-desc { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+
+/* ── WEEK LIST ─────────────────────────────────────────────── */
+.week-list { display: flex; flex-direction: column; gap: 8px; }
+.week-card {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: box-shadow .15s;
+}
+.week-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,.07); }
+.week-hdr {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 18px;
+  cursor: pointer;
+  user-select: none;
+}
+.week-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Baloo 2', cursive;
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+.week-info { flex: 1; min-width: 0; }
+.week-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14.5px;
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.week-meta { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.week-pill {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 4px 11px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  white-space: nowrap;
+}
+.week-chev {
+  font-size: 10px;
+  color: var(--hint);
+  transition: transform .2s;
+  flex-shrink: 0;
+  margin-left: 4px;
+}
+.week-chev.open { transform: rotate(90deg); }
+
+/* ── WEEK DETAIL ───────────────────────────────────────────── */
+.week-detail { display: none; border-top: 1px solid var(--border); }
+.week-detail.open { display: block; }
+.det-top { padding: 16px 18px 0; background: var(--lt); }
+.det-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.det-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 11px 14px;
+}
+.det-box.full { grid-column: 1 / -1; }
+.det-label {
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: var(--hint);
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--border);
+}
+.det-val { font-size: 12.5px; color: var(--ink); line-height: 1.6; }
+.det-box.gold  { background: #FFFBEE; border-color: #FFD166; }
+.det-box.green { background: #E0F5F2; border-color: #0B8A78; }
+.det-box.red   { background: #FFF0EE; border-color: #E8593A; }
+.det-box.purple{ background: #F5EEF8; border-color: #7B2FBE; }
+
+/* ── 7-DAY WORKBOOK TABS ───────────────────────────────────── */
+.wb-tabs {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+}
+.wb-tab {
+  padding: 9px 5px;
+  text-align: center;
+  cursor: pointer;
+  border-right: 1px solid var(--border);
+  transition: background .1s;
+  user-select: none;
+}
+.wb-tab:last-child { border-right: none; }
+.wb-tab:hover { background: var(--lt); }
+.wb-tab.active { background: var(--lt); border-bottom: 3px solid currentColor; }
+.wb-dn { font-size: 9.5px; font-weight: 800; font-family: 'Nunito', sans-serif; }
+.wb-di { font-size: 17px; margin: 3px 0; }
+.wb-dl { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .2px; }
+
+/* ── WORKBOOK BODY ─────────────────────────────────────────── */
+.wb-body { padding: 16px 18px; background: var(--lt); }
+.wb-goal {
+  border-radius: 10px;
+  padding: 11px 15px;
+  margin-bottom: 13px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+  border-left: 4px solid currentColor;
+}
+.wb-steps-title {
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: var(--hint);
+  margin-bottom: 9px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--border);
+}
+.wb-steps { list-style: none; margin-bottom: 13px; }
+.wb-step {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 7px 0;
+  border-bottom: 1px dotted var(--border);
+}
+.wb-step:last-child { border-bottom: none; }
+.wb-step-n {
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+  font-family: 'Nunito', sans-serif;
+  margin-top: 1px;
+}
+.wb-step-t { font-size: 13px; color: var(--ink); line-height: 1.55; }
+.wb-deliv {
+  border-radius: 10px;
+  padding: 11px 15px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  border-left: 3px solid currentColor;
+}
+.wb-excellence {
+  background: #FFFBEE;
+  border: 1px solid #FFD166;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #7A5F00;
+  margin-bottom: 10px;
+}
+.wb-res {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.wb-vocab { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.vocab-pill {
+  font-size: 10px;
+  padding: 2px 9px;
+  border-radius: 10px;
+  background: var(--border);
+  color: var(--muted);
+  font-weight: 700;
+}
+.wb-reflect {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 10px;
+}
+.wb-reflect-title {
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--hint);
+  margin-bottom: 9px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--border);
+}
+.wb-reflect-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px dotted var(--border);
+  font-size: 12px;
+}
+.wb-reflect-row:last-child { border-bottom: none; }
+.wb-reflect-label { font-weight: 700; color: var(--muted); min-width: 115px; flex-shrink: 0; }
+.wb-reflect-line { flex: 1; border-bottom: 1px solid var(--border); min-height: 20px; }
+
+/* ── PANEL VIEWS ───────────────────────────────────────────── */
+.panel { display: none; }
+.panel.open { display: block; }
+
+/* ML GRID */
+.ml-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.ml-card {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 13px;
+  padding: 16px 18px;
+  border-top: 4px solid var(--teal);
+}
+.ml-card-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--teal);
+  margin-bottom: 6px;
+}
+.ml-card-def { font-size: 13px; color: var(--ink); margin-bottom: 8px; line-height: 1.6; }
+.ml-card-ex {
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--lt);
+  border-radius: 8px;
+  padding: 8px 11px;
+  line-height: 1.55;
+}
+.ml-card-week { font-size: 10px; color: var(--hint); margin-top: 7px; font-weight: 700; }
+
+/* FRAMEWORK */
+.fw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.fw-card {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 13px;
+  padding: 16px 18px;
+}
+.fw-card h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--border);
+}
+.fw-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 5px 0;
+  font-size: 12px;
+  border-bottom: 1px dotted var(--border);
+}
+.fw-row:last-child { border-bottom: none; }
+.fw-row-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+.fw-row-text { color: var(--ink); line-height: 1.5; }
+.fw-row-text strong { color: var(--navy); }
+
+/* FOOTER */
+.footer {
+  background: var(--navy);
+  color: rgba(255,255,255,.65);
+  text-align: center;
+  padding: 18px 1rem;
+  font-size: 11px;
+  margin-top: 3rem;
+  border-top: 3px solid var(--gold);
+  line-height: 1.9;
+}
+.footer strong { color: var(--gold); }
+
+/* EMPTY */
+.empty { padding: 3rem; text-align: center; color: var(--muted); font-size: 14px; }
+
+/* RESPONSIVE */
+@media(max-width: 750px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: row; flex-wrap: wrap; }
+  .hstat { flex: 1 1 120px; }
+  .unit-tabs { grid-template-columns: 1fr 1fr; }
+  .det-grid, .fw-grid, .ml-grid { grid-template-columns: 1fr; }
+  .wb-tabs { grid-template-columns: repeat(4, 1fr); }
+  .week-pill { display: none; }
+  .brand-title { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- WATERMARK -->
+<div class="wm-bar" style="font-size:10.5px;padding:5px 1rem">&copy; 2025 <span>creAItors Club&trade;</span> &mdash; ALL RIGHTS RESERVED &nbsp;|&nbsp; <a href="index.html" style="color:#FFB703;text-decoration:none;font-weight:800">Home</a> &nbsp;|&nbsp; <span style="color:#34c7a0;font-weight:800">Nano Tots</span> &nbsp;|&nbsp; <a href="pixel-blockers.html" style="color:rgba(255,255,255,.55);text-decoration:none">Pixel Blockers</a> &nbsp;|&nbsp; <a href="minecrafters.html" style="color:rgba(255,255,255,.55);text-decoration:none">Minecrafters</a> &nbsp;|&nbsp; <a href="ai-unicorns.html" style="color:rgba(255,255,255,.55);text-decoration:none">Unicorns</a></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="brand">
+        <div class="brand-badge">🌱</div>
+        <div class="brand-text">
+          <div class="brand-club">creAItors Club™ · Level 0 - Entry</div>
+          <div class="brand-title">Nano<span class="brand-dot"> </span><span>Tots</span></div>
+        </div>
+      </div>
+      <div class="brand-sub">A complete 50-week AI literacy curriculum · 6 and above · Entry Level · One lesson per week · Seven days of structured practice · No prior knowledge needed.</div>
+      <div class="hero-badges">
+        <span class="hbadge">📅 50 Lessons · 50 Weeks · 1 School Year</span>
+        <span class="hbadge">👶 6 and above - Entry Level</span>
+        <span class="hbadge">🤖 10 ML Concepts Embedded</span>
+        <span class="hbadge">✅ ISTE · CSTA · UNESCO Aligned</span>
+        <span class="hbadge">⚖️ Ethics Every Week</span>
+        <span class="hbadge">🌍 Free Tools Only</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-icon">📅</div><div><div class="hstat-n">50</div><div class="hstat-l">Lessons</div></div></div>
+        <div class="hstat"><div class="hstat-icon">🧩</div><div><div class="hstat-n">4</div><div class="hstat-l">Units</div></div></div>
+        <div class="hstat"><div class="hstat-icon">📖</div><div><div class="hstat-n">7</div><div class="hstat-l">Days / Week</div></div></div>
+        <div class="hstat"><div class="hstat-icon">🤖</div><div><div class="hstat-n">10</div><div class="hstat-l">ML Concepts</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<div class="nav-wrap">
+  <div class="nav">
+    <button class="nav-btn active" id="btn-curriculum" onclick="showView('curriculum',this)">📚 Curriculum</button>
+    <button class="nav-btn" id="btn-workbook" onclick="showView('workbook',this)">📝 Workbooks</button>
+    <button class="nav-btn" id="btn-ml" onclick="showView('ml',this)">🤖 ML Concepts</button>
+    <button class="nav-btn" id="btn-framework" onclick="showView('framework',this)">🗺️ Framework</button>
+    <button class="nav-btn" onclick="showView('tutor',this)">&#x1F393; Tutor Guide</button>
+    <div class="nav-search">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input class="search-inp" id="search" placeholder="Search weeks, topics, tools…" oninput="renderWeeks()">
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- ACADEMIC STRUCTURE NOTE -->
+  <div class="acad-note">
+    <div style="font-size:26px;flex-shrink:0;margin-top:2px">📐</div>
+    <div>
+      <h3>Academic Structure — 50 Lessons = 50 Weeks = 1 School Year</h3>
+      <p><strong>200 lessons ÷ 4 levels = 50 lessons per level.</strong> 50 lessons × 1 lesson per week = <strong>50 weeks ≈ 1 full school year.</strong> Each week follows a 7-day workbook: Day 1 teaches ONE new concept (45–60 min), Days 2–7 provide six structured practice sessions reinforcing exactly that concept. This mirrors how rigorous academic curricula work — deep mastery of one concept per week beats shallow coverage of many. <strong>Nano Tots 🔬</strong> = 6 and above · <strong>Pixel Blockers 🧩</strong> = 7 and above · <strong>Minecrafters ⛏️</strong> = 8 and above · <strong>Unicorns 🦄</strong> = 9 and above.</p>
+    </div>
+  </div>
+
+  <!-- UNIT OVERVIEW TABS -->
+  <div class="unit-tabs" id="unit-tabs">
+    <div class="utab active" onclick="filterUnit(1,this)" style="border-color:#0B8A78">
+      <div class="utab-hdr" style="background:#0B8A78"><span class="utab-icon">⚙️</span><span class="utab-name">Machines &amp; Computing Foundations</span></div>
+      <div class="utab-body"><div class="utab-range">Weeks 1–10</div><div class="utab-desc">Machines, IPO model, input/output devices, cause-effect, systems thinking</div></div>
+    </div>
+    <div class="utab" onclick="filterUnit(2,this)" style="border-color:transparent">
+      <div class="utab-hdr" style="background:#E8593A"><span class="utab-icon">🔢</span><span class="utab-name">Patterns &amp; Sequences</span></div>
+      <div class="utab-body"><div class="utab-range">Weeks 11–20</div><div class="utab-desc">Pattern recognition, sorting, classification, sequences, algorithms</div></div>
+    </div>
+    <div class="utab" onclick="filterUnit(3,this)" style="border-color:transparent">
+      <div class="utab-hdr" style="background:#7B2FBE"><span class="utab-icon">🐛</span><span class="utab-name">Debugging &amp; Logic</span></div>
+      <div class="utab-body"><div class="utab-range">Weeks 21–30</div><div class="utab-desc">Bug types, debugging method, robot game, if-then logic, loops</div></div>
+    </div>
+    <div class="utab" onclick="filterUnit(4,this)" style="border-color:transparent">
+      <div class="utab-hdr" style="background:#2176AE"><span class="utab-icon">🎨</span><span class="utab-name">ScratchJr: Stories &amp; Animation</span></div>
+      <div class="utab-body"><div class="utab-range">Weeks 31–50</div><div class="utab-desc">ScratchJr programming, storytelling, characters, events, creative projects</div></div>
+    </div>
+  </div>
+
+  <!-- CURRICULUM PANEL -->
+  <div id="view-curriculum" class="panel open">
+    <div class="week-list" id="week-list"></div>
+  </div>
+
+  <!-- WORKBOOK PANEL -->
+  <div id="view-workbook" class="panel">
+    <div style="margin-bottom:1rem">
+      <select id="wb-sel" onchange="loadStandaloneWb()" style="width:100%;padding:10px 16px;border-radius:10px;border:1.5px solid var(--border);font-size:14px;background:var(--card);color:var(--ink);font-family:'Nunito Sans',sans-serif">
+        <option value="">— Select a week to open its 7-day workbook —</option>
+      </select>
+    </div>
+    <div id="wb-standalone"></div>
+  </div>
+
+  <!-- ML PANEL -->
+  <div id="view-ml" class="panel">
+    <div style="background:var(--card);border:1.5px solid var(--border);border-left:4px solid var(--teal);border-radius:12px;padding:14px 18px;margin-bottom:1.2rem">
+      <div style="font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;margin-bottom:5px">🤖 Machine Learning Foundations for Ages 6–7</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.6">These 10 ML concepts are woven across all 50 weeks. Children encounter them as part of everyday learning — the ML connection is made explicit by the teacher at exactly the right moment. This is deliberate: the best way to introduce AI concepts to 6-year-olds is through activities that make complete sense at their level.</div>
+    </div>
+    <div class="ml-grid" id="ml-grid"></div>
+  </div>
+
+  <!-- FRAMEWORK PANEL -->
+  <div id="view-framework" class="panel">
+    <div class="fw-grid">
+      <div class="fw-card">
+        <h3>📅 7-Day Weekly Workbook Structure</h3>
+        <div class="fw-row"><div class="fw-row-icon">🎓</div><div class="fw-row-text"><strong>Day 1 — Teach:</strong> Direct instruction. ONE new concept. Teacher-led. 45–60 min. Vocabulary introduced.</div></div>
+        <div class="fw-row"><div class="fw-row-icon">✏️</div><div class="fw-row-text"><strong>Day 2 — Guided Practice:</strong> Structured worksheets with teacher support. Reinforces Day 1 concept.</div></div>
+        <div class="fw-row"><div class="fw-row-icon">🎲</div><div class="fw-row-text"><strong>Day 3 — Unplugged:</strong> Physical hands-on activity. No technology required. Games, role-play, building.</div></div>
+        <div class="fw-row"><div class="fw-row-icon">💻</div><div class="fw-row-text"><strong>Day 4 — Digital Explore:</strong> Supervised tool exploration. Student-led with teacher available.</div></div>
+        <div class="fw-row"><div class="fw-row-icon">🎨</div><div class="fw-row-text"><strong>Day 5 — Create:</strong> Open-ended creative application. Student chooses format. Highest-order thinking.</div></div>
+        <div class="fw-row"><div class="fw-row-icon">🤝</div><div class="fw-row-text"><strong>Day 6 — Share &amp; Reflect:</strong> Peer sharing, gallery walk, family show-and-tell. Metacognition.</div></div>
+        <div class="fw-row"><div class="fw-row-icon">🏆</div><div class="fw-row-text"><strong>Day 7 — Assess &amp; Portfolio:</strong> Traffic-light self-assessment, quiz, portfolio entry. Informs next week.</div></div>
+      </div>
+      <div class="fw-card">
+        <h3>✅ Standards Alignment</h3>
+        <div class="fw-row"><div class="fw-row-icon">📐</div><div class="fw-row-text"><strong>ISTE:</strong> 1.1 Empowered Learner · 1.4 Innovative Designer · 1.5 Computational Thinker · 1.6 Creative Communicator</div></div>
+        <div class="fw-row"><div class="fw-row-icon">📐</div><div class="fw-row-text"><strong>CSTA K–2:</strong> K-2.AP.10 · K-2.AP.11 · K-2.CS.01 · K-2.DA.05 · K-2.IC.20</div></div>
+        <div class="fw-row"><div class="fw-row-icon">📐</div><div class="fw-row-text"><strong>UNESCO AI Ethics (2021):</strong> Prerequisite skills framework — digital literacy, computational thinking, AI ethics</div></div>
+        <div class="fw-row"><div class="fw-row-icon">📐</div><div class="fw-row-text"><strong>MIT RAISE:</strong> AI literacy learning objectives for elementary age groups</div></div>
+        <div class="fw-row"><div class="fw-row-icon">📐</div><div class="fw-row-text"><strong>K-12 CS Framework:</strong> Use–Modify–Create progression applied across all 50 weeks</div></div>
+      </div>
+      <div class="fw-card">
+        <h3>⚖️ Ethics — Embedded Every Week</h3>
+        <div class="fw-row"><div class="fw-row-icon">🔏</div><div class="fw-row-text"><strong>Privacy:</strong> Who owns data? Who controls always-on microphones and cameras?</div></div>
+        <div class="fw-row"><div class="fw-row-icon">⚖️</div><div class="fw-row-text"><strong>Fairness:</strong> Who has access to helpful technology? Do sorting rules treat everyone equally?</div></div>
+        <div class="fw-row"><div class="fw-row-icon">🛡️</div><div class="fw-row-text"><strong>Safety:</strong> What happens when programs have bugs? Who is responsible for testing?</div></div>
+        <div class="fw-row"><div class="fw-row-icon">🌍</div><div class="fw-row-text"><strong>Access &amp; Equity:</strong> Not everyone has computers at home. What does that mean for learning?</div></div>
+        <div class="fw-row"><div class="fw-row-icon">🤖</div><div class="fw-row-text"><strong>Responsibility:</strong> When you make a program, who is responsible for what it does?</div></div>
+      </div>
+      <div class="fw-card">
+        <h3>📦 Resources — All Free</h3>
+        <div class="fw-row"><div class="fw-row-icon">🌐</div><div class="fw-row-text"><strong>BBC Bitesize CS</strong> — Technology and computing, ages 5–11</div></div>
+        <div class="fw-row"><div class="fw-row-icon">🌐</div><div class="fw-row-text"><strong>CS Unplugged</strong> — Printable activities without computers</div></div>
+        <div class="fw-row"><div class="fw-row-icon">🌐</div><div class="fw-row-text"><strong>Code.org Courses A, B, C</strong> — Sequences, loops, conditionals</div></div>
+        <div class="fw-row"><div class="fw-row-icon">🌐</div><div class="fw-row-text"><strong>Khan Academy Kids</strong> — Math and patterns for ages 4–8</div></div>
+        <div class="fw-row"><div class="fw-row-icon">🌐</div><div class="fw-row-text"><strong>ScratchJr</strong> — Block programming for ages 5–7 (free app + browser)</div></div>
+        <div class="fw-row"><div class="fw-row-icon">🌐</div><div class="fw-row-text"><strong>Google QuickDraw</strong> — Live AI demo for kids</div></div>
+        <div class="fw-row"><div class="fw-row-icon">🌐</div><div class="fw-row-text"><strong>Code.org AI for Oceans</strong> — Intro to AI training</div></div>
+      </div>
+    </div>
+    <div style="background:var(--card);border:1.5px solid var(--border);border-radius:13px;padding:16px 18px;border-top:4px solid var(--gold)">
+      <div style="font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;margin-bottom:10px">⭐ Excellence Framework — What Mastery Looks Like</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.9">Every lesson has an <strong style="color:var(--ink)">Excellence Marker</strong> — an observable behaviour showing mastery beyond task completion:<br>
+      <strong style="color:var(--navy)">① Curiosity</strong> — asks "what if?" or "why?" unprompted &nbsp;·&nbsp;
+      <strong style="color:var(--navy)">② Transfer</strong> — applies concept in a context not discussed in class &nbsp;·&nbsp;
+      <strong style="color:var(--navy)">③ Explanation</strong> — teaches the concept to someone younger &nbsp;·&nbsp;
+      <strong style="color:var(--navy)">④ Iteration</strong> — improves work without being told to &nbsp;·&nbsp;
+      <strong style="color:var(--navy)">⑤ Ethics</strong> — considers impact on others when making decisions &nbsp;·&nbsp;
+      <strong style="color:var(--navy)">⑥ Originality</strong> — creates something the teacher didn't predict &nbsp;·&nbsp;
+      <strong style="color:var(--navy)">⑦ Metacognition</strong> — accurately identifies their own learning gaps</div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>© 2025 creAItors Club™ — All Rights Reserved</strong><br>
+  This document is protected by copyright law. Unauthorised reproduction, redistribution, or commercial use without written permission is strictly prohibited.<br>
+  Nano Tots · Level 0 · Entry · 6 and above · 50 Weeks · creAItors Club · contact@creatorsclub.ai
+</div>
+
+<script>
+// © 2025 creAItors Club™ — All Rights Reserved
+const WEEKS=[{"n":1,"title":"What Is a Machine?","unit":"Machines & Computing Foundations","unit_id":1,"obj":"Distinguish tools from machines; identify 5+ real machines; explain what problem each solves","big":"Machines extend human ability -- they help us do work that would be too hard, too slow, or impossible alone.","ml":"Classification -- sorting things into groups is the first skill of AI","d1":"Introduce: lever, wheel, pulley, incline. Ask: what problem does each solve? For whom?","d2":"Machines in My World worksheet: draw 5 machines, label what each helps us do","d3":"Card sort (no technology): 30 cards -- tools vs machines. Debate the tricky ones!","d4":"BBC Bitesize Technology: explore interactive 'machines in daily life' module","d5":"Design YOUR machine: what problem in your life could a machine solve? Draw it with labels","d6":"Gallery walk: present your machine design to 2 classmates. Explain the problem it solves.","d7":"Quiz: name 3 machines + what they do. Self-rate: \ud83d\udd34 unsure / \ud83d\udfe1 getting it / \ud83d\udfe2 got it","deliverable":"Machines in My Day chart: 5 machines drawn and labelled with what problem they solve","excellence":"Student explains WHY the machine helps -- not just WHAT it does. Cause-and-effect reasoning.","ethics":"Whose jobs did machines replace? Were those workers supported? Who should be responsible?","resources":"BBC Bitesize Technology (free) | CS Unplugged printables (free) | Real objects: ruler, wheel, ramp","vocab":"machine, tool, lever, wheel, pulley, inclined plane, problem, solution"},{"n":2,"title":"Machines Around Us","unit":"Machines & Computing Foundations","unit_id":1,"obj":"Categorise 15+ machines by purpose: transport, health, home, school, communication","big":"Machines are everywhere -- classifying them by purpose helps us understand how technology shapes every part of life.","ml":"Classification -- machines belong to categories, just like AI classifies images","d1":"Machine hunt: explore room, list 10 machines. Add to class chart. Discuss: can one machine fit two categories?","d2":"Sorting worksheet: place 20 machines into 4 purpose categories. Justify any that fit two.","d3":"Human machine relay: each student IS a part of a machine system (e.g., printing press). Act it out.","d4":"Khan Academy Kids Technology module: explore and identify machines in story contexts","d5":"Machine Category Poster: illustrate 4 categories with 3 machines each. Make it colourful!","d6":"Present poster: 'The most interesting machine I found was ___ because ___'","d7":"Portfolio quiz: draw one machine from each category. Write its purpose in one sentence.","deliverable":"Machine Category Poster with 12+ machines across 4 purpose groups, hand-illustrated","excellence":"Student invents a NEW category the teacher hasn't listed -- and justifies it with at least 2 examples","ethics":"Are machines available equally to everyone? Who has access to helpful machines and who doesn't?","resources":"Khan Academy Kids (free) | BBC Bitesize (free) | Machine category chart template (printable)","vocab":"category, purpose, transport, communication, classify, sort, group"},{"n":3,"title":"Living, Non-Living, Machine","unit":"Machines & Computing Foundations","unit_id":1,"obj":"Sort 30 objects into three groups; argue about tricky border cases; understand why categories need explicit rules","big":"Classification requires RULES -- without a clear rule, two people will sort the same object differently. AI needs rules too.","ml":"Classification -- AI must have clear rules for every category, or it makes mistakes","d1":"Introduce 3-circle Venn. Show 5 examples of each type. Introduce 'border cases': robot dog, smart fridge, beehive","d2":"Venn diagram worksheet: sort 30 picture cards into Living / Non-Living / Machine","d3":"Border case court: pairs argue whether a robot dog is 'living' or 'machine'. Present both sides.","d4":"CS Unplugged Classification activity: sort digital cards, discuss decisions with partner","d5":"Create your own border case creature: half-living, half-machine. Draw and explain which category it fits.","d6":"Share border case creature: 'I put it in ___ because my rule says ___'","d7":"Quiz: 5 objects to classify + written rule explaining how you decided","deliverable":"3-Circle Venn Diagram with 5+ items in each section + written defence of one border case","excellence":"Student argues for a border case using a SELF-INVENTED rule -- not just intuition","ethics":"Who decides what counts as 'alive'? Does it matter if AI can seem alive? Why?","resources":"CS Unplugged Classification (free printable) | Venn diagram template | 30-card sort deck (printable)","vocab":"living, non-living, machine, classify, border case, category, rule, Venn diagram"},{"n":4,"title":"Humans vs Machines","unit":"Machines & Computing Foundations","unit_id":1,"obj":"Identify tasks humans do better vs machines; understand machines follow fixed instructions while humans can adapt","big":"Machines are powerful but they follow FIXED rules. Humans can adapt, feel, and imagine -- machines (for now) cannot.","ml":"Algorithm -- machines follow instructions exactly. Humans write the instructions.","d1":"Role play: teacher gives instruction, student follows LITERALLY (robot mode). What breaks?","d2":"Comparison chart: 5 tasks humans do better + 5 tasks machines do better + 1 'it depends'","d3":"Newspaper challenge: build tallest tower using only newspaper. A machine couldn't do this -- why?","d4":"Code.org 'What is a computer?' video + discussion: what can computers NOT do?","d5":"Cartoon strip: 4 panels showing a human and machine trying the same task. Who wins? Why?","d6":"Share cartoon: 'Machines are better at ___ but humans are better at ___ because ___'","d7":"Portfolio reflection: 'If I could build a machine to help with one thing in my life, it would be ___'","deliverable":"Comparison Chart: 5 human-better + 5 machine-better tasks + 1 'depends' with full reasoning","excellence":"Student identifies a task machines have RECENTLY started doing that used to need humans -- asks WHY","ethics":"If machines take jobs, who is responsible for helping the workers? Companies? Governments? Everyone?","resources":"Code.org 'What is a computer?' (free video) | Newspaper + tape for tower challenge","vocab":"adapt, instruct, fixed, flexible, robot, program, instruction, decision"},{"n":5,"title":"What Is a Computer?","unit":"Machines & Computing Foundations","unit_id":1,"obj":"Define computer; identify 5+ computing devices; explain what makes computers fundamentally different from other machines","big":"A computer is special because it can be PROGRAMMED -- the same device can do completely different things by running different programs.","ml":"Algorithm -- programs are algorithms. The same computer can run millions of different algorithms.","d1":"Show 6 devices: tablet, laptop, calculator, phone, smart TV, ATM. What do they share?","d2":"Worksheet: circle all computers in 15 images. Explain why a calculator differs from a smartphone.","d3":"Guess my device: describe a computing device using only clues. Partner guesses.","d4":"BBC Bitesize 'What is a computer?': interactive exploration","d5":"Draw YOUR ideal computer: what would it look like? What would it do? Label all its parts.","d6":"Show and tell your computer design: 'My computer is special because ___'","d7":"Self-assessment checklist: can I name 5 computing devices? Explain what makes them computers?","deliverable":"Labelled drawing of a computer device + written explanation: 'A computer is special because ___'","excellence":"Explanation uses the word 'program' correctly AND explains what changes when the program changes","ethics":"Not everyone has a computer at home. How does this affect children's learning? What should be done?","resources":"BBC Bitesize CS (free) | Code.org Course A intro (free) | Device card set (printable)","vocab":"computer, device, program, software, hardware, tablet, laptop, smartphone, programmable"},{"n":6,"title":"Input Devices","unit":"Machines & Computing Foundations","unit_id":1,"obj":"Name and demonstrate 6+ input devices; match each to the type of information it sends to the computer","big":"Every computer needs INPUT -- a way for humans or the world to send information in. Without input, computers just sit there.","ml":"Input -- all AI systems also need input. What goes IN determines what comes OUT.","d1":"Demo each device: keyboard (text), mouse (position), microphone (sound), camera (image), touchscreen (touch), sensor (data)","d2":"Matching worksheet: draw a line from each input device to the type of information it sends","d3":"Be the input device! Students act out each device: type (keyboard), point and click (mouse), speak (mic)","d4":"Code.org Course B: input/output interactive activity","d5":"Design a NEW input device: what information would it send? Draw and label it.","d6":"Present input device design: 'My device sends ___ information because ___'","d7":"Quiz: name 5 input devices + what each sends. Check with traffic light.","deliverable":"Worksheet: 4 input devices drawn + label showing exactly what information type each sends to computer","excellence":"Student names an input device NOT on the teacher's list -- correctly identifies what information it inputs","ethics":"Microphones and cameras are always-on input devices. Who should control when they're active?","resources":"Code.org Course B (free) | BBC Bitesize Input/Output (free) | Physical devices to touch if available","vocab":"input, keyboard, mouse, microphone, camera, touchscreen, sensor, data, information"},{"n":7,"title":"Output Devices","unit":"Machines & Computing Foundations","unit_id":1,"obj":"Name 5+ output devices; explain what kind of information each produces; understand output = computer's response","big":"Output is how the computer RESPONDS -- without output, we'd never know what the computer computed.","ml":"Output -- AI also produces outputs: recommendations, translations, images, decisions. These affect real people.","d1":"Output hunt: find speakers, screens, printers, lights, vibration motors in the room. What does each produce?","d2":"Output postcard activity: for each device, draw exactly what it produces (what you see/hear/feel)","d3":"Blind orchestra: one student controls 'output devices' (other students making sounds/movements) based on input cards","d4":"Explore: what outputs can a simple Code.org program produce? (sounds, movements, speech)","d5":"Create an output instruction card: draw an output device + 3 things it can produce","d6":"Share: 'The most interesting output device I found was ___ because ___'","d7":"Portfolio entry: diagram of favourite device with input AND output both labelled","deliverable":"Set of 4 Output Postcards -- each showing what the device produces with drawn examples","excellence":"Student creates a complete chain: input device \u2192 what it sends \u2192 output device \u2192 what it produces","ethics":"Screens are output we stare at for hours. Whose responsibility is it to manage this for children?","resources":"Code.org (free) | BBC Bitesize (free) | Output postcard template (printable)","vocab":"output, speaker, screen, printer, vibration, display, respond, produce, result"},{"n":8,"title":"Input \u2192 Process \u2192 Output","unit":"Machines & Computing Foundations","unit_id":1,"obj":"Define all three IPO stages; trace information through the model for 5 real systems including non-computers","big":"EVERY computing system -- from a calculator to the most powerful AI -- follows Input \u2192 Process \u2192 Output. Always.","ml":"Data pipeline -- AI also has an IPO pipeline: raw data in \u2192 model processes \u2192 prediction out","d1":"IPO relay game: 3 students -- input (whisper a number), process (add 5), output (hold up result). Swap roles.","d2":"IPO diagram worksheet: complete the diagram for 5 systems (vending machine, calculator, microwave, ATM, human eye)","d3":"Human body as IPO: eyes = input, brain = process, hands = output. Act out 3 scenarios.","d4":"Code.org Course A: complete cause-and-effect levels showing IPO in action","d5":"Draw your own IPO system: input \u2192 secret process \u2192 surprise output. Partner guesses the process!","d6":"Present IPO system: 'My input is ___, my process is ___, my output is ___'","d7":"Portfolio quiz: draw IPO diagram from memory for 3 different systems","deliverable":"IPO Diagram completed for 5 different systems with all stages clearly labelled and explained","excellence":"Student applies IPO to a LIVING system (e.g. human body, plant) and explains the analogy accurately","ethics":"The 'process' stage is hidden from us. Should computers always explain what they're doing with our information?","resources":"CS Unplugged Human Computer activity (free printable) | Code.org Course A (free) | IPO diagram template","vocab":"input, process, output, IPO, pipeline, system, data, result, transform"},{"n":9,"title":"Cause and Effect in Technology","unit":"Machines & Computing Foundations","unit_id":1,"obj":"Identify cause-effect pairs in technology; understand same input produces same output; discover when this breaks","big":"Computers are DETERMINISTIC -- the same input always produces the same output. Until AI: then the same input might produce different outputs as the model learns.","ml":"Prediction -- deterministic systems are perfectly predictable. AI adds probability -- they predict, not guarantee.","d1":"Cause-effect game: teacher action \u2192 student response (IF clap \u2192 stand; IF snap \u2192 sit). Record every rule.","d2":"Cause-effect journal: find and record 6 technology examples. Try to find one where same input gives DIFFERENT output.","d3":"Domino cause-effect: set up domino chain. Identify: what is the input? Each step? The output?","d4":"Code.org Course A: cause-and-effect programming levels. Screenshot completed levels.","d5":"Create a cause-effect story: draw 4 panels showing: cause \u2192 effect \u2192 cause \u2192 effect","d6":"Share story: 'The cause is ___, the effect is ___, and that's interesting because ___'","d7":"Self-check: can I name 3 technology cause-effect pairs? Can I explain one that surprises people?","deliverable":"Cause-Effect Journal: 6 technology examples + 1 analogy + 1 example where the rule breaks","excellence":"Student discovers a technology where same input DOES produce different output -- correctly explains why","ethics":"If a computer always does the same thing to the same person -- is that always fair?","resources":"Code.org Course A Cause and Effect (free) | Dominoes for chain activity | Cause-effect journal template","vocab":"cause, effect, deterministic, predict, random, input, output, rule, exception"},{"n":10,"title":"Computers Need People","unit":"Machines & Computing Foundations","unit_id":1,"obj":"Understand that every computer was built, programmed, and is used by people; connect technology to human purpose","big":"Technology is HUMAN -- every machine was imagined, built, and programmed by a person just like you.","ml":"Data -- humans create the data AI learns from. Without people, AI cannot exist.","d1":"Show: who built your tablet? Who wrote the app? Who decided what it does? Technology has human fingerprints everywhere.","d2":"Worksheet: for 5 devices, draw the person who might have built it. What skills did they need?","d3":"Human chain game: act out the journey of a computer from idea to your hands. Each student is one person in the chain.","d4":"BBC Bitesize: explore stories of real people who built technology","d5":"Draw YOUR future: if you built a computer or app, what would it do? Who would it help?","d6":"Share: 'The person behind technology I use every day is ___ and they help me by ___'","d7":"Unit 1 Review: knowledge check all 10 concepts. Traffic light. Portfolio entry 1.","deliverable":"Future Tech Drawing: what you would build, who it helps, and what problem it solves","excellence":"Student identifies a technology that was built specifically to help a group of people who were being left out","ethics":"Who gets to decide what technology gets built? Should everyone have a say?","resources":"BBC Bitesize Technology (free) | Stories of real tech builders (printable) | Drawing template","vocab":"builder, programmer, designer, purpose, human, community, invent, create, impact"},{"n":11,"title":"Patterns Are Everywhere","unit":"Patterns & Sequences","unit_id":2,"obj":"Define pattern; find patterns in nature, music, numbers, behaviour; understand patterns are predictable","big":"Patterns are the language of intelligence -- humans find patterns naturally, and AI is built specifically to find patterns in data.","ml":"Pattern Recognition -- finding patterns in data is HOW machine learning works. No patterns = no AI.","d1":"Pattern hunt: zebra stripes, sunflower seeds, music beat, 2-4-6-8. Clap nursery rhyme rhythms -- that IS a pattern!","d2":"Pattern worksheet: extend 6 patterns + write the rule for each. Include one sound/rhythm pattern.","d3":"Pattern body percussion: clap-snap-stomp repeat. Add complexity each round. Spot who breaks it!","d4":"Khan Academy Kids Patterns: explore and extend visual patterns digitally","d5":"Create a Pattern Poster: invent 3 original patterns -- visual, number, AND a clapping rhythm. Write the rule for each.","d6":"Share Pattern Poster: 'My hardest pattern has the rule ___ and you can tell because ___'","d7":"Portfolio quiz: extend 4 patterns + explain 2 rules in own words","deliverable":"Pattern Portfolio Page: 3 original patterns (visual, number, rhythm) each with written rule","excellence":"Student creates pattern with TWO layered rules -- challenges partner to find BOTH","ethics":"Patterns can predict behaviour. Is it fair to judge what someone will do based on patterns about their group?","resources":"Khan Academy Kids Patterns (free) | Pattern cards 60-pack (printable) | Physical blocks/counters","vocab":"pattern, rule, predict, extend, visual, rhythm, sequence, repeat, regular, irregular"},{"n":12,"title":"Finding the Hidden Rule","unit":"Patterns & Sequences","unit_id":2,"obj":"Identify the hidden rule in a given pattern; extend patterns correctly; create patterns others must solve","big":"Finding hidden rules is what scientists do. It's also exactly what machine learning algorithms do -- find the hidden rule in data.","ml":"Pattern Recognition -- the hidden rule in a dataset IS the pattern the AI is trying to learn","d1":"Mystery patterns: show 5 sequences without giving the rule. Students debate: what IS the rule?","d2":"Detective worksheet: 8 patterns -- write the rule, extend by 3 more, predict the 10th term","d3":"Pattern auction: each student creates a mystery pattern. Class bids on whose rule is hardest to find.","d4":"Khan Academy Early Math: number pattern activities + interactive prediction","d5":"Rule book: create 5 original patterns with answer keys. Swap with a partner -- can they crack all 5?","d6":"Pattern swap showcase: 'The hardest rule to crack was ___ because ___'","d7":"Self-assessment: can I find the rule in any visual pattern? Any number pattern? What am I unsure of?","deliverable":"Pattern Detective Worksheet: 8 patterns with rules identified + 2 original patterns with answer key","excellence":"Student creates a pattern whose rule requires TWO operations (e.g. \u00d72 then \u22121) -- explains clearly","ethics":"","resources":"Khan Academy Early Math (free) | Pattern detective worksheet | Graph paper","vocab":"rule, predict, extend, term, sequence, operation, hidden, discover, solve"},{"n":13,"title":"Sorting by Rules","unit":"Patterns & Sequences","unit_id":2,"obj":"Sort objects by single then multiple attributes; understand sorting requires an explicit rule; connect to how computers search","big":"Sorting makes finding things FASTER -- this is why computers sort everything, and why AI models sort training data before learning from it.","ml":"Classification -- sorting IS classification. Every time AI sorts spam from not-spam, it's doing what you're doing now.","d1":"Physical sort: 20 mixed objects \u2192 sort by colour \u2192 then by size \u2192 then by BOTH simultaneously","d2":"Sorting worksheet: sort the same 20 items by 4 different rules. Which rule is most useful? Why?","d3":"Speed sort challenge: given random cards, race to sort by colour in 30 seconds. Then by shape. Then both.","d4":"Google QuickDraw teacher demo: watch AI sort 50 million drawings in real time. How?!","d5":"Sorting invention: invent a rule for sorting 20 objects that nobody else would think of -- but that works","d6":"Share sorting rule: 'My rule is ___ and it works because ___. The hardest object to sort was ___'","d7":"Quiz: sort 10 objects by 2 rules. Write why your sorting rule is better than alphabetical.","deliverable":"Sorting Chart: 20 objects sorted by 3 different rules + explanation of which rule is most useful and why","excellence":"Student sorts by a self-invented compound rule that is completely unambiguous and consistent","ethics":"When we sort people (into ability groups, into countries), who decides the rule? Who gets hurt?","resources":"Khan Academy Kids (free) | Google QuickDraw demo (free, quickdraw.withgoogle.com) | 20 mixed objects","vocab":"sort, attribute, rule, group, classify, organise, consistent, algorithm, efficient"},{"n":14,"title":"Classification Systems","unit":"Patterns & Sequences","unit_id":2,"obj":"Design a classification system with clear rules; test it on edge cases; understand different rules produce different groups","big":"The SAME objects can be classified differently by different rules -- and both can be valid. AI systems need rules agreed upon by humans.","ml":"Classification -- AI classification systems are only as good as the rules humans design for them","d1":"Introduce criteria for a good classification rule: clear, consistent, complete (handles all cases)","d2":"Design worksheet: create 3 categories for 20 objects. Write explicit rules. Test on 5 edge cases.","d3":"Rule court: each team presents their classification system. Others try to break it with edge cases.","d4":"CS Unplugged 20 Questions: use yes/no questions to classify hidden objects -- minimum questions wins","d5":"Create a classification game: design rules so a stranger can classify correctly without asking questions","d6":"Play classification game with another pair: does their rule work? How many questions were needed?","d7":"Portfolio reflection: 'My best classification rule is ___ because it handles the tricky case of ___'","deliverable":"Classification System Card: 3 categories with rules so explicit another student can apply them without asking","excellence":"System handles ALL edge cases -- student has written rules for objects that fit in multiple categories","ethics":"","resources":"CS Unplugged 20 Questions (free printable) | Classification design template | 20 mixed objects","vocab":"classify, criteria, rule, edge case, consistent, explicit, category, system, design"},{"n":15,"title":"Tricky Patterns -- When Rules Break","unit":"Patterns & Sequences","unit_id":2,"obj":"Identify when a pattern breaks; understand exceptions are important information; connect to why AI makes mistakes","big":"Exceptions are WHERE learning happens -- for humans AND for AI. AI mistakes come from patterns that almost work but don't.","ml":"Data Quality -- exceptions in training data confuse AI. More varied data = fewer mistakes.","d1":"Show 5 patterns that almost work. Students spot the exception. Discuss: what does the exception TELL us?","d2":"Exception journal: for each of 6 broken patterns, write: what was the rule? what broke it? what does it teach?","d3":"Exception drama: act out a pattern (AABBAABB...) then deliberately break it. Class spots the break.","d4":"AI for Oceans (Code.org): what happens when we train AI with unusual fish? Watch it get confused!","d5":"Design a tricky pattern: one that looks like it has a rule but has a hidden exception. Challenge a partner!","d6":"Share tricky pattern: 'The exception in my pattern is ___ and it teaches us ___'","d7":"UNIT 2 progress check: 6-question quiz on patterns, sorting, classification. Traffic light.","deliverable":"Pattern Mistake Journal: 5 broken patterns with hypotheses for WHY each broke + 1 deliberately tricky pattern","excellence":"Student creates deliberately tricky pattern -- explains SPECIFICALLY what makes it hard to classify","ethics":"When AI doesn't recognise someone's face or name correctly, what happens to that person?","resources":"Code.org AI for Oceans (free) | Exception journal template | Tricky pattern cards (printable)","vocab":"exception, break, mistake, confuse, varied, diverse, robust, training, error"},{"n":16,"title":"What Is a Sequence?","unit":"Patterns & Sequences","unit_id":2,"obj":"Define sequence; distinguish from repeating patterns; identify sequences in daily life; understand order creates meaning","big":"A sequence is not just repeated -- it has a SPECIFIC ORDER that means something. Change the order and you change everything.","ml":"Algorithm -- every algorithm IS a sequence. The order of steps is everything.","d1":"Daily routine sequence: what's the EXACT order for getting ready? What happens if steps swap?","d2":"Sequence worksheet: write sequences for 3 everyday tasks. Swap with partner -- they follow exactly.","d3":"Sequence acting: 6 students each hold one step of 'making a cup of tea'. Arrange in correct order.","d4":"Code.org Sequencing: first sequence levels. Take screenshot of completed levels.","d5":"Create a sequence book: draw and write a 6-step sequence for a fun activity. Make it EXACT.","d6":"Read sequence book aloud to class: do they know what you're describing from the steps alone?","d7":"Portfolio: copy your sequence into the portfolio with one sentence explaining why order matters","deliverable":"Two Sequences Written: daily routine (5+ steps) + student-chosen task (6+ steps, exact language)","excellence":"Student finds a sequence where TWO different orders both work correctly -- explains WHY this is possible","ethics":"","resources":"Code.org Sequencing (free) | Sequence card sets (printable/scrambled) | Sequence book template","vocab":"sequence, order, step, exact, instruction, routine, arrange, first, then, finally"},{"n":17,"title":"Order Matters -- Algorithms","unit":"Patterns & Sequences","unit_id":2,"obj":"Write clear ordered instructions for a task; test with a literal-instruction follower; improve based on testing","big":"An ALGORITHM is a precise sequence that always produces the correct result. Vague instructions are NOT algorithms.","ml":"Algorithm -- algorithms must be precise, complete, and in the right order. Just like the ones inside AI.","d1":"Robot instruction game: give instructions to make a sandwich. Teacher follows LITERALLY. What breaks?","d2":"Algorithm worksheet: write algorithm for 2 tasks. Partner tests each step -- mark every ambiguity.","d3":"Paper folding algorithm: write instructions to fold a paper aeroplane. Swap -- do planes fly?","d4":"Code.org Course B Sequencing: maze algorithm levels. Find the shortest solution.","d5":"Algorithm v1 \u2192 test \u2192 find all failures \u2192 write Algorithm v2. Submit BOTH with explanation of changes.","d6":"Algorithm exchange: present v1 and v2. Class identifies: what specific words made v1 fail?","d7":"Portfolio quiz: write an algorithm for brushing teeth. Include exact quantities and timings.","deliverable":"Algorithm v1 (tested with partner) + Algorithm v2 (improved) + written explanation of every change made","excellence":"Algorithm v2 is followed correctly by a total stranger -- zero questions needed, exact intended result","ethics":"","resources":"Code.org Course B Sequencing (free) | Algorithm recording sheet | Paper + tape for aeroplane","vocab":"algorithm, precise, complete, ambiguous, instruction, step, test, improve, iterate"},{"n":18,"title":"Missing Steps","unit":"Patterns & Sequences","unit_id":2,"obj":"Identify missing steps in incomplete instruction sets; explain WHY gaps cause failure; repair broken algorithms","big":"A missing step breaks EVERYTHING that follows. This is why programmers test every path -- and why AI needs complete training data.","ml":"Data Completeness -- missing examples in training data cause AI to fail in exactly those cases","d1":"Find-the-gap: show 5 instruction sets each missing exactly one critical step. Find the gap together.","d2":"Gap worksheet: 10 algorithms each missing one step. Find the gap. Explain WHY it causes failure.","d3":"Gap drama: group of 6 performs a task algorithm. One student secretly 'disappears' (missing step). What breaks?","d4":"Code.org Course B: continue algorithm levels. Notice what happens when you skip a step.","d5":"Gap challenge maker: write an algorithm with exactly one deliberate gap. Partner must find and fix it.","d6":"Gap challenge exchange: how quickly did partner find the gap? How?","d7":"Self-assessment: how do I KNOW when a step is missing? Write my strategy in my own words.","deliverable":"10 Gaps Found and Filled + 1 Original Gap Challenge created with answer key","excellence":"Student explains HOW they identified the gap -- the reasoning strategy, not just the answer","ethics":"","resources":"Code.org Course B Sequencing (free) | Missing step worksheet | Gap-challenge blank template","vocab":"gap, missing, incomplete, critical, failure, repair, identify, test, complete"},{"n":19,"title":"Storytelling with Sequences","unit":"Patterns & Sequences","unit_id":2,"obj":"Use a story as a sequence; understand that every story follows steps in order; connect narrative to algorithmic thinking","big":"Every story is an algorithm -- characters follow steps in order, and changing the order changes the story completely.","ml":"Algorithm -- AI that generates stories uses sequence models. The order of words matters just like the order of story steps.","d1":"Tell a familiar story (3 Little Pigs). Scramble the order -- what breaks? Why does order matter in stories AND in code?","d2":"Storyboard worksheet: arrange 6 scrambled story panels in correct order. Write the sequence rule.","d3":"Story acting: each student holds one story step card. Arrange yourselves in order. What if two steps swap?","d4":"Code.org: complete sequence levels using story-based characters","d5":"Write your own 6-step story algorithm: exact steps, exact order, exact language. Swap with partner -- can they act it out?","d6":"Share: 'My story algorithm has ___ steps and the most important order rule is ___'","d7":"Portfolio: story algorithm v1 (tested) + v2 (improved) + what changed and why","deliverable":"Original 6-Step Story Algorithm -- tested by partner, improved, both versions submitted","excellence":"Student finds a story where TWO different step orders both produce a valid story -- explains why this works","ethics":"","resources":"Code.org Sequencing (free) | Story step cards (printable) | Storyboard template","vocab":"story, sequence, order, step, narrative, arrange, algorithm, character, plot"},{"n":20,"title":"Build Your Own Algorithm","unit":"Patterns & Sequences","unit_id":2,"obj":"Design a complete algorithm for a self-chosen real task; test it rigorously; iterate until perfect","big":"A perfect algorithm works EVERY time for EVERYONE, not just for the person who wrote it. That is the standard for all programming and AI.","ml":"Training -- an algorithm that only works for you is like AI that only works for one type of person. Neither is useful.","d1":"Introduce criteria for a perfect algorithm: precise, complete, correct order, handles all cases, works for strangers","d2":"Algorithm design session: choose a task, write v1 (8+ steps), test on partner, record every failure","d3":"Peer algorithm testing marathon: every student tests a classmate's algorithm. Record failures. Discuss patterns.","d4":"Code.org: use learned sequence skills to complete bonus challenges","d5":"Algorithm v2: rewrite based on ALL failures. Test again. Is it perfect? Write a test plan.","d6":"UNIT 2 SHOWCASE: present algorithm + what it taught you about precision","d7":"UNIT 2 REVIEW: knowledge check quiz + traffic light all 10 concepts. What do I still need?","deliverable":"Original Algorithm v1 (tested) + v2 (improved after ALL partner testing) + test plan","excellence":"Algorithm v2 followed correctly by a complete stranger -- zero clarifications needed","ethics":"Who should be responsible when an algorithm produces unfair outcomes?","resources":"Code.org (free) | Algorithm design template | Peer testing record sheet","vocab":"algorithm, perfect, precise, iterate, test, improve, criteria, stranger, universal"},{"n":21,"title":"What Is a Bug?","unit":"Debugging & Logic","unit_id":3,"obj":"Define 'bug' in computing; identify 3 bug types (wrong/missing/extra); understand debugging as a professional skill","big":"Every programmer writes bugs. The skill is FINDING and FIXING them -- debugging is one of the most valued skills in technology and science.","ml":"Debugging -- AI systems also have bugs: wrong predictions, biased outputs, edge case failures.","d1":"Story: Grace Hopper and the world's first actual computer bug (1947). Discuss: what is a bug?","d2":"Bug identification worksheet: 10 instruction sets -- label each bug as wrong / missing / extra step","d3":"Bug hunt drama: perform an algorithm with a planted bug. Class spots it and explains what TYPE it is.","d4":"Code.org Debugging levels: fix broken programs. Screenshot each fix.","d5":"Create a Bug Museum: 5 examples of different bugs with labels, causes, and fixes","d6":"Bug Museum tour: present 2 exhibits. 'This bug is interesting because ___'","d7":"Debugging Toolkit quiz: given 3 buggy algorithms, apply the 5-step toolkit. Document each step.","deliverable":"5 Bugs Found on Worksheet -- each labelled with bug type (wrong/missing/extra) + test case proving fix","excellence":"Student writes a test case that PROVES each fix worked -- not 'I think it's right' but 'I know because evidence'","ethics":"Software bugs in medical devices and aircraft have killed people. What responsibility do programmers have to test?","resources":"Code.org Debugging intro (free) | Grace Hopper biography (printable, free) | Debugging Toolkit card","vocab":"bug, debug, wrong, missing, extra, fix, test, evidence, toolkit, Grace Hopper"},{"n":22,"title":"Passwords and Secrets","unit":"Debugging & Logic","unit_id":3,"obj":"Understand what a password is and why it matters; distinguish strong from weak passwords; know never to share passwords","big":"A password is like a KEY to your digital house -- a weak key means anyone can get in.","ml":"Data -- your password protects your personal data. AI systems also need protection from unauthorised access.","d1":"What is a password? Why do we have them? Show: weak passwords (cat, 123) vs strong passwords (C@t52!). What makes the difference?","d2":"Worksheet: rate 10 passwords as weak/medium/strong. Write what makes each one better or worse.","d3":"Password strength game: class votes on weak/strong. Debate the tricky ones. What rules did we discover?","d4":"Common Sense Media: interactive digital safety activity for ages 6-7","d5":"Design a password poster: rules for a strong password in kid-friendly language with illustrations","d6":"Share poster: 'A strong password needs ___ and you should NEVER ___'","d7":"Quiz: strong vs weak passwords + 3 password safety rules written in own words. Portfolio entry.","deliverable":"Password Safety Poster: rules for strong passwords illustrated for other kids to understand","excellence":"Student invents a memorable strong password system (e.g. first letters of a song) and explains why it works","ethics":"Should you share your password with your best friend? What could go wrong even if you trust them completely?","resources":"Common Sense Media Digital Safety (free) | Password strength checker demo | Poster template","vocab":"password, strong, weak, private, protect, secret, secure, access, digital safety"},{"n":23,"title":"The Robot Game","unit":"Debugging & Logic","unit_id":3,"obj":"Experience what it means to follow instructions literally; identify ambiguous language; understand computers have no common sense","big":"Computers have NO common sense. They follow instructions EXACTLY as written. If the instruction is ambiguous, the computer will do the wrong thing without knowing it.","ml":"Algorithm -- 'common sense' is not available to algorithms. Every edge case must be handled explicitly.","d1":"Teacher is the robot: students give instructions to get teacher from desk to door. Follow literally. Chaos!","d2":"Robot worksheet: identify all ambiguous words in 10 instructions. Rewrite each precisely.","d3":"Robot relay: teams take turns. One person gives robot instructions to do a task. Robot follows literally.","d4":"Code.org: review completed levels. Identify: where would common sense have helped? What did the computer need?","d5":"Precision improvement: take yesterday's algorithm. Find every word that relies on common sense. Replace them.","d6":"Share: 'The most surprising literal interpretation was ___ and I fixed it by ___'","d7":"Portfolio: write the most precise version of 'walk to the door' you possibly can. No ambiguity allowed.","deliverable":"Robot Instruction Challenge: written instructions + partner test result + reflection on every ambiguous word","excellence":"Student discovers independently that an instruction can be grammatically correct AND completely ambiguous","ethics":"","resources":"CS Unplugged Following Instructions (free printable) | Precision reference card","vocab":"literal, ambiguous, precise, common sense, interpret, instruction, explicit, edge case"},{"n":24,"title":"Drawing with Algorithms","unit":"Debugging & Logic","unit_id":3,"obj":"Write precise drawing instructions that produce identical results; iterate on precision; measure accuracy","big":"If two people follow the same algorithm, they should get the SAME result. If they don't, the algorithm is not precise enough.","ml":"Algorithm -- two AI models trained on the same data should give similar results. If they don't, there's a bug.","d1":"Demo: teacher draws a simple shape behind a screen. Dictates instructions. Class draws. Compare!","d2":"Drawing algorithm worksheet: write instructions for 3 simple shapes. Partner draws. Measure % similarity.","d3":"Drawing algorithm challenge: make instructions so precise that both drawings are identical (within 5mm)","d4":"Code.org: use coordinate/drawing concepts to reinforce precision in instructions","d5":"Drawing algorithm v1 \u2192 partner test \u2192 v2 \u2192 different partner test. Track improvement.","d6":"Share v1 and v2 drawings: 'What specific words made the biggest difference in accuracy?'","d7":"Self-assessment: what makes a drawing algorithm fail? Write 3 rules for avoiding drawing algorithm bugs.","deliverable":"Instructions v1 + Partner Drawing + Comparison Note + Instructions v2 + Second Different Partner Drawing","excellence":"v2 instructions produce a drawing within 90% visual similarity to original -- student defines how they measured this","ethics":"","resources":"Graph paper (square grid for precision) | Ruler | Instruction writing guide","vocab":"precision, identical, ambiguous, measurement, iterate, improve, similarity, coordinate"},{"n":25,"title":"Logic Games and Alan Turing","unit":"Debugging & Logic","unit_id":3,"obj":"Recognise logical arguments; identify where reasoning breaks; apply logical thinking; discover the story of Alan Turing","big":"Logic is the foundation of computing -- and Alan Turing, one of the greatest logical thinkers ever, invented the idea of the computer.","ml":"Conditional Logic -- logical reasoning IS the language of computing. Alan Turing proved machines could think logically.","d1":"Story: Alan Turing -- brave, brilliant, different. He asked 'can machines think?' and changed the world. Then: logic puzzle intro.","d2":"Logic worksheet: 10 logical arguments -- find the flaw in each. Write the corrected version.","d3":"Logic card game: students each have a statement card. Build valid logical chains. Spot invalid ones.","d4":"CS Unplugged Logic Gates intro: explore AND, OR, NOT gates with physical cards","d5":"Create a logic puzzle: design a 3-step logic chain with a hidden flaw. Partner must find the flaw.","d6":"Logic puzzle exchange: how quickly did partner find the flaw? What was the key clue?","d7":"Portfolio: explain to a younger student what makes a logical argument valid. Use a drawing.","deliverable":"5 Logic Puzzles Solved with working shown + 1 Original Logic Puzzle + Alan Turing fact card","excellence":"Original puzzle uses 3-step logic -- cannot be solved by guessing, must be reasoned through","ethics":"Alan Turing was treated very unfairly because he was different. What does his story teach us about how we treat people?","resources":"CS Unplugged Logic Gates (free printable) | Alan Turing story printable (age-appropriate) | Logic puzzle cards","vocab":"logic, argument, valid, invalid, flaw, reasoning, Alan Turing, computer science, AND, OR, NOT"},{"n":26,"title":"If-Then Thinking","unit":"Debugging & Logic","unit_id":3,"obj":"Write if-then-else statements for 10 real-life situations; understand conditions control what happens next","big":"IF-THEN is the engine of all computer decisions. Every time a computer 'chooses', it's following an IF-THEN rule written by a human.","ml":"Conditional Logic -- AI decisions are also IF-THEN at their core, but with probabilities instead of certainties","d1":"Conditional game: IF raining \u2192 umbrella ELSE leave it. Add complexity: AND, OR conditions.","d2":"Conditional worksheet: 10 scenarios \u2192 write if-then-else for each. Check for edge cases.","d3":"Conditional human robot: class follows conditional rules. Change conditions mid-game. Who adapts fastest?","d4":"Code.org Course C Conditionals: first conditional programming levels. Complete + screenshot.","d5":"Conditional decision tree: design a multi-step decision tree for a real problem (e.g. what to eat for lunch)","d6":"Decision tree share: 'My decision tree has ___ branches and handles the tricky case of ___'","d7":"Portfolio: write if-then-else for the most complex decision you make every day. How many conditions?","deliverable":"10 if-then-else statements + 1 decision tree for a multi-step real decision (4+ branches)","excellence":"Student writes a conditional that handles an edge case nobody else in the class considered","ethics":"'If you look like X then get flagged by security' -- why is this conditional dangerous when built into AI?","resources":"Code.org Course C Conditionals (free) | Conditional worksheet | Decision tree template","vocab":"conditional, if-then-else, condition, branch, decision, edge case, AND, OR, NOT, tree"},{"n":27,"title":"Safe Online, Safe Offline","unit":"Debugging & Logic","unit_id":3,"obj":"Identify information that is safe vs unsafe to share online; know who to trust; know what to do if something feels wrong","big":"The same rules that keep you safe in the real world keep you safe online -- your instincts are right, trust them.","ml":"Data -- personal information IS data. Protecting your data online is protecting yourself.","d1":"What information is private? Name + school + address + photo = never share. What IS okay to share? Show real scenarios.","d2":"Worksheet: safe or unsafe to share? 15 scenarios -- circle safe/unsafe. Explain your reasoning.","d3":"Trusted adults role play: if something feels wrong online, who do you tell? Practice the conversation.","d4":"Common Sense Media: age 6-7 online safety interactive activity","d5":"Create a Safety Shield: draw 4 things you will always protect online + 4 trusted adults you can tell","d6":"Share Safety Shield: 'I will always protect ___ because ___ and if something feels wrong I will tell ___'","d7":"Quiz: 5 safe/unsafe scenarios + my 3 online safety rules. Portfolio entry.","deliverable":"Personal Safety Shield: 4 things to always protect + 4 trusted adults identified","excellence":"Student identifies a scenario that seems safe but is actually risky -- explains the hidden danger clearly","ethics":"Should websites be allowed to collect information about children without asking parents? Who should make that rule?","resources":"Common Sense Media Digital Citizenship (free) | NSPCC online safety resources (free) | Safety Shield template","vocab":"private, public, safe, unsafe, trust, protect, share, online, offline, permission"},{"n":28,"title":"Loops -- Why Repeat?","unit":"Debugging & Logic","unit_id":3,"obj":"Identify repetitive tasks that need loops; write repeat-N and forever loops; calculate efficiency gains","big":"Loops are one of the most POWERFUL ideas in computing. Instead of writing the same instruction 1,000 times, you write it once and say 'repeat 1,000 times'.","ml":"Repetition -- AI processes millions of training examples using loops. Without loops, AI would be impossible.","d1":"Without loops: write 20 steps for 20 jumping jacks (do it -- it's painful!). With loops: 2 steps. Count savings.","d2":"Loop worksheet: rewrite 6 repetitive algorithms using loops. Calculate: how many steps saved?","d3":"Jumping jack loop: physical demonstration of repeat-10 vs forever (keep going until I clap)","d4":"Code.org Loops: complete loop levels. Find: what's the MINIMUM number of blocks needed?","d5":"Loop art: use loop logic to design a repeating pattern. Write the loop algorithm that creates it.","d6":"Share loop art: 'My loop repeats ___ times and creates ___. Without the loop I would have needed ___ steps.'","d7":"Efficiency quiz: given 5 repetitive tasks, how many steps does a loop save? Calculate each.","deliverable":"3 Loop Examples: before loop (fully written) vs after loop (with notation) + steps-saved calculation","excellence":"Student calculates total steps saved if the loop ran for a FULL YEAR -- connects to computer efficiency","ethics":"","resources":"Code.org Loops (free) | Khan Academy Kids (free) | Loop efficiency calculator worksheet","vocab":"loop, repeat, forever, efficient, repetition, iteration, count, save, block"},{"n":29,"title":"Loops in Code","unit":"Debugging & Logic","unit_id":3,"obj":"Use repeat and forever blocks; debug loop count errors; write a conditional loop (repeat until)","big":"Different loop types for different situations: repeat-N when you know the count, forever when you don't, repeat-until when you have a stopping condition.","ml":"Training Loop -- AI training is literally a loop: show examples \u2192 update model \u2192 repeat until accurate enough","d1":"Compare loop types: repeat-5, forever, repeat-until-touching. When is each the right choice?","d2":"Loop coding session: Code.org loop levels -- use repeat-N, forever, and repeat-until appropriately.","d3":"Loop debugging: given 3 buggy loops (wrong count, no stop condition, wrong placement), find and fix each.","d4":"Advanced: write a loop that uses a variable as the count. Change the variable -- loop changes automatically!","d5":"Loop creation: write a Code.org program that uses ALL THREE loop types. Each should be necessary.","d6":"Share program: explain why each loop type was the right choice for that specific part of the program","d7":"Portfolio: draw a diagram explaining the difference between the 3 loop types with examples of each","deliverable":"Code.org Project: Repeat-N AND Forever AND Repeat-Until -- each used appropriately + 3 loop bugs fixed","excellence":"Student writes a loop that stops early when a condition is met -- combining loops and conditionals correctly","ethics":"","resources":"Code.org Course C Loops (free) | ScratchJr repeat and end blocks (free) | Loop debugging worksheet","vocab":"repeat, forever, repeat-until, count, condition, stop, variable, loop type, debug"},{"n":30,"title":"Physical Computing -- Bee-Bot Adventure","unit":"Debugging & Logic","unit_id":3,"obj":"Program a physical or simulated robot using directional sequences; connect physical movement to algorithmic thinking","big":"When you program a Bee-Bot, you are doing EXACTLY what professional programmers do -- giving precise instructions to a machine.","ml":"Algorithm -- Bee-Bot follows your algorithm exactly. Same as AI: precise instructions in, precise actions out.","d1":"Introduce Bee-Bot (physical or simulator). Demo: press forward 3 times -- it moves 3 steps. Press turn -- it turns. Students predict before pressing.","d2":"Worksheet: write the button sequence to get Bee-Bot from A to B on a printed grid. Test predictions.","d3":"Floor maze: create a maze with tape. Students write sequences on paper FIRST, then test on Bee-Bot or act it out themselves.","d4":"Bee-Bot simulator online: complete 5 challenges. Screenshot completed routes.","d5":"Design a Bee-Bot story map: create a themed grid (jungle, space, ocean) with a start and end. Write the sequence to complete the journey.","d6":"Share story map: 'My Bee-Bot travelled from ___ to ___ using the sequence ___. The trickiest part was ___'","d7":"Unit 3 complete review: traffic light all concepts. Portfolio entry. Level 1 foundations certificate preparation.","deliverable":"Bee-Bot Story Map Grid + Written Sequence to Complete the Journey + Tested Result Documented","excellence":"Student finds the shortest possible sequence to complete the journey AND explains why it is shortest","ethics":"Robots are being used in hospitals, warehouses, and schools. Should robots make decisions that affect people?","resources":"Bee-Bot physical robot (if available) | Bee-Bot simulator free at beebot.nunl.com | Floor tape for maze | Grid printable","vocab":"robot, sequence, direction, forward, backward, turn, program, predict, physical computing, Bee-Bot"},{"n":31,"title":"Hello ScratchJr","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Navigate ScratchJr interface; add characters; run a first program; understand blocks = instructions","big":"Making something happen on screen by giving instructions -- this is programming. And if you can program, you can begin to understand AI.","ml":"Input -- every block in ScratchJr IS an instruction. The device IS the input. The animation IS the output.","d1":"Guided ScratchJr tour: stage, characters, block palette, script area. Try every main button.","d2":"Exploration record: test 10 blocks. For each: draw the block + write what it did + predict if number changes","d3":"ScratchJr without looking: partner calls out a sequence of actions, other student codes them. Swap.","d4":"ScratchJr free explore time: make a character do something -- anything! Screenshot your best moment.","d5":"First project: make a character move from one side of the screen to the other and back. Add a sound.","d6":"Share first project: 'I made ___ happen by using the blocks ___. The hardest part was ___'","d7":"Portfolio: screenshot of first project + written explanation: 'A block is like ___ because ___'","deliverable":"ScratchJr Project: character moves across screen and back when green flag pressed -- saved, labelled","excellence":"Student experiments with 3+ block types independently without prompting -- explains what each does","ethics":"When you make a program, who is responsible for what it does? You? The platform? The person who uses it?","resources":"ScratchJr (free, tablet/iPad or browser at jrScratch.org) | ScratchJr Getting Started guide (printable)","vocab":"block, instruction, character, stage, script, run, program, ScratchJr, interface"},{"n":32,"title":"Block Explorer","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Test all 5 ScratchJr block categories; predict what each does before testing; build a personal block dictionary","big":"Learning a new programming environment is like learning a new language -- each block is a word, and you need to know what each word means.","ml":"Pattern Recognition -- blocks behave in PATTERNS. Predict-Test-Record is the scientific method, and the AI training loop.","d1":"Predict-Test-Record: for 15 blocks -- write prediction, run, record what actually happened. Which surprised you?","d2":"Block dictionary worksheet: draw each block + write what it does + one scenario where you'd use it","d3":"Block auction: each pair 'bids' points on which block is most useful. Present their argument.","d4":"ScratchJr free explore: try combining blocks in ways not taught yet. Document discoveries.","d5":"Block recipe book: write 3 'recipes' -- combinations of blocks that produce interesting effects","d6":"Recipe share: 'My best block combination is ___ because it creates ___. I discovered it by ___'","d7":"Portfolio: block dictionary -- at least 15 entries. Highlight the 3 most useful blocks and explain why.","deliverable":"Block Dictionary: 15 entries with drawing + action description + best use case","excellence":"Dictionary includes 2+ block COMBINATIONS producing surprising effects the teacher didn't demonstrate","ethics":"","resources":"ScratchJr (free) | Block reference card (printable) | Block dictionary template","vocab":"block, category, motion, sound, control, predict, explore, recipe, combine, vocabulary"},{"n":33,"title":"Stories Need Structure","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Plan a 4-scene story on paper; identify characters, actions, and sequence for each scene before coding","big":"The best programs are PLANNED before they're built. Professional programmers and AI researchers plan before they code.","ml":"Algorithm -- a story is a sequence. Planning the sequence before coding is the professional way to work.","d1":"Discuss story structure: beginning (character + problem), middle (action), end (resolution). Give 3 examples.","d2":"Storyboard worksheet: 4 panels -- scene description, characters, main action, transition to next scene","d3":"Story critique: share storyboards in groups of 4. Each person gives 2 stars + 1 wish. Improve based on feedback.","d4":"Look at ScratchJr example stories: what 3-act structure can you spot? How many scenes?","d5":"Write the block plan: for each scene in your storyboard, list which ScratchJr blocks you'll need","d6":"Storyboard showcase: present your story plan. 'My story is about ___ and my favourite scene is ___'","d7":"Portfolio: storyboard + block plan for at least 3 scenes, ready to code next week","deliverable":"4-Panel Storyboard with block plan for each scene -- clearly ready to code","excellence":"Story has genuine problem \u2192 complication \u2192 action \u2192 resolution -- not just 'and then... and then...'","ethics":"Stories shape how people think. What responsibility do storytellers have to be honest and fair?","resources":"Storyboard template (printable) | ScratchJr block reference card | Story Spine framework card","vocab":"story, structure, plan, storyboard, beginning, middle, end, scene, character, problem"},{"n":34,"title":"Build the Story -- Scenes 1 and 2","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Code scenes 1 and 2 from the storyboard; compare code to plan; debug any deviations","big":"Coding to a plan is FASTER and has fewer bugs. Professional developers and AI researchers always plan before they code.","ml":"Debugging -- compare plan vs result. Every difference is either a deliberate improvement OR a bug.","d1":"Review storyboard: confirm scenes 1 and 2. Set a goal: what should happen in each?","d2":"Coding session: code scene 1 exactly as planned. Test. Compare to storyboard. Note any differences.","d3":"Code scene 2: use page transitions. Test: does it flow from scene 1 naturally?","d4":"Debug: find any places where the code doesn't match the plan. Fix or update the plan.","d5":"Polish: add one extra detail to each scene. Can you explain why you added it?","d6":"Progress share: 'Scene 1 is about ___, scene 2 is about ___. The trickiest block was ___'","d7":"Portfolio: screenshot of scenes 1 and 2 + note on what was changed from the plan and why","deliverable":"ScratchJr Project: Scenes 1 and 2 working + plan vs actual comparison note","excellence":"Project matches storyboard so closely a stranger who has never seen the plan can follow the story","ethics":"","resources":"ScratchJr (free) | Storyboard from previous lesson | Debugging toolkit reference card","vocab":"scene, transition, compare, plan, deviate, improve, polish, debug, page"},{"n":35,"title":"Scenes and Backgrounds","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Use page transitions to change scenes; design backgrounds that support story meaning; understand atmosphere","big":"Background design is COMMUNICATION -- the colours and shapes tell the audience how to feel before any character speaks.","ml":"Data -- background = context data. AI uses context to interpret meaning. Without context, meaning changes.","d1":"Colour mood exploration: show 4 same-character scenes with different backgrounds. How does each feel? Why?","d2":"Background design worksheet: for each of your 3 scenes, plan background colours + key visual elements + mood","d3":"Background museum: draw 5 backgrounds that communicate different emotions without any characters or words","d4":"ScratchJr: experiment with painting custom backgrounds. What happens when you change background in the story?","d5":"Design and paint backgrounds for all 3 scenes in your story. Test: does each scene FEEL right?","d6":"Background critique: partner views your story with eyes closed (listening) then open (watching). Compare.","d7":"Portfolio: 3 background sketches with written explanation of colour/mood choices for each","deliverable":"3-Page Story with purposefully designed backgrounds + written explanation of visual and mood choices","excellence":"Background art style is visually consistent across all scenes AND student explains each design choice","ethics":"","resources":"ScratchJr paint tools (built-in) | Background design planner (printable) | Colour mood reference","vocab":"background, atmosphere, mood, colour, scene, design, visual, communicate, consistent"},{"n":36,"title":"Characters Interact -- Messages","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Control 2+ characters simultaneously; use messages to make characters respond to each other","big":"Characters responding to each other is the first step toward INTERACTIVITY -- programs that respond to what happens.","ml":"Conditional -- messages are a form of conditional: IF character A sends a message THEN character B responds","d1":"Demo: two characters, message block. Cat sends \u2192 Dog receives \u2192 Dog reacts. Watch it happen live.","d2":"Message activity: design a 4-exchange conversation between 2 characters using message blocks only","d3":"Character personality test: give each character 3 personality traits. Do the blocks express them?","d4":"ScratchJr: add two characters to your story who interact using messages. Test timing carefully.","d5":"Dialogue creation: write a 6-exchange conversation between your two characters that reveals personality","d6":"Share: 'You can tell character A is ___ because of the blocks ___. Character B feels ___ because ___'","d7":"Portfolio: screenshot of interaction + message flow diagram showing which character sends/receives what","deliverable":"ScratchJr Project: 2 characters with 6+ exchange conversation via message coordination","excellence":"Conversation reveals distinct character personalities through timing and word choice -- not just information","ethics":"","resources":"ScratchJr (free) | Message block reference card | Character personality planning sheet","vocab":"message, send, receive, interact, coordinate, respond, character, personality, dialogue"},{"n":37,"title":"Loops in Stories","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Use repeat and forever blocks to create looping animations; understand when each block type is appropriate","big":"Loops in animation create the ILLUSION of life -- a character that keeps moving feels alive. The loop is the magic behind animation.","ml":"Repetition -- animated films use loops (24 frames per second). AI also uses training loops.","d1":"Compare: forever loop (sun rising and setting) vs repeat-5 (character hops 5 times). When is each right?","d2":"Loop animation worksheet: plan 2 loop animations -- one with forever, one with repeat-N. Justify choices.","d3":"Flipbook animation: make a 6-frame flipbook of a simple loop animation. What loop does each page represent?","d4":"ScratchJr: add one looping animation to your story using the appropriate loop type","d5":"Loop challenge: create an animation where TWO different characters loop simultaneously at different speeds","d6":"Share: 'I used forever for ___ because ___, and repeat-5 for ___ because ___'","d7":"Portfolio: screenshot of loop animation + written explanation of why each loop type was chosen","deliverable":"ScratchJr Animation: using BOTH loop types appropriately + written explanation of why each was used","excellence":"Student programs a loop that STOPS when a condition is met -- using message + end block combination","ethics":"","resources":"ScratchJr (free) | Loop type decision guide card | Flipbook paper (6 pages)","vocab":"forever, repeat, loop, animate, simultaneous, appropriate, condition, speed, life"},{"n":38,"title":"Events and Interactivity","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Use 3 event types (green flag, tap character, message) to create interactive stories","big":"Events make programs INTERACTIVE -- they wait for something to happen and then respond. This is how ALL apps and games work.","ml":"Conditional -- an event is a condition that triggers an action: IF user taps character THEN character responds","d1":"Event types demo: green flag (automatic start), tap character (user triggers), message (program triggers)","d2":"Interaction design worksheet: plan an interactive story with 3 different event types. Draw the event map.","d3":"Event acting: class acts out an event-driven story. Teacher triggers events (tap, start, message). Students respond.","d4":"ScratchJr: add interactivity to your story -- at least 2 event types","d5":"Two-ending story: design a story with 2 different endings based on which character the user taps first","d6":"Interactive share: let a classmate play your story. Watch what they do -- does it work as intended?","d7":"Portfolio: event map diagram showing all events in your story + user action that triggers each","deliverable":"Interactive ScratchJr Story: 3 different event types all working + 2 different endings based on user choice","excellence":"Story has 2 genuinely different endings based on which character the user taps first","ethics":"Interactive media makes people feel things. What responsibility comes with designing those experiences?","resources":"ScratchJr (free) | Code.org Course A Events (free) | Interactive story planning template","vocab":"event, trigger, interactive, tap, flag, message, respond, user, choice, branch"},{"n":39,"title":"ScratchJr Complete Story Project","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Design and build a complete 3-scene interactive story using all ScratchJr skills from Unit 4","big":"A complete project brings EVERYTHING together: structure, visual design, interaction, loops, events, messages.","ml":"ML Project -- ML projects also combine everything: data + model + training + testing + deployment.","d1":"Project brief: must have 3 scenes, 2 characters, 1 loop, 1 event, 1 message, 1 background per scene","d2":"Build day 1: code scenes 1 and 2 to storyboard. Debug. Test. Polish.","d3":"Build day 2: code scene 3. Add all events, loops, messages. Test full story. Fix bugs.","d4":"Test with real users: 3 classmates play your story. Watch -- don't explain. Record what confuses them.","d5":"Polish sprint: fix the top 3 things that confused real users. Add one 'wow' moment they won't expect.","d6":"Story screening: play stories on the screen. Class votes: most creative / most technically impressive / best story","d7":"Portfolio: complete story saved + 3 screenshots with annotations explaining key technical choices","deliverable":"Complete 3-Scene Interactive Story -- saved + 3 annotated screenshots","excellence":"Story has a satisfying interactive moment the user must DISCOVER -- it's not signposted or announced","ethics":"","resources":"ScratchJr (free) | Storyboard template | Portfolio annotation guide | Peer testing form","vocab":"complete, project, test, user, polish, wow, discover, annotate, deploy, feedback"},{"n":40,"title":"ScratchJr Showcase","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Present ScratchJr project; explain code choices using block names; give and receive structured feedback","big":"Presenting your work is as important as building it -- communication is a core skill in technology and in life.","ml":"AI Ethics -- explaining how a program works is called 'explainability'. It's considered an ethical requirement.","d1":"Presentation prep: practise explaining your story. Must mention: 3 specific blocks + 1 design decision + 1 debug story","d2":"Showcase event: each student presents 2 minutes. Audience gives feedback using the feedback protocol.","d3":"Feedback practice: give 2 stars + 1 wish to 2 classmates. Be specific. No vague compliments.","d4":"Improvement sprint: take the best feedback received. Make 1 improvement in 15 minutes.","d5":"Improved showcase: present improved version. Explain what changed and why.","d6":"Audience reflection: which presentation was most CLEAR? Which was most CREATIVE? Which would you play again?","d7":"Portfolio: final story project + presentation notes + feedback received + improvement made","deliverable":"Presented Project + Written Feedback Received + 1 Improvement Made in Response + Presentation Notes","excellence":"Presentation explains WHY code choices were made -- uses specific block names -- audience follows completely","ethics":"When we share creative work, do we need to credit the tools we used? What about ScratchJr?","resources":"Feedback protocol card (printable) | Showcase checklist | Timer for presentations","vocab":"present, explain, feedback, specific, improve, communicate, audience, explainability"},{"n":41,"title":"Creative Thinking","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Generate 5+ original project ideas using structured brainstorming; develop a creative brief for a final project","big":"Creative thinking is a SKILL that improves with practice. The best AI researchers are also creative thinkers.","ml":"AI Design -- the most important step in any AI project is: what problem should we solve? Creative thinking answers this.","d1":"Brainstorm techniques: What If? SCAMPER (Substitute/Combine/Adapt/Modify/Eliminate/Reverse). Crazy 8s.","d2":"Brainstorm 8 ideas in 8 minutes (1 per page). No judging. No explaining. Just ideas.","d3":"Idea gallery walk: post your 8 ideas. Others put a dot sticker on their favourite. See what resonates.","d4":"ScratchJr gallery explore: look at examples. What ideas do they spark? Note them.","d5":"Develop top 2 ideas into creative briefs: what is it? who is it for? what makes it special?","d6":"Creative brief pitch: 60-second pitch for top idea. Class votes: thumbs up if they'd want to use it.","d7":"Portfolio: creative brief for chosen final project idea. Include: concept, audience, key features, blocks","deliverable":"5+ Original Ideas + Creative Brief for Chosen Idea including concept, audience, features, blocks needed","excellence":"Chosen idea is genuinely original -- not a copy of anything the student has seen -- AND excites them","ethics":"","resources":"SCAMPER prompt cards (printable) | Crazy 8s sketchpad | Creative brief template","vocab":"creative, brainstorm, idea, original, SCAMPER, brief, pitch, concept, audience"},{"n":42,"title":"More ScratchJr -- Block Mastery","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Explore all ScratchJr block categories in depth; discover block combinations that create surprising effects","big":"Mastery comes from EXPLORATION -- the best programmers try things that shouldn't work and discover things that do.","ml":"Training -- in ML, exploring different model architectures is called 'experimentation'. Same mindset.","d1":"Advanced block deep-dive: speed blocks, grow/shrink, colour change, hide/show, jump to position","d2":"Block combination lab: experiment with 10 block combinations. Record: expected vs actual result.","d3":"Combination auction: each pair presents their most surprising discovery. Class votes on most interesting.","d4":"ScratchJr: use at least 5 new blocks in a mini-project (not in your main project)","d5":"Block recipe book vol. 2: write 3 new recipes using blocks from this week's deep-dive","d6":"Share most surprising discovery: 'I combined ___ and ___ and was surprised to see ___'","d7":"Portfolio: block combination discovery page -- 5 combinations + what each creates","deliverable":"Block Combination Discovery Page -- 5 surprising combinations with descriptions and use cases","excellence":"Student discovers a block combination that the teacher has never seen -- can explain exactly why it works","ethics":"","resources":"ScratchJr (free) | Block combination lab worksheet | 'Block Recipe Book Vol. 2' template","vocab":"explore, combine, discover, surprise, experiment, mastery, depth, recipe, effect"},{"n":43,"title":"Multi-Character Stories","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Control 4+ characters simultaneously; give each distinct personality through code choices","big":"Managing multiple characters is like managing multiple processes -- it requires careful planning and coordination.","ml":"Multi-agent systems -- in AI, multiple AI 'agents' can work simultaneously. Called multi-agent AI.","d1":"Character profile planning: create 4 characters with distinct personalities. What code expresses each?","d2":"Character coding session: code each character independently. Test each individually before combining.","d3":"Personality test: play the story for a partner. Can they tell which character is brave? Nervous? Funny?","d4":"ScratchJr: add all 4 characters to your main project. Ensure they don't clash.","d5":"Interaction design: which characters should interact? Plan 2 message exchanges between characters.","d6":"Share: 'Character ___ is [personality] because of the blocks ___. You can tell because ___'","d7":"Portfolio: character profile cards for all 4 characters + screenshot of them all on stage","deliverable":"4-Character Project: each character with distinct behaviour and personality visible in code choices","excellence":"Each character's personality is distinct enough that changing their code would visibly change who they seem","ethics":"","resources":"ScratchJr (free) | Character personality planning cards | Multi-character coordination diagram","vocab":"character, personality, simultaneous, coordinate, profile, distinct, interact, agent"},{"n":44,"title":"My Character Has Feelings","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Use ScratchJr movement, colour, speed, and size to express emotions through a character; connect coding to feelings","big":"Code can express emotion -- the way a character moves tells the audience how it feels, without a single word.","ml":"Data -- emotions are information. AI is being trained to recognise human emotions from movement and expression. You are doing the same thing.","d1":"Demo: fast + big + bright = excited. Slow + small + dark = sad. How does changing blocks change the feeling?","d2":"Emotion coding worksheet: plan the blocks needed to show 4 emotions -- happy, sad, scared, surprised.","d3":"Emotion acting: students physically show an emotion using only movement (no words or sounds). Class guesses.","d4":"ScratchJr: code one character showing 2 different emotions using different block combinations.","d5":"Emotion story: create a short ScratchJr story where the character's emotion changes. Show it without words -- can the audience feel it?","d6":"Share: 'My character feels ___ because I used the blocks ___ and you can tell because ___'","d7":"Portfolio: emotion story saved + written explanation of which blocks create which emotion and why.","deliverable":"ScratchJr Emotion Story: character shows 2+ emotions using deliberate block choices -- emotion identified by audience without being told","excellence":"Audience correctly identifies the emotion without any explanation -- code communicates feeling completely","ethics":"AI is being trained to read human emotions from faces and movement. Does that feel comfortable to you? Who should control that?","resources":"ScratchJr (free) | Emotion planning worksheet | Colour mood reference card","vocab":"emotion, express, feeling, movement, speed, colour, size, communicate, happy, sad, scared, surprised"},{"n":45,"title":"Fix and Improve -- Iteration","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Identify 5 specific weaknesses in own work; make targeted improvements; document the iteration process","big":"Iteration is the engine of improvement -- in programming, in science, and in AI. No first version is ever the best version.","ml":"Training -- AI models are trained iteratively. Each iteration the model gets a little better.","d1":"Quality checklist review: against criteria (story clarity, character personality, sound, interactivity, visual design)","d2":"Improvement identification: find exactly 5 specific weaknesses. Not 'make it better' but precise issues.","d3":"Improvement priority voting: which of the 5 improvements would make the BIGGEST difference to a user?","d4":"ScratchJr: implement all 5 improvements. After each: does it actually improve the experience? Test.","d5":"Before/after demo: show a classmate the original + improved version. Can they spot all 5 improvements?","d6":"Iteration reflection: 'The improvement that made the biggest difference was ___ because ___'","d7":"Portfolio: before/after screenshots for all 5 improvements + iteration log showing order and reason","deliverable":"Improved Project (before/after screenshots) + Iteration Log with 5 specific changes + results of each","excellence":"At least one improvement makes the project genuinely better in a way a REAL USER would notice without being told","ethics":"","resources":"ScratchJr (free) | Quality checklist (printable) | Iteration log template | Before/after guide","vocab":"iterate, improve, quality, specific, target, before, after, feedback, version"},{"n":46,"title":"Final Creative Project","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Design and build a complete original ScratchJr project with full creative freedom; test with real users","big":"A final project with complete creative freedom is the ultimate test -- can you bring everything together AND make something you're proud of?","ml":"AI Project -- AI projects also go through design \u2192 build \u2192 test \u2192 improve \u2192 present. You're following the same process.","d1":"Project requirements: 3+ scenes, 2+ characters, 1 loop, 1 event, 1 message, sound, backgrounds -- all serve the story","d2":"Build day 1: scenes 1-2. Debug as you go. No waiting until the end to debug!","d3":"User testing: 3 real users play your project. Record: what they do without being told anything.","d4":"Build day 2: scene 3 + polish based on user testing. Fix the things that confused users.","d5":"Wow moment: add one element that will genuinely surprise and delight users. Don't announce it.","d6":"Public screening: project plays on the big screen. Class identifies: what was the wow moment?","d7":"Portfolio: complete project saved + 3 annotated screenshots + user testing notes + wow moment explanation","deliverable":"Complete Original ScratchJr Project -- built from student's own ideas -- full user testing documented","excellence":"Project does something student couldn't have done in Week 31 -- visible growth is documentable","ethics":"","resources":"ScratchJr (free) | All previous planning templates | Peer testing form | Portfolio annotation guide","vocab":"creative, freedom, original, complete, wow, user, test, iterate, document, pride"},{"n":47,"title":"What Computers Can't Do","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Identify 5 cognitive/emotional tasks computers currently cannot do; understand why; connect to the future of AI","big":"Understanding what computers CANNOT do is as important as knowing what they can. This shapes how we design AI responsibly.","ml":"AI Limitations -- knowing where AI fails is crucial for using it responsibly.","d1":"Challenge round: try to make ScratchJr 'feel sad'. Can it? Can it 'decide' what story to tell?","d2":"Capability worksheet: for each of 10 tasks, decide: can computers do this now? Partially? Never? Why?","d3":"Human vs AI debate: split into two teams. 'AI will eventually do everything' vs 'AI will always need humans'","d4":"Explore: AI failures gallery -- examples of AI making embarrassing or harmful mistakes (age-appropriate)","d5":"Human superpower design: draw a certificate for a human skill that AI will never replicate. Explain why.","d6":"Present certificate: 'The human skill that matters most is ___ because ___. AI can't do this because ___'","d7":"Portfolio: 'Human Superpower List' -- 5 things humans can do that computers currently cannot, with reasoning","deliverable":"Human Superpower List: 5 things with reasoned explanation for WHY each is beyond current computer capability","excellence":"Student provides a deep explanation for WHY -- not just 'computers don't have feelings' but WHY that matters","ethics":"If computers one day do everything humans can -- what does that mean for us? Who benefits? Who might suffer?","resources":"Age-appropriate AI failure examples | Capability worksheet | Human Superpower certificate template","vocab":"capability, limitation, emotion, creativity, empathy, consciousness, reason, future, responsibility"},{"n":48,"title":"Level 1 Reflection and Portfolio Review","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Identify the 5 most important learnings from all 48 weeks; articulate how thinking has changed; set Level 2 goals","big":"Reflection is how learning BECOMES knowledge. Without reflection, you forget what you learned. With it, you own it.","ml":"Metacognition -- thinking about your own thinking. AI researchers use it to understand their models.","d1":"Journey map: timeline of 48 weeks -- mark 5 moments when understanding shifted significantly","d2":"Portfolio review: look at every piece of work. What has changed from Week 1 to Week 48? Document.","d3":"Traffic light audit: for every concept from all 4 units, traffic light your current confidence","d4":"Visual comparison: Week 1 machine drawing vs Week 46 creative project. What changed? How much?","d5":"Level 2 goal setting: 3 specific goals for Level 2 -- 'I want to learn how to ___', not 'I want to be better'","d6":"Share: 'The moment I understood something differently was ___ because ___'","d7":"Portfolio completion: all sections done. Sign the cover page. This portfolio belongs to you.","deliverable":"Complete Level 1 Portfolio: all sections filled + growth statement + 3 specific Level 2 goals","excellence":"Growth statement identifies a SPECIFIC conceptual change -- not just 'I learned to code' but 'I now understand that...'","ethics":"","resources":"Portfolio review guide | Traffic light audit sheet | Goal-setting template | Journey map template","vocab":"reflect, metacognition, growth, journey, understand, goal, portfolio, change, own"},{"n":49,"title":"Teach Someone What You Know","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Explain one Level 1 concept to a younger student or family member; verify they understood using evidence","big":"The best way to know if you REALLY understand something is to teach it to someone else. If you can teach it, you own it.","ml":"Explainability -- being able to explain how a system works is called 'explainability'. It's an ethical requirement for AI systems.","d1":"Concept selection: choose one concept from Level 1. Create a 'teaching resource' (drawing, video, or guide)","d2":"Teaching resource draft: create the resource. Test it: does it explain the concept accurately? Simply?","d3":"Teaching practice: explain your concept to a classmate who pretends they've never heard of it. Refine.","d4":"N/A -- teaching activity replaces digital session this week","d5":"Teach the concept to a younger student, parent, or family member. Verify: ask them to explain it back.","d6":"Share evidence: 'I know they understood because ___. The hardest part to explain was ___'","d7":"Portfolio: teaching resource + written evidence that the person understood","deliverable":"Teaching Resource Created + Evidence That Younger Person Understood + Reflection on What Was Hard to Explain","excellence":"The younger student can explain the concept back to someone ELSE in their own words -- genuine transfer","ethics":"Explaining AI and technology in simple terms is a responsibility. Why does it matter that everyone understands?","resources":"Teaching resource template | Verification evidence form | Explainability reference card","vocab":"teach, explain, verify, evidence, simplify, understand, communicate, responsibility, explainability"},{"n":50,"title":"Level 1 Showcase and Graduation","unit":"ScratchJr: Stories & Animation","unit_id":4,"obj":"Present best work; receive Nano Tots certificate; set goals for Pixel Blockers","big":"Completing 50 weeks of learning is a REAL achievement. Celebration is part of the learning process.","ml":"FULL RECAP: Classification + Patterns + Algorithms + Debugging + Logic + ScratchJr = foundation of all CS and AI","d1":"Showcase preparation: select best 2 projects + prepare 2-minute presentation for each","d2":"Showcase event: full presentations. Audience: parents, teachers, school community. Real audience matters!","d3":"Questions and answers: audience asks genuine questions. Students answer in their own words.","d4":"Celebration screenings: all ScratchJr projects run simultaneously on available screens","d5":"Certificate ceremony: Six Seven Level 1 certificate. What does it mean? Why does it matter?","d6":"Level 2 preview: what's coming? Scratch! Games! More AI! Set 3 specific goals.","d7":"Portfolio seal: final review. Sign and seal. Keep it -- this is evidence of 50 weeks of thinking.","deliverable":"Showcase Presentation + Level 1 Portfolio Complete + Six Seven Certificate + 3 Level 2 Goals","excellence":"Presentation conveys genuine pride AND understanding -- explains WHY the work matters, not just WHAT was built","ethics":"Reflect on the full journey. Which ethics question will you still be thinking about as a teenager?","resources":"Showcase ceremony materials | Six Seven Level 1 certificate template | Level 2 preview guide","vocab":"celebrate, achievement, present, certificate, goal, portfolio, pride, journey, transition"}];
+
+const UC={1:'#0B8A78',2:'#E8593A',3:'#7B2FBE',4:'#2176AE'};
+const UL={1:'#E0F5F2',2:'#FDECEA',3:'#F5EEF8',4:'#EBF5FF'};
+const UE={1:'⚙️',2:'🔢',3:'🐛',4:'🎨'};
+const UN={1:'Machines & Computing Foundations',2:'Patterns & Sequences',3:'Debugging & Logic',4:'ScratchJr: Stories & Animation'};
+const DC=['#C0392B','#D35400','#B7950B','#1A8A3E','#1F618D','#7D3C98','#1A252F'];
+const DL=['🎓 Teach','✏️ Practice','🎲 Unplugged','💻 Digital','🎨 Create','🤝 Reflect','🏆 Assess'];
+const DF=['d1','d2','d3','d4','d5','d6','d7'];
+const DD=['Direct instruction. ONE new concept. 45–60 min.','Structured worksheets with teacher support.','Physical hands-on activity — no tech needed.','Supervised digital tool exploration.','Open-ended creative application.','Peer sharing and verbal reflection.','Self-assessment, quiz, portfolio entry.'];
+
+const ML=[
+  {t:'Classification',d:'Sorting things into groups using rules — just like sorting toys by colour or size',e:'AI that recognises cats vs dogs sorted millions of animal pictures into groups first',w:'Weeks 3, 13, 14, 15'},
+  {t:'Pattern Recognition',d:'Finding what repeats or what rule connects things — your brain does this automatically',e:'Spotify recommends songs because it found a pattern in what you\'ve listened to before',w:'Weeks 11, 12, 15'},
+  {t:'Data',d:'Information that AI learns from — like examples in a textbook. More varied examples = smarter AI.',e:'1 million cat photos = training data for a cat-recognition AI',w:'Weeks 1–10 (all), 18'},
+  {t:'Algorithm',d:'A step-by-step set of instructions that ALWAYS produces the correct result',e:'GPS navigation follows a shortest-path algorithm to get you home',w:'Weeks 17, 18, 19, 20'},
+  {t:'Debugging',d:'Finding and fixing mistakes in a program or AI system — all programmers do this every day',e:'AI researchers spend most of their time debugging models that give wrong answers',w:'Weeks 21–30'},
+  {t:'Input / Output',d:'What goes INTO a system and what comes OUT — applies to AI too',e:'Alexa: voice input → process → spoken answer output',w:'Weeks 6, 7, 8'},
+  {t:'Training',d:'Teaching AI by showing it thousands of examples — like learning with flashcards',e:'A spam filter is trained by showing it millions of spam and non-spam emails',w:'Weeks 11–20 (pattern finding = training)'},
+  {t:'Prediction',d:'Using patterns to guess what will happen next — what weather forecasts and recommendations do',e:'Weather forecasts use AI trained on 40 years of weather data to predict tomorrow',w:'Weeks 9, 15'},
+  {t:'Conditional Logic',d:'If this → then that. How all computers and AI make every single decision',e:'Netflix: IF you watched action movies → THEN recommend more action movies',w:'Weeks 26, 27'},
+  {t:'Loops / Repetition',d:'Doing the same thing many times efficiently — how AI processes millions of examples',e:'AI training loops: show example → update model → repeat until accurate enough',w:'Weeks 28, 29'},
+];
+
+let curUnit = 1;
+let openWeek = null;
+let openDay = 0;
+
+function showView(v, btn) {
+  ['curriculum','workbook','ml','framework','tutor'].forEach(p => {
+    const el = document.getElementById('view-'+p);
+    if(el) { el.classList.remove('open'); el.style.display='none'; }
+  });
+  const el = document.getElementById('view-'+v);
+  if(el) { el.classList.add('open'); el.style.display='block'; }
+  document.querySelectorAll('.nav-btn').forEach(b => {
+    b.classList.remove('active');
+    b.style.background=''; b.style.borderColor=''; b.style.color='';
+  });
+  if(btn) { btn.classList.add('active'); }
+  if(v==='curriculum') renderWeeks();
+  if(v==='workbook') buildWbSel();
+  if(v==='ml') renderMl();
+}
+
+function filterUnit(uid, el) {
+  curUnit = uid;
+  document.querySelectorAll('.utab').forEach(c => { c.classList.remove('active'); c.style.borderColor='transparent'; });
+  if(el) { el.classList.add('active'); el.style.borderColor = UC[uid]; }
+  openWeek = null;
+  renderWeeks();
+}
+
+function renderWeeks() {
+  const q = (document.getElementById('search').value||'').toLowerCase();
+  const list = document.getElementById('week-list');
+  const filtered = WEEKS.filter(w => {
+    if(w.unit_id !== curUnit) return false;
+    if(q && !`${w.title} ${w.unit} ${w.obj} ${w.ml} ${w.vocab}`.toLowerCase().includes(q)) return false;
+    return true;
+  });
+  if(!filtered.length) { list.innerHTML='<div class="empty">No weeks match your search. Try a different keyword.</div>'; return; }
+  list.innerHTML = filtered.map(w => weekCard(w)).join('');
+}
+
+function weekCard(w) {
+  const uc = UC[w.unit_id], ul = UL[w.unit_id], ue = UE[w.unit_id];
+  const isOpen = openWeek === w.n;
+  return `<div class="week-card" id="wk${w.n}">
+    <div class="week-hdr" onclick="toggleWeek(${w.n})">
+      <div class="week-num" style="background:${uc}">${w.n}</div>
+      <div class="week-info">
+        <div class="week-title">${w.title}</div>
+        <div class="week-meta">${ue} ${w.unit} &nbsp;·&nbsp; 🤖 ${w.ml.split('—')[0].trim()}</div>
+      </div>
+      <span class="week-pill" style="background:${ul};color:${uc}">${ue} Unit ${w.unit_id}</span>
+      <span class="week-chev${isOpen?' open':''}" id="cv${w.n}">▶</span>
+    </div>
+    <div class="week-detail${isOpen?' open':''}" id="det${w.n}">${isOpen ? buildDetail(w, openDay) : ''}</div>
+  </div>`;
+}
+
+function toggleWeek(n) {
+  if(openWeek === n) { openWeek = null; }
+  else { openWeek = n; openDay = 0; }
+  renderWeeks();
+  if(openWeek) setTimeout(() => {
+    const el = document.getElementById('wk'+openWeek);
+    if(el) el.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }, 80);
+}
+
+function switchDay(n, d) {
+  openWeek = n; openDay = d;
+  const w = WEEKS.find(x => x.n === n);
+  if(!w) return;
+  document.getElementById('det'+n).innerHTML = buildDetail(w, d);
+}
+
+function buildDetail(w, d) {
+  const uc = UC[w.unit_id], ul = UL[w.unit_id];
+  const days = [w.d1,w.d2,w.d3,w.d4,w.d5,w.d6,w.d7];
+  const tabsHtml = DL.map((l,i) => `
+    <div class="wb-tab${d===i?' active':''}" onclick="switchDay(${w.n},${i})" style="color:${DC[i]}${d===i?';border-bottom:3px solid '+DC[i]:''}">
+      <div class="wb-dn" style="color:${DC[i]}">Day ${i+1}</div>
+      <div class="wb-di">${l.split(' ')[0]}</div>
+      <div class="wb-dl" style="color:${DC[i]}">${l.split(' ').slice(1).join(' ')}</div>
+    </div>`).join('');
+
+  const dayText = days[d] || '';
+  const steps = dayText.split('. ').map(s=>s.trim()).filter(s=>s.length>5);
+  const stepsHtml = steps.map((s,i) => `
+    <li class="wb-step">
+      <div class="wb-step-n" style="background:${DC[d]}">${i+1}</div>
+      <div class="wb-step-t">${s.replace(/\.$/,'')}</div>
+    </li>`).join('');
+
+  const mlParts = w.ml.split('—');
+  const mlTitle = mlParts[0].trim();
+  const mlDesc = (mlParts[1]||'').trim();
+
+  return `
+    <div class="det-top">
+      <div class="det-grid">
+        <div class="det-box"><div class="det-label">📎 Learning Objective</div><div class="det-val">${w.obj}</div></div>
+        <div class="det-box green"><div class="det-label">🤖 ML Concept This Week</div><div class="det-val"><strong>${mlTitle}</strong>${mlDesc?`<br><span style="font-size:11.5px;color:var(--muted)">${mlDesc}</span>`:''}</div></div>
+        <div class="det-box full"><div class="det-label">💡 Big Idea</div><div class="det-val">${w.big}</div></div>
+        <div class="det-box gold full"><div class="det-label">⭐ Week Deliverable</div><div class="det-val">${w.deliverable}</div></div>
+        ${w.excellence?`<div class="det-box red full"><div class="det-label">🏆 Excellence Marker</div><div class="det-val">${w.excellence}</div></div>`:''}
+        ${w.ethics?`<div class="det-box purple full"><div class="det-label">⚖️ Ethics Discussion</div><div class="det-val">${w.ethics}</div></div>`:''}
+      </div>
+    </div>
+    <div class="wb-tabs">${tabsHtml}</div>
+    <div class="wb-body">
+      <div class="wb-goal" style="background:${DC[d]}18;color:${DC[d]};border-color:${DC[d]}">
+        🎯 <strong>Day ${d+1} — ${DL[d].split(' ').slice(1).join(' ')}:</strong> ${DD[d]}
+      </div>
+      <div class="wb-steps-title">Steps for Today</div>
+      <ul class="wb-steps">${stepsHtml}</ul>
+      <div class="wb-deliv" style="background:${DC[d]}12;color:${DC[d]};border-color:${DC[d]}">
+        📎 <strong>${d===6?'Final Deliverable:':'Day '+( d+1)+' Activity Output:'}</strong> ${d===6?w.deliverable:'Complete the activity above and save your work for your portfolio.'}
+      </div>
+      ${w.excellence&&d===4?`<div class="wb-excellence">⭐ <strong>Excellence Challenge:</strong> ${w.excellence}</div>`:''}
+      <div class="wb-res">📦 <strong>Resources:</strong> ${w.resources}</div>
+      <div class="wb-vocab">${w.vocab.split(',').map(v=>`<span class="vocab-pill">${v.trim()}</span>`).join('')}</div>
+      <div class="wb-reflect">
+        <div class="wb-reflect-title">My Reflection — End of Day ${d+1}</div>
+        <div class="wb-reflect-row"><span class="wb-reflect-label">Today I learned</span><span class="wb-reflect-line"></span></div>
+        <div class="wb-reflect-row"><span class="wb-reflect-label">I found it hard when</span><span class="wb-reflect-line"></span></div>
+        <div class="wb-reflect-row"><span class="wb-reflect-label">I'm still wondering</span><span class="wb-reflect-line"></span></div>
+        <div class="wb-reflect-row"><span class="wb-reflect-label">My confidence today</span><span style="font-size:13px">🔴 Unsure &nbsp; 🟡 Getting it &nbsp; 🟢 Got it!</span></div>
+      </div>
+    </div>`;
+}
+
+function buildWbSel() {
+  const sel = document.getElementById('wb-sel');
+  if(sel.options.length > 1) return;
+  WEEKS.forEach(w => {
+    const opt = document.createElement('option');
+    opt.value = w.n;
+    opt.textContent = `Week ${w.n}: ${w.title} — ${UE[w.unit_id]} ${w.unit}`;
+    sel.appendChild(opt);
+  });
+}
+
+function loadStandaloneWb() {
+  const n = parseInt(document.getElementById('wb-sel').value);
+  if(!n) { document.getElementById('wb-standalone').innerHTML=''; return; }
+  const w = WEEKS.find(x => x.n === n);
+  if(!w) return;
+  const uc = UC[w.unit_id];
+  const days = [w.d1,w.d2,w.d3,w.d4,w.d5,w.d6,w.d7];
+  let selDay = 0;
+
+  function render(d) {
+    selDay = d;
+    const tabsHtml = DL.map((l,i) => `
+      <div class="wb-tab${d===i?' active':''}" onclick="(function(){${i};})(); renderSWb(${n},${i})" style="color:${DC[i]}${d===i?';border-bottom:3px solid '+DC[i]+';background:'+DC[i]+'15':''}">
+        <div class="wb-dn" style="color:${DC[i]}">Day ${i+1}</div>
+        <div class="wb-di">${l.split(' ')[0]}</div>
+        <div class="wb-dl" style="color:${DC[i]}">${l.split(' ').slice(1).join(' ')}</div>
+      </div>`).join('');
+    const dayText = days[d]||'';
+    const steps = dayText.split('. ').map(s=>s.trim()).filter(s=>s.length>5);
+    const stepsHtml = steps.map((s,i) => `
+      <li class="wb-step">
+        <div class="wb-step-n" style="background:${DC[d]}">${i+1}</div>
+        <div class="wb-step-t">${s.replace(/\.$/,'')}</div>
+      </li>`).join('');
+    document.getElementById('wb-standalone').innerHTML = `
+      <div style="background:var(--card);border:1.5px solid var(--border);border-radius:14px;overflow:hidden">
+        <div style="background:linear-gradient(135deg,${uc},${DC[d]});color:#fff;padding:18px 22px">
+          <div style="font-family:'Baloo 2',cursive;font-size:22px;font-weight:800">Week ${w.n}: ${w.title}</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.8);margin-top:4px">${UE[w.unit_id]} ${w.unit} &nbsp;·&nbsp; Day ${d+1}: ${DL[d].split(' ').slice(1).join(' ')} &nbsp;·&nbsp; © 2025 creAItors Club™</div>
+        </div>
+        <div class="wb-tabs">${tabsHtml}</div>
+        <div class="wb-body">
+          <div class="wb-goal" style="background:${DC[d]}18;color:${DC[d]};border-color:${DC[d]}">🎯 <strong>Day ${d+1} — ${DL[d].split(' ').slice(1).join(' ')}:</strong> ${DD[d]}</div>
+          <div class="wb-steps-title">Steps for Today</div>
+          <ul class="wb-steps">${stepsHtml}</ul>
+          <div class="wb-deliv" style="background:${DC[d]}12;color:${DC[d]};border-color:${DC[d]}">📎 <strong>${d===6?'Final Deliverable:':'Day '+(d+1)+' Output:'}</strong> ${d===6?w.deliverable:'Complete the activity above and save your work.'}</div>
+          ${w.excellence&&d===4?`<div class="wb-excellence">⭐ <strong>Excellence Challenge:</strong> ${w.excellence}</div>`:''}
+          <div class="wb-res">📦 <strong>Resources:</strong> ${w.resources}</div>
+          <div class="wb-vocab">${w.vocab.split(',').map(v=>`<span class="vocab-pill">${v.trim()}</span>`).join('')}</div>
+          ${w.ethics?`<div style="background:#F5EEF8;border:1px solid #C39BD3;border-radius:10px;padding:10px 14px;margin-top:10px;font-size:12px;color:#4A1D8F"><strong>⚖️ Ethics Discussion:</strong> ${w.ethics}</div>`:''}
+          <div class="wb-reflect">
+            <div class="wb-reflect-title">My Reflection — Day ${d+1}</div>
+            <div class="wb-reflect-row"><span class="wb-reflect-label">Today I learned</span><span class="wb-reflect-line"></span></div>
+            <div class="wb-reflect-row"><span class="wb-reflect-label">I found it hard when</span><span class="wb-reflect-line"></span></div>
+            <div class="wb-reflect-row"><span class="wb-reflect-label">I'm still wondering</span><span class="wb-reflect-line"></span></div>
+            <div class="wb-reflect-row"><span class="wb-reflect-label">Confidence today</span><span style="font-size:13px">🔴 Unsure &nbsp; 🟡 Getting it &nbsp; 🟢 Got it!</span></div>
+          </div>
+        </div>
+      </div>`;
+  }
+  render(0);
+  window.renderSWb = function(n2, d2) { if(n2===n) render(d2); };
+}
+
+function renderMl() {
+  document.getElementById('ml-grid').innerHTML = ML.map(m => `
+    <div class="ml-card">
+      <div class="ml-card-title">🤖 ${m.t}</div>
+      <div class="ml-card-def">${m.d}</div>
+      <div class="ml-card-ex"><strong>Real world:</strong> ${m.e}</div>
+      <div class="ml-card-week">📅 ${m.w}</div>
+    </div>`).join('');
+}
+
+// BOOT
+renderWeeks();
+buildWbSel();
+</script>
+<div id="view-tutor" style="display:none"><div style="max-width:900px;margin:0 auto;padding:0 4px"><div style="background:linear-gradient(135deg,#e6faf4,#fff);border:2px solid #34c7a0;border-radius:14px;padding:20px 24px;margin-bottom:1.5rem"><div style="font-family:Nunito,sans-serif;font-size:18px;font-weight:800;color:#12243A;margin-bottom:6px">Tutor Guide - Level 0 Entry - Nano Tots</div><div style="font-size:13px;color:#444;line-height:1.6">For <strong>tutors, educators, and parents</strong>. Summarises what children learn, what they arrive knowing, corrections to apply, and how to deliver this level well.</div></div><div style="background:#1A2F50;border-radius:12px;padding:16px 20px;margin-bottom:1.5rem"><div style="font-family:Nunito,sans-serif;font-size:11px;font-weight:800;color:#FFB703;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">The Mission</div><div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.7;font-style:italic">"Every child deserves a strong, confident beginning with AI - because it is shaping the world they will grow into. creAItors Club provides that foundation, introducing AI early through a clear, structured approach so children can build understanding, spark curiosity, and develop the confidence to shape what comes next."</div></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:1.5rem"><div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:14px 16px"><div style="font-size:10px;font-weight:800;color:#999;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px">Ideal Age</div><div style="font-family:Nunito,sans-serif;font-size:15px;font-weight:800;color:#12243A">6 and above</div><div style="font-size:11px;color:#666;margin-top:2px">Age is a guide, not a gate</div></div><div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:14px 16px"><div style="font-size:10px;font-weight:800;color:#999;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px">Assessment</div><div style="font-size:12px;color:#12243A;line-height:1.5">None - open entry. Every child is welcome.</div></div><div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:14px 16px"><div style="font-size:10px;font-weight:800;color:#999;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px">Structure</div><div style="font-size:12px;color:#12243A;line-height:1.5">50 weeks - Day 1 teach - Days 2-7 practice - Ethics every week</div></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.5rem"><div style="background:#E9F7EF;border:1.5px solid #27AE60;border-radius:10px;padding:14px 16px"><div style="font-family:Nunito,sans-serif;font-size:12px;font-weight:800;color:#1a7a40;margin-bottom:6px">Children arrive knowing</div><div style="font-size:12px;color:#2d6a4f;line-height:1.6">No prior knowledge required. This is the starting point.</div></div><div style="background:#e6faf4;border:1.5px solid #34c7a0;border-radius:10px;padding:14px 16px"><div style="font-family:Nunito,sans-serif;font-size:12px;font-weight:800;color:#34c7a0;margin-bottom:6px">Children leave knowing</div><div style="font-size:12px;color:#444;line-height:1.6">Patterns everywhere. Sequences and algorithms. Debugging as creative thinking. ScratchJr stories. 10 ML concepts introduced.</div></div></div><div style="margin-bottom:1.5rem"><div style="font-family:Nunito,sans-serif;font-size:13px;font-weight:800;color:#12243A;margin-bottom:10px">Four Units at a Glance</div><div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:12px 14px;margin-bottom:8px"><div style="font-family:Nunito,sans-serif;font-size:13px;font-weight:800;color:#12243A;margin-bottom:2px">Machines & Computing <span style="color:#999;font-weight:600;font-size:11px">Weeks 1-10</span></div><div style="font-size:12px;color:#666;line-height:1.5">IPO model, cause-effect, human vs machine, Bee-Bot</div></div><div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:12px 14px;margin-bottom:8px"><div style="font-family:Nunito,sans-serif;font-size:13px;font-weight:800;color:#12243A;margin-bottom:2px">Patterns & Sequences <span style="color:#999;font-weight:600;font-size:11px">Weeks 11-20</span></div><div style="font-size:12px;color:#666;line-height:1.5">Visual patterns, number patterns, sorting, classification, music as pattern</div></div><div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:12px 14px;margin-bottom:8px"><div style="font-family:Nunito,sans-serif;font-size:13px;font-weight:800;color:#12243A;margin-bottom:2px">Debugging & Logic <span style="color:#999;font-weight:600;font-size:11px">Weeks 21-30</span></div><div style="font-size:12px;color:#666;line-height:1.5">Sequences, instructions, robot game, debugging, cybersecurity basics</div></div><div style="background:#fff;border:1.5px solid #eee;border-radius:10px;padding:12px 14px;margin-bottom:8px"><div style="font-family:Nunito,sans-serif;font-size:13px;font-weight:800;color:#12243A;margin-bottom:2px">ScratchJr Stories <span style="color:#999;font-weight:600;font-size:11px">Weeks 31-50</span></div><div style="font-size:12px;color:#666;line-height:1.5">Movement, storytelling, scenes, animation, events, interaction</div></div></div><div style="background:#fff;border:1.5px solid #eee;border-radius:12px;padding:16px 20px;margin-bottom:1.5rem"><div style="font-family:Nunito,sans-serif;font-size:13px;font-weight:800;color:#12243A;margin-bottom:12px">The 7-Day Week</div><div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px"><div style="text-align:center;background:#FFFBEE;border:1px solid #FFD166;border-radius:8px;padding:8px 4px"><div style="font-family:Nunito,sans-serif;font-size:14px;font-weight:800;color:#7A5F00">1</div><div style="font-size:9px;font-weight:800;color:#666;margin:2px 0">Teach</div><div style="font-size:9px;color:#999;line-height:1.3">New concept + story</div></div><div style="text-align:center;background:#f8f8f8;border:1px solid #eee;border-radius:8px;padding:8px 4px"><div style="font-family:Nunito,sans-serif;font-size:14px;font-weight:800;color:#7A5F00">2</div><div style="font-size:9px;font-weight:800;color:#666;margin:2px 0">Guided</div><div style="font-size:9px;color:#999;line-height:1.3">Structured practice</div></div><div style="text-align:center;background:#f8f8f8;border:1px solid #eee;border-radius:8px;padding:8px 4px"><div style="font-family:Nunito,sans-serif;font-size:14px;font-weight:800;color:#7A5F00">3</div><div style="font-size:9px;font-weight:800;color:#666;margin:2px 0">Unplug</div><div style="font-size:9px;color:#999;line-height:1.3">Offline activity</div></div><div style="text-align:center;background:#f8f8f8;border:1px solid #eee;border-radius:8px;padding:8px 4px"><div style="font-family:Nunito,sans-serif;font-size:14px;font-weight:800;color:#7A5F00">4</div><div style="font-size:9px;font-weight:800;color:#666;margin:2px 0">Explore</div><div style="font-size:9px;color:#999;line-height:1.3">Digital tools/demos</div></div><div style="text-align:center;background:#f8f8f8;border:1px solid #eee;border-radius:8px;padding:8px 4px"><div style="font-family:Nunito,sans-serif;font-size:14px;font-weight:800;color:#7A5F00">5</div><div style="font-size:9px;font-weight:800;color:#666;margin:2px 0">Create</div><div style="font-size:9px;color:#999;line-height:1.3">Child builds something</div></div><div style="text-align:center;background:#f8f8f8;border:1px solid #eee;border-radius:8px;padding:8px 4px"><div style="font-family:Nunito,sans-serif;font-size:14px;font-weight:800;color:#7A5F00">6</div><div style="font-size:9px;font-weight:800;color:#666;margin:2px 0">Share</div><div style="font-size:9px;color:#999;line-height:1.3">Explain and reflect</div></div><div style="text-align:center;background:#f8f8f8;border:1px solid #eee;border-radius:8px;padding:8px 4px"><div style="font-family:Nunito,sans-serif;font-size:14px;font-weight:800;color:#7A5F00">7</div><div style="font-size:9px;font-weight:800;color:#666;margin:2px 0">Assess</div><div style="font-size:9px;color:#999;line-height:1.3">Self-check + ethics Q</div></div></div><div style="margin-top:10px;font-size:11px;color:#666;line-height:1.6">Ethics every week: Every lesson includes an embedded ethics question. The ML concept connects the activity to AI awareness. Make this connection explicit every time - it is the point of the lesson.</div></div><div style="margin-bottom:1.5rem"><div style="font-family:Nunito,sans-serif;font-size:13px;font-weight:800;color:#12243A;margin-bottom:10px">Tutor Notes - Known Corrections for This Level</div><div style="background:#FFFCEC;border:1px solid #FFD166;border-left:4px solid #FFB703;border-radius:8px;padding:11px 14px;margin-bottom:8px"><div style="font-family:Nunito,sans-serif;font-size:11px;font-weight:800;color:#7A5F00;margin-bottom:4px">C1 - ML concept must be central, not a footnote</div><div style="font-size:12px;color:#555;line-height:1.5">The activity is the vehicle. AI awareness is the destination. Make the ML concept connection explicit every lesson.</div></div><div style="background:#FFFCEC;border:1px solid #FFD166;border-left:4px solid #FFB703;border-radius:8px;padding:11px 14px;margin-bottom:8px"><div style="font-family:Nunito,sans-serif;font-size:11px;font-weight:800;color:#7A5F00;margin-bottom:4px">C2 - Sorting/classification human connection</div><div style="font-size:12px;color:#555;line-height:1.5">Weeks 13-14: always connect sorting back to AI. When AI sorts data, who decides the rules? Who could be harmed?</div></div></div><div style="background:#fff;border:1.5px solid #eee;border-radius:12px;padding:16px 20px;margin-bottom:1.5rem"><div style="font-family:Nunito,sans-serif;font-size:13px;font-weight:800;color:#12243A;margin-bottom:10px">Core Principles - Apply at Every Level</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:4px"><div style="font-size:12px;color:#555;padding:5px 0;border-bottom:1px solid #f0f0f0"><strong>Creators not consumers</strong> - every lesson involves making something</div><div style="font-size:12px;color:#555;padding:5px 0;border-bottom:1px solid #f0f0f0"><strong>Safety first</strong> - cybersecurity and bias woven in always</div><div style="font-size:12px;color:#555;padding:5px 0;border-bottom:1px solid #f0f0f0"><strong>Joy is non-negotiable</strong> - if it is not fun, something is wrong</div><div style="font-size:12px;color:#555;padding:5px 0;border-bottom:1px solid #f0f0f0"><strong>Ethics every week</strong> - embedded question, not standalone unit</div><div style="font-size:12px;color:#555;padding:5px 0;border-bottom:1px solid #f0f0f0"><strong>AI is human</strong> - every algorithm connects to the person who built it</div><div style="font-size:12px;color:#555;padding:5px 0;border-bottom:1px solid #f0f0f0"><strong>Not a career pipeline</strong> - awareness, not employment preparation</div><div style="font-size:12px;color:#555;padding:5px 0;border-bottom:1px solid #f0f0f0"><strong>Readiness not age</strong> - levels are competency-based</div><div style="font-size:12px;color:#555;padding:5px 0;border-bottom:1px solid #f0f0f0"><strong>Mistakes are the method</strong> - debugging and failure are curriculum</div></div></div><div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:16px 0;border-top:2px solid #eee"><a href="index.html" style="font-family:Nunito,sans-serif;font-size:13px;font-weight:700;color:#666;text-decoration:none">&larr; Back to creAItors Club Home</a><a href="pixel-blockers.html" style="display:inline-flex;align-items:center;gap:8px;background:#34c7a0;color:#fff;font-family:Nunito,sans-serif;font-size:13px;font-weight:800;padding:9px 20px;border-radius:22px;text-decoration:none">Next Level: Pixel Blockers &rarr;</a></div></div></div>
+</body>
+</html>
